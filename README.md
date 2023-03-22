@@ -5,7 +5,7 @@
    <img src="http://img.shields.io/static/v1?label=STATUS&message=Desenvolvimento&color=GREY&style=for-the-badge"/>
 </p>
 
-> Status do Projeto: Desenvolvimento
+-> Status do Projeto: Desenvolvimento
 
 ### Tópicos 
 
