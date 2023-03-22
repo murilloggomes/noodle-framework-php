@@ -28,7 +28,7 @@
                     
                     <div class="signin-form">
                       <div style="width:100%;">
-                        <div class="image-horus mb-20">
+                        <div class="image-capa mb-20">
                           
                         
                         </div>
