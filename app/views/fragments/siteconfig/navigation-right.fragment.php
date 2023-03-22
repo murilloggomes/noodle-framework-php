@@ -1,4 +1,6 @@
-<div class="end-bar">
+<?php $idUser = $AuthUser->get("id") ?>
+
+        <div class="end-bar">
 
             <div class="rightbar-title">
                 <a href="javascript:void(0);" class="end-bar-toggle float-end">
