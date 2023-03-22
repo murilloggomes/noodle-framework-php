@@ -61,7 +61,7 @@
         <!-- Begin page -->
             <!-- ========== Left Sidebar Start ========== -->            
         <div class="wrapper" >
-            <!-- <?php require(APPPATH.'/views/fragments/siteconfig/navigation.fragment.php'); ?> -->
+           <?php require(APPPATH.'/views/fragments/siteconfig/navigation.fragment.php'); ?> 
             <?php require(APPPATH.'/views/fragments/siteconfig/topbar.fragment.php'); ?>
           <div class="content-page">
 						<div class="content">
@@ -71,8 +71,6 @@
 								<?php require(APPPATH.'/views/fragments/siteconfig/modal.fragment.php'); ?>
 
 								<?php require(APPPATH.'/views/fragments/users.fragment.php'); ?>
-								<?php require(APPPATH.'/views/fragments/usuario/modal-usuario.fragment.php'); ?>
-								<?php require(APPPATH.'/views/fragments/usuario/modal-permissao.fragment.php'); ?>
 
 							 </div>
 						</div>
