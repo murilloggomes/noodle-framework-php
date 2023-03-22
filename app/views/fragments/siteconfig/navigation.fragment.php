@@ -3,20 +3,20 @@
                 <!-- LOGO -->
                 <a href="<?= APPURL ?>" class="logo text-center logo-light">
                     <span class="logo-lg">
-                        <img src="<?= APPURL . "/app-assets/assets/image/logo-branco-noodle.png"?>" alt="" height="36">
+                        <img src="<?= APPURL . "/assets/image/logo/logo-branco-noodle.png"?>" alt="" height="36">
                     </span>
                     <span class="logo-sm">
-                        <img src="<?= APPURL . "/app-assets/assets/image/icon-branco-noodle.png"?>" alt="" height="26">
+                        <img src="<?= APPURL . "/assets/image/logo/icon-branco-noodle.png"?>" alt="" height="26">
                     </span>
                 </a>
 
                 <!-- LOGO -->
                 <a href="<?= APPURL ?>" class="logo text-center logo-dark">
                     <span class="logo-lg">
-                        <img src="<?= APPURL . "/app-assets/assets/image/logo-preto-noodle.png"?>" alt="" height="36">
+                        <img src="<?= APPURL . "/assets/image/logo/logo-preto-noodle.png"?>" alt="" height="36">
                     </span>
                     <span class="logo-sm">
-                        <img src="<?= APPURL . "/app-assets/assets/image/icon-preto-noodle.png"?>" alt="" height="26">
+                        <img src="<?= APPURL . "/assets/image/logo/icon-preto-noodle.png"?>" alt="" height="26">
                     </span>
                 </a>
     
