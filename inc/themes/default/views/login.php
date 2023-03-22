@@ -8,9 +8,7 @@
         <meta name="theme-color" content="#fff">
 
         <meta name="description" content="<?= site_settings("site_description") ?>">
-        <meta name="keywords" content="<?= site_settings("site_keywords") ?>">
-
-        <link rel="shortcut icon" type="image/x-icon" href="<?= APPURL . "/app-assets/images/logo/peep-icon2.png"?>">
+        <meta name="keywords" content="<?= site_settings("site_keywords") ?>"> 
                 
         <link rel="stylesheet" type="text/css" href="<?= APPURL . "/inc/themes/default/assets/styles/main.css" ?>">
 
@@ -83,6 +81,9 @@
                                 </div>
                                 <div class="reset-pass">
                                     <a href="<?= APPURL."/recovery" ?>"><?= "Esqueceu sua senha?" ?></a>
+                                </div>
+                                <div class="reset-pass">
+                                    <p><?= APP_VERSION ?></p>
                                 </div>
                             </div>
                         </form>
