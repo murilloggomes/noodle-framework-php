@@ -54,9 +54,9 @@ git clone git@github.com:murilloggomes/noodle-open-source-framework-php-82.git
 cd no arquivo do projeto (que deve ser baixa na pasta raiz realmente da aplicação)
 
 ## Como rodar os testes
-
+```
 Pasta colocar os acessos do banco no arquivo /app/config/database.config.php;
-
+```
 ## Casos de Uso
 
 Depois disso pode ir direto pro login e acessar com o usuário e senha que você cadastrou ou rodar o script sql:
