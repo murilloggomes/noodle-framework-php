@@ -55,7 +55,7 @@ cd no arquivo do projeto (que deve ser baixa na pasta raiz realmente da aplicaç
 
 ## Como rodar os testes
 ```
-Pasta colocar os acessos do banco no arquivo /app/config/database.config.php;
+nano /app/config/database.config.php;
 ```
 ## Casos de Uso
 
