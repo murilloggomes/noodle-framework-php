@@ -1,0 +1,568 @@
+{
+  "listItems": [
+    {
+      "url": "dashboard-modern.html",
+      "name": "Modern",
+      "icon": "dashboard",
+      "category": "Dashboard"
+    },
+    {
+      "url": "dashboard-ecommerce.html",
+      "name": "eCommerce",
+      "icon": "add_shopping_cart",
+      "category": "Dashboard"
+    },
+    {
+      "url": "dashboard-analytics.html",
+      "name": "Analytics",
+      "icon": "equalizer",
+      "category": "Dashboard"
+    },
+    {
+      "url": "app-invoice-list.html",
+      "name": "Invoice List",
+      "icon": "content_paste",
+      "category": "Applications"
+    },
+    {
+      "url": "app-invoice-view.html",
+      "name": "Invoice View",
+      "icon": "event_note",
+      "category": "Applications"
+    },
+    {
+      "url": "app-invoice-edit.html",
+      "name": "Invoice Edit",
+      "icon": "content_paste",
+      "category": "Applications"
+    },
+    {
+      "url": "app-invoice-add.html",
+      "name": "Invoice Add",
+      "icon": "content_paste",
+      "category": "Applications"
+    },
+    {
+      "url": "eCommerce-products-page.html",
+      "name": "Products Page",
+      "icon": "add_shopping_cart",
+      "category": "Applications"
+    },
+    {
+      "url": "eCommerce-pricing.html",
+      "name": "Pricing",
+      "icon": "attach_money",
+      "category": "Applications"
+    },
+    {
+      "url": "page-contact.html",
+      "name": "Contact",
+      "icon": "contact_mail",
+      "category": "Pages"
+    },
+    {
+      "url": "page-blog-list.html",
+      "name": "Blog",
+      "icon": "announcement",
+      "category": "Pages"
+    },
+    {
+      "url": "page-search.html",
+      "name": "Search",
+      "icon": "search",
+      "category": "Pages"
+    },
+    {
+      "url": "page-knowledge.html",
+      "name": "Knowledge",
+      "icon": "lightbulb_outline",
+      "category": "Pages"
+    },
+    {
+      "url": "page-timeline.html",
+      "name": "Timeline",
+      "icon": "timeline",
+      "category": "Pages"
+    },
+    {
+      "url": "page-faq.html",
+      "name": "FAQs",
+      "icon": "question_answer",
+      "category": "Pages"
+    },
+    {
+      "url": "page-account-settings.html",
+      "name": "Account Settings",
+      "icon": "settings",
+      "category": "Pages"
+    },
+    {
+      "url": "page-blank.html",
+      "name": "Page Blank",
+      "icon": "check_box_outline_blank",
+      "category": "Pages"
+    },
+    {
+      "url": "media-gallery-page.html",
+      "name": "Gallery Page",
+      "icon": "perm_media",
+      "category": "Medias Pages"
+    },
+    {
+      "url": "media-hover-effects.html",
+      "name": "Media Hover Effects",
+      "icon": "picture_in_picture",
+      "category": "Medias Pages"
+    },
+    {
+      "url": "page-users-list.html",
+      "name": "List",
+      "icon": "person_add",
+      "category": "User Page"
+    },
+    {
+      "url": "page-users-view.html",
+      "name": "View",
+      "icon": "person_outline",
+      "category": "User Page"
+    },
+    {
+      "url": "page-users-edit.html",
+      "name": "Edit",
+      "icon": "person_outline",
+      "category": "User Page"
+    },
+    {
+      "url": "user-login.html",
+      "name": "Login",
+      "icon": "perm_identity",
+      "category": "Authentication Pages"
+    },
+    {
+      "url": "user-register.html",
+      "name": "Register",
+      "icon": "perm_identity",
+      "category": "Authentication Pages"
+    },
+    {
+      "url": "user-forgot-password.html",
+      "name": "Forgot Password",
+      "icon": "lock_outline",
+      "category": "Authentication Pages"
+    },
+    {
+      "url": "user-lock-screen.html",
+      "name": "Lock Screen",
+      "icon": "screen_lock_portrait",
+      "category": "Authentication Pages"
+    },
+    {
+      "url": "page-404.html",
+      "name": "404",
+      "icon": "error_outline",
+      "category": "Misc"
+    },
+    {
+      "url": "page-maintenance.html",
+      "name": "Page Maintenanace",
+      "icon": "build",
+      "category": "Misc"
+    },
+    {
+      "url": "page-500.html",
+      "name": "500",
+      "icon": "error_outline",
+      "category": "Misc"
+    },
+    {
+      "url": "cards-basic.html",
+      "name": "Cards",
+      "icon": "credit_card",
+      "category": "User Interface"
+    },
+    {
+      "url": "cards-advance.html",
+      "name": "Cards Advance",
+      "icon": "card_giftcard",
+      "category": "User Interface"
+    },
+    {
+      "url": "cards-extended.html",
+      "name": "Cards Extended",
+      "icon": "card_travel",
+      "category": "User Interface"
+    },
+    {
+      "url": "css-typography.html",
+      "name": "Typograpy",
+      "icon": "format_color_text",
+      "category": "User Interface"
+    },
+    {
+      "url": "css-color.html",
+      "name": "Color",
+      "icon": "color_lens",
+      "category": "User Interface"
+    },
+    {
+      "url": "css-grid.html",
+      "name": "Grid",
+      "icon": "grid_on",
+      "category": "User Interface"
+    },
+    {
+      "url": "css-helpers.html",
+      "name": "Helpers",
+      "icon": "accessibility",
+      "category": "User Interface"
+    },
+    {
+      "url": "css-media.html",
+      "name": "Media",
+      "icon": "perm_media",
+      "category": "User Interface"
+    },
+    {
+      "url": "css-pulse.html",
+      "name": "Pulse",
+      "icon": "radio_button_checked",
+      "category": "User Interface"
+    },
+    {
+      "url": "css-sass.html",
+      "name": "Sass",
+      "icon": "filter_frames",
+      "category": "User Interface"
+    },
+    {
+      "url": "css-shadow.html",
+      "name": "Shadow",
+      "icon": "filter_hdr",
+      "category": "User Interface"
+    },
+    {
+      "url": "css-animations.html",
+      "name": "Animations",
+      "icon": "flash_auto",
+      "category": "User Interface"
+    },
+    {
+      "url": "css-transitions.html",
+      "name": "Transitions",
+      "icon": "forward_5",
+      "category": "User Interface"
+    },
+    {
+      "url": "ui-basic-buttons.html",
+      "name": "Basic",
+      "icon": "view_comfy",
+      "category": "User Interface"
+    },
+    {
+      "url": "ui-extended-buttons.html",
+      "name": "Extended",
+      "icon": "view_module",
+      "category": "User Interface"
+    },
+    {
+      "url": "ui-icons.html",
+      "name": "Icons",
+      "icon": "radio_button_unchecked",
+      "category": "User Interface"
+    },
+    {
+      "url": "ui-alerts.html",
+      "name": "Alerts",
+      "icon": "add_alert",
+      "category": "User Interface"
+    },
+    {
+      "url": "ui-badges.html",
+      "name": "Badges",
+      "icon": "card_membership",
+      "category": "User Interface"
+    },
+    {
+      "url": "ui-breadcrumbs.html",
+      "name": "Breadcrumbs",
+      "icon": "radio_button_unchecked",
+      "category": "User Interface"
+    },
+    {
+      "url": "ui-chips.html",
+      "name": "Chips",
+      "icon": "web",
+      "category": "User Interface"
+    },
+    {
+      "url": "ui-collections.html",
+      "name": "Collections",
+      "icon": "format_list_bulleted",
+      "category": "User Interface"
+    },
+    {
+      "url": "ui-navbar.html",
+      "name": "Navbar",
+      "icon": "radio_button_unchecked",
+      "category": "User Interface"
+    },
+    {
+      "url": "ui-pagination.html",
+      "name": "Pagination",
+      "icon": "first_page",
+      "category": "User Interface"
+    },
+    {
+      "url": "ui-preloader.html",
+      "name": "Preloader",
+      "icon": "refresh",
+      "category": "User Interface"
+    },
+    {
+      "url": "advance-ui-carousel.html",
+      "name": "Carousel",
+      "icon": "settings_ethernet",
+      "category": "User Interface"
+    },
+    {
+      "url": "advance-ui-collapsibles.html",
+      "name": "Collapsibles",
+      "icon": "fullscreen_exit",
+      "category": "User Interface"
+    },
+    {
+      "url": "advance-ui-toasts.html",
+      "name": "Toasts",
+      "icon": "radio_button_unchecked",
+      "category": "User Interface"
+    },
+    {
+      "url": "advance-ui-tooltip.html",
+      "name": "Tooltip",
+      "icon": "info_outline",
+      "category": "User Interface"
+    },
+    {
+      "url": "advance-ui-dropdown.html",
+      "name": "Dropdown",
+      "icon": "arrow_drop_down_circle",
+      "category": "User Interface"
+    },
+    {
+      "url": "advance-ui-feature-discovery.html",
+      "name": "Discovery",
+      "icon": "radio_button_unchecked",
+      "category": "User Interface"
+    },
+    {
+      "url": "advance-ui-media.html",
+      "name": "Media",
+      "icon": "burst_mode",
+      "category": "User Interface"
+    },
+    {
+      "url": "advance-ui-modals.html",
+      "name": "Modals",
+      "icon": "event_available",
+      "category": "User Interface"
+    },
+    {
+      "url": "advance-ui-scrollspy.html",
+      "name": "Scrollspy",
+      "icon": "radio_button_unchecked",
+      "category": "User Interface"
+    },
+    {
+      "url": "advance-ui-tabs.html",
+      "name": "Tabs",
+      "icon": "tab",
+      "category": "User Interface"
+    },
+    {
+      "url": "advance-ui-waves.html",
+      "name": "Waves",
+      "icon": "wifi",
+      "category": "User Interface"
+    },
+    {
+      "url": "extra-components-range-slider.html",
+      "name": "Range Slider",
+      "icon": "radio_button_unchecked",
+      "category": "User Interface"
+    },
+    {
+      "url": "extra-components-sweetalert.html",
+      "name": "Sweetalert",
+      "icon": "info_outline",
+      "category": "User Interface"
+    },
+    {
+      "url": "extra-components-nestable.html",
+      "name": "Nestable",
+      "icon": "format_list_bulleted",
+      "category": "User Interface"
+    },
+    {
+      "url": "extra-components-treeview.html",
+      "name": "Treeview",
+      "icon": "toc",
+      "category": "User Interface"
+    },
+    {
+      "url": "extra-components-ratings.html",
+      "name": "Ratings",
+      "icon": "star_half",
+      "category": "User Interface"
+    },
+    {
+      "url": "extra-components-tour.html",
+      "name": "Tour",
+      "icon": "person_pin",
+      "category": "User Interface"
+    },
+    {
+      "url": "extra-components-i18n.html",
+      "name": "i18n",
+      "icon": "translate",
+      "category": "User Interface"
+    },
+    {
+      "url": "extra-components-highlight.html",
+      "name": "Highlight",
+      "icon": "radio_button_unchecked",
+      "category": "User Interface"
+    },
+    {
+      "url": "form-elements.html",
+      "name": "Form Elements",
+      "icon": "select_all",
+      "category": "Forms"
+    },
+    {
+      "url": "form-select2.html",
+      "name": "Form Select2",
+      "icon": "content_paste",
+      "category": "Forms"
+    },
+    {
+      "url": "form-validation.html",
+      "name": "Form Validation",
+      "icon": "radio_button_unchecked",
+      "category": "Forms"
+    },
+    {
+      "url": "form-masks.html",
+      "name": "Form Masks",
+      "icon": "radio_button_unchecked",
+      "category": "Forms"
+    },
+    {
+      "url": "form-editor.html",
+      "name": "Form Editor",
+      "icon": "edit",
+      "category": "Forms"
+    },
+    {
+      "url": "form-file-uploads.html",
+      "name": "File Uploads",
+      "icon": "file_upload",
+      "category": "Forms"
+    },
+    {
+      "url": "charts-chartjs.html",
+      "name": "ChartJS",
+      "icon": "multiline_chart",
+      "category": "Charts"
+    },
+    {
+      "url": "charts-chartist.html",
+      "name": "Chartist",
+      "icon": "pie_chart_outlined",
+      "category": "Charts"
+    },
+    {
+      "url": "charts-sparklines.html",
+      "name": "Sparkline Charts",
+      "icon": "show_chart",
+      "category": "Charts"
+    },
+    {
+      "url": "app-email.html",
+      "name": "Mail",
+      "icon": "mail_outline",
+      "category": "Applications"
+    },
+    {
+      "url": "app-chat.html",
+      "name": "Chat",
+      "icon": "chat_bubble_outline",
+      "category": "Applications"
+    },
+    {
+      "url": "app-todo.html",
+      "name": "ToDo",
+      "icon": "check",
+      "category": "Applications"
+    },
+    {
+      "url": "app-kanban.html",
+      "name": "Kanban",
+      "icon": "format_list_bulleted",
+      "category": "Applications"
+    },
+    {
+      "url": "app-file-manager.html",
+      "name": "File manager",
+      "icon": "content_paste",
+      "category": "Applications"
+    },
+    {
+      "url": "app-contacts.html",
+      "name": "Contacts",
+      "icon": "import_contacts",
+      "category": "Applications"
+    },
+    {
+      "url": "app-calendar.html",
+      "name": "Calendar",
+      "icon": "today",
+      "category": "Pages"
+    },
+    {
+      "url": "user-profile-page.html",
+      "name": "User Profile",
+      "icon": "person_outline",
+      "category": "Pages"
+    },
+    {
+      "url": "table-basic.html",
+      "name": "Basic Tables",
+      "icon": "border_all",
+      "category": "Tables"
+    },
+    {
+      "url": "table-data-table.html",
+      "name": "Data Tables",
+      "icon": "grid_on",
+      "category": "Tables"
+    },
+    {
+      "url": "form-layouts.html",
+      "name": "Form Layouts",
+      "icon": "image_aspect_ratio",
+      "category": "Forms"
+    },
+    {
+      "url": "form-wizard.html",
+      "name": "Form Wizard",
+      "icon": "settings_ethernet",
+      "category": "Forms"
+    },
+    {
+      "url": "changelog.html",
+      "name": "Changelog",
+      "icon": "track_changes",
+      "category": "Updates"
+    }
+  ]
+}

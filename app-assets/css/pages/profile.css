@@ -1,0 +1,92 @@
+/*----------------------------------------
+    Profile Page
+------------------------------------------*/
+#profile-page-header .card-image
+{
+    height: 250px;
+}
+
+#profile-page-header .card-profile-image
+{
+    position: absolute;
+    z-index: 1;
+    top: 190px;
+    left: 40px;
+
+    width: 110px;
+    margin: 0;
+
+    cursor: pointer;
+}
+
+#profile-page-header .card-content
+{
+    margin-top: -40px;
+}
+
+#profile-page-header .card-content .card-title
+{
+    margin-bottom: 0;
+}
+
+/*profile-page-wall*/
+#profile-page-wall .profile-image-post
+{
+    width: 60px;
+    margin: 30px 10px;
+}
+
+#profile-page-wall .tab-content
+{
+    padding: 10px;
+}
+
+#profile-page-wall .share-icons
+{
+    margin-top: 10px;
+}
+
+#profile-page-wall .share-icons i
+{
+    padding: 0 5px;
+}
+
+#profile-page-wall .tab-profile .tab i
+{
+    font-size: 16px;
+}
+
+#profile-page-wall-posts .profile-small
+{
+    overflow: hidden;
+
+    height: 250px;
+}
+
+#profile-page-wall-posts .profile-medium
+{
+    overflow: hidden;
+
+    height: 350px;
+}
+
+#profile-page-wall-posts .profile-large
+{
+    overflow: hidden;
+
+    height: 450px;
+}
+
+#profile-page-wall-posts .card-profile-title
+{
+    font-size: 16px;
+
+    padding: 20px;
+
+    border-radius: 0 0 2px 2px;
+}
+
+#profile-page-wall-posts .card-action-share
+{
+    padding: 16px;
+}
