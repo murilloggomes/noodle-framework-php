@@ -1,4 +1,5 @@
- <!-- BEGIN: Page Main-->
+<?php $idUser = $AuthUser->get("id") ?>
+<!-- BEGIN: Page Main-->
     <div id="main">
         <div class="row">           
           

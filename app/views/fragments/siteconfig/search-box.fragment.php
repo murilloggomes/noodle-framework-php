@@ -1,3 +1,4 @@
+<?php $idUser = $AuthUser->get("id") ?>
 <!-- BEGIN: Search Box-->
 
    <ul class="display-none" id="default-search-main">

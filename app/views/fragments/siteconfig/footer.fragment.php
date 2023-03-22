@@ -1,3 +1,4 @@
+<?php $idUser = $AuthUser->get("id") ?>
 <!-- BEGIN: Footer-->
                <footer class="footer">
                     <div class="container-fluid">

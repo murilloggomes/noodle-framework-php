@@ -1,4 +1,5 @@
- <!-- START RIGHT SIDEBAR NAV -->
+<?php $idUser = $AuthUser->get("id") ?>
+<!-- START RIGHT SIDEBAR NAV -->
                     <aside id="right-sidebar-nav">
                         <div id="slide-out-right" class="slide-out-right-sidenav sidenav rightside-navigation">
                             <div class="row">

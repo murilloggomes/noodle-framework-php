@@ -1,3 +1,4 @@
+<?php $idUser = $AuthUser->get("id") ?>
 <div class="leftside-menu">
                 <!-- LOGO -->
                 <a href="<?= APPURL ?>" class="logo text-center logo-light">

@@ -1,3 +1,4 @@
+<?php $idUser = $AuthUser->get("id") ?>
 <div class="modal fade" id="notificacaoG" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog modal-xl modal-dialog-centered">
     <div class="modal-content">
