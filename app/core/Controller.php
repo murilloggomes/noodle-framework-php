@@ -92,58 +92,12 @@ class Controller
         require_once $path;
     }
   
-    /**
-     * Create database connection
-     * @return App 
-     */
-    public function dbSantri()
-    {
-        // Define MYDB connection string as described in tnsnames.ora
-        define("MYDB","(DESCRIPTION=(ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = 200.252.18.135)(PORT = 1521)))(CONNECT_DATA=(SERVICE_NAME = SANTRIPDB)))");
-        // Connect to database      
-        $conn = oci_pconnect("BANCOWEB","H8T9L1",MYDB,"utf8");  
-      
-        // Through error if not connected      
-        if (!$conn) {
-            $e = oci_error();
-           return trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);
-        }        
-        return $conn;
-    }
-  
-  
-    public function dbAnalise()
-    {      
-        $mysqli = new mysqli("localhost", "usuario_analise","F{#Dwnk1qWn<;rT","banco_analise"); 
-        $mysqli->set_charset('utf8mb4');
-      
-        return $mysqli;
-    } 
-  
-  public function dbLogistica()
-    {      
-        $mysqli = new mysqli("localhost", "usuario_logistica","1aquiCB|Ny#(Mxl","banco_logistica"); 
-        $mysqli->set_charset('utf8mb4');
-      
-        return $mysqli;
-    } 
-  
-
-      public function dbSolar()
-    {      
-        $mysqli = new mysqli("localhost", "usuario_solar","!YnG;uGHT^ct{!6","banco_solar"); 
-        $mysqli->set_charset('utf8mb4');
-      
-        return $mysqli;
-    } 
-
-  
   
     /**
-     * Create database connection
+     * Use TOAST Notification in Controllers Pages
      * @return App 
      */
-    public function toast($msg, $type = "success")
+    public function jstoast($msg, $type = "success")
     {
         $toast = "<script>setTimeout(function() {
                 M.toast({
