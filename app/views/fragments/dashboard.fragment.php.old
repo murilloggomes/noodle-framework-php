@@ -1,0 +1,281 @@
+
+<div class="section" style="border-bottom:1px solid #cecece">
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+ Criar Gráfico
+</button>
+</div>
+
+    <div class="dropzone"></div>
+    
+		<?php foreach($GraficosI->getDataAs("Chart") as $ChartI): ?>
+<div class="winston" >
+		<div class="col l4 m12 s12 l-last m-last s-last">
+		<div class="card animate fadeLeft">
+				<?php $cor = $ChartI->get('cor');  $idG = $ChartI->get("id"); ?>
+				<div class="card-content" <?= "style='border-left:4px solid $cor'" ?>>				
+					<h6 class="mb-0 mt-0 display-flex justify-content-between"><?= mb_convert_case($ChartI->get("nome"), MB_CASE_TITLE, 'UTF-8') ?> 
+						<div class="dropdown">
+								<a type="button"  data-bs-toggle="dropdown" aria-expanded="false">
+									 <i class="material-icons float-right">more_vert</i>
+								</a>
+								<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+									<li><a class="dropdown-item" onclick="link(<?= $idG ?>)">Editar</a></li>
+									<li><a class="dropdown-item" onclick="excluirChart(<?= $idG ?>)">Excluir</a></li>
+								</ul>
+						</div>
+					</h6>
+					<?php if($ChartI->get("date_inicio") != "0000-00-00"): ?>							
+						 <p class="medium-small"><?= "De: " . date('d/m/Y', strtotime($ChartI->get("date_inicio"))) . " - Até: " . date('d/m/Y', strtotime($ChartI->get("date_fim"))) ?></p>
+					<?php else: ?>					 
+						 <p class="medium-small">Todos os registros</p>
+					<?php endif; ?>			
+				<div class="current-balance-container exibicaoChart graficonumero<?= $idG?>">
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>
+		<?php endforeach; ?>
+
+
+
+		<?php foreach($Graficos->getDataAs("Chart") as $Chart): ?>
+   <div class="winston" >
+		<div class="col l4 m12 s12 l-last m-last s-last">
+			<?php $IDG = $Chart->get("id") ; ?>
+         <!-- Current Balance -->
+         <div class="card animate fadeLeft">
+            <div class="card-content">
+               <h6 class="mb-0 mt-0 display-flex justify-content-between"><?= mb_convert_case($Chart->get("nome"), MB_CASE_TITLE, 'UTF-8') ?>
+								<div class="dropdown">
+										<a type="button"  data-bs-toggle="dropdown" aria-expanded="false">
+											 <i class="material-icons float-right">more_vert</i>
+										</a>
+										<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+											<li><a class="dropdown-item" onclick="link(<?= $IDG ?>)">Editar</a></li>
+											<li><a class="dropdown-item" onclick="excluirChart(<?= $IDG ?>)">Excluir</a></li>
+										</ul>
+								</div>
+               </h6>
+              <?php if($Chart->get("date_inicio") != "0000-00-00"): ?>							
+								 <p class="medium-small"><?= "De: " . date('d/m/Y', strtotime($Chart->get("date_inicio"))) . " - Até: " . date('d/m/Y', strtotime($Chart->get("date_fim"))) ?></p>
+							<?php else: ?>					 
+								 <p class="medium-small">Todos os registros</p>
+							<?php endif; ?>			
+               <div class="current-balance-container">
+                  <canvas id="ct-chart<?= $IDG ?>" ></canvas>
+               </div>               
+            </div>
+         </div>
+      </div>
+
+<!-- 		<div style="width: 50% !important" class="Graficos col l12 m12 s12 l-last m-last s-last ">
+
+		 <div class="periodoChart">
+				<?php if($Chart->get("date_inicio") != "0000-00-00"): ?>	
+				<text><strong>De: </strong><?= date('d/m/Y ', strtotime($Chart->get("date_inicio") )) ?></text>
+				<text><strong>Até: </strong><?= date('d/m/Y ', strtotime($Chart->get("date_fim") )) ?></text>
+				<?php else: ?>
+				<text><strong>Todos Registros</strong></text>
+				<?php endif; ?>
+			</div> -->
+</div>	
+		<?php endforeach; ?>
+
+
+<?php if(isset($IndicadoresDashboard)):?>
+<?php foreach($IndicadoresDashboard as $i): ?>
+<?php endforeach; ?>
+<?php endif; ?>
+
+
+
+
+<!-- Modal -->
+<div  style="width: 62%; max-height: 90%; top:85px; "  class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div style="max-width:100%;" class="modal-dialog  modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body">
+      
+				
+					<blockquote style="border-bottom:solid 1px #cecece; margin: 20px 0 0;font-size:16px">
+       Grafíco de Relatório
+    </blockquote>
+
+      <aside class="skeleton-aside">
+				<input required id="nomeChart" name="nomeChart" class="mt-5" value="" style="display:block;padding-left:0.6rem;font-size:14px;margin:15px;width:94% !important" type="text" placeholder="Digite o nome do Indicador" value="">    
+				<div style="position: absolute; z-index: 99999999;left: 30%; top: 54%;transform: translate(-50%, -50%);"class="graficonumero"></div>
+               <div style="padding:60px" class="ct-chart current-balance-container">
+                  <canvas id="ct-chart" ></canvas>
+               </div>               
+      </aside>  
+      <aside class="skeleton-aside-right" style="border-left:solid 1px #cecece;">    
+        <div class="row">
+         <div class="col s12 s-last m12 m-last l12 l-last" style="text-align-last: center;">  
+          <h5>Detalhes do Gráfico</h5>
+         </div>
+        <div style="text-align: center;" class="col s2 s-last m2 m-last l2 l-last">  
+        <input onchange="ajaxChart(5)"  type="color" onchange="" id="cores" class="input-field" name="ArcoIris" list="arcoIris" type="checkbox" style="padding: none !important;border: none;width: 55px;background: transparent;" value="#FF0000"> 
+				<input onchange="ajaxChart(3)" type="color" id="coresLinha" class="input-field" name="ArcoIrisLinha" list="arcoIris" type="checkbox" style="padding: none !important;border: none;width: 55px;background: transparent;" value="#FF0000">         
+          <datalist id="arcoIris">
+            <option value="#FF0000">Vermelho</option>
+            <option value="#FFA500">Laranja</option>
+            <option value="#FFFF00">Amarelo</option>
+            <option value="#008000">Verde</option>
+            <option value="#0000FF">Azul</option>
+            <option value="#4B0082">Indigo</option>
+            <option value="#EE82EE">Violeta</option>
+          </datalist>
+          </div>
+        </div>
+				<center>
+          <div align="center" style="text-align: center;" class="col s12 m12 l12">
+              <label style="font-size:12px;">Escolha o tipo de Gráfico</label>		
+					<section class="section">
+						<div class="section-content">
+						<div class="row row-dashboard">
+							<center>
+              <div onclick="ajaxChart(1)" class=" col s6 m6 l6">
+                <div style="border: 1px solid #cecece; border-radius: 10px" id="chart-coluna" class="active1 coluna chart-icon">
+                  <span style="font-size:80px">
+                    <img width="40px" src="<?= APPURL . '/app-assets/images/icon/icon-barras.png'?>">
+                  </span>  
+									<label style="font-size:12px;display: block;">Coluna</label>
+                 </div>
+							</div>									
+							<div onclick="ajaxChart(2)" class="col s6 s-last m6 m-last l6 l-last">
+               <div style="border: 1px solid #cecece; border-radius: 10px" id="chart-rosca" class="active2  rosca chart-icon">
+                 <span style="font-size:80px">
+                   <img width="40px" src="<?= APPURL . '/app-assets/images/icon/icon-pizza.png'?>">
+                 </span>
+								 <label style="font-size:12px;display: block;">Rosca</label>
+                </div>
+							</div>
+							<div onclick="ajaxChart(3)" class="col s6 m6 l6">
+               <div style="border: 1px solid #cecece; border-radius: 10px" id="chart-lolipop" class="active3  lolipop chart-icon">
+                 <span style="font-size:80px">
+                   <img width="40px" src="<?= APPURL . '/app-assets/images/icon/icon-line.png'?>">
+                 </span>
+								 <label style="font-size:12px;display: block;">Linha</label>
+                </div>
+							</div>
+							<div onclick="ajaxChart(5)" class="col s6 s-last m6 m-last l6 l-last">
+               <div style="border: 1px solid #cecece; border-radius: 10px" id="chart-numero" class="active4  numero chart-icon">
+                 <span style="font-size:80px">
+                   <img width="40px" src="<?= APPURL . '/app-assets/images/icon/icon-montante.png'?>">
+                 </span>
+								 <label style="font-size:12px;display: block;">Montante</label>
+                </div>
+							</div>
+								<div onclick="ajaxChart(4)" class="chartDuplo col s6 m6 l6">
+               <div style="border: 1px solid #cecece; border-radius: 10px" id="chart-comparacao" class="active5 comparacao chart-icon">
+                 <span style="font-size:80px">
+                    <img width="40px" src="<?= APPURL . '/app-assets/images/icon/icon-comparacoes.png'?>">
+                 </span>
+								 <label style="font-size:12px;display: block;">Barra de Comparação</label>
+                </div>
+							</div>
+								</center>
+           </div>		
+						</div>
+						</section>
+          </div>  
+					</center>
+						<center>
+            <div class="row ml-20" style="margin-top:25px">        
+              <div class="col s12 m12 l12" >
+                  <label class="active" for="medida-principal">Indicador</label>
+                  <select onchange="indicador()"  required style="width:100%" onchange="ajaxChart(1)" id="indicador" name="tarefa-principal" class="js-example-basic-single browser-default select-chart select2" id="tarefa-principal">                     
+                     <option value="" selected disabled="">Selecione</option>
+										<?php foreach($Indicadores->getDataAs("Indicador") as $i):?>
+                        <option   value="<?= $i->get("id") ?>" ><?= $i->get("nome") ?></option>
+                     <?php endforeach; ?>
+                  </select>
+              </div>
+               <div class="col s12 m12 l12" style="margin-top:8px">
+                 <label class="active" for="medida-principal">Eixo X</label>
+                  <select required style="width:100%" onchange="ajaxChart(1)" id="eixoX" name="grupo-principal" class="js-example-basic-single browser-default select-chart select2" id="grupo-principal">                     
+                     <option value="" selected disabled="">Selecione</option>
+										 <option value="1">Responsável</option>
+                     <option  value="2">Filial Responsável</option>                      
+                  </select>
+              </div>
+              <div class="col s12 m12 l12" style="margin-top:8px">
+                  <label class="active" for="medida-principal">Eixo Y</label>
+                  <select required  style="width:100%" onchange="ajaxChart(1)" id="eixoY" name="medida-principal" class="js-example-basic-single browser-default select-chart select2" id="medida-principal">                 
+                     <option value="" selected disabled="">Selecione</option>
+                  </select>                  
+              </div>
+        </div>
+        <div class="row" style="border-bottom:solid 1px #cecece;margin-top:25px">
+					<div class="filtros-selecionados" >
+						<div id="fecharData" >
+						<a href="javascript:void(0)" onclick="fecharData()"  style="color:grey; float:right;font-size:18px;margin-top:13px">X </a>
+						</div> 
+						<div id="datainicio" class="col s12 s-last m12 m-last l5"> 
+							<input  style="width:100%" onchange="ajaxChart(1)" class="dataComeco" id="dataComeco" name="dataComeco" value="<?=  date('Y-m-d', strtotime('-1 month')) ?>" type="date">Inicio</input>                
+						</div>						
+						<div id="datafim" class="col s12 s-last m12 m-last l5 l-last">
+							<input  style="width:100%" onchange="ajaxChart(1)" class="dataFinal" id="dataFinal" name="dataFinal" value="<?= date('Y-m-d') ?>"type="date">Fim</input>                
+						</div>
+					</div>			
+				  
+					<div id="usuarioFiltro" style="border-bottom:solid 1px;margin-top:25px; border-color:#cecece;" >
+						 <div class="col s12 m12 l12" style="margin-top:8px">	 <a onclick="fecharUser()"    style="color:grey; float:right;font-size:18px;margin-top:13px">X </a>
+						<select  style="width:100%" onchange="ajaxChart(1)"  name="omitir" class="omitir select2 browser-default " required id="omitir">
+                            <option value="" disabled selected>Usuários Selecionados:</option>
+														 <option   value="1">Excluir Usuários</option>	
+														 <option   value="0">Selecionar Apenas Usuários</option>		
+                          </select>
+						</div>
+						 <div class="col s12 m12 l12" style="margin-top:8px">
+                          <select placeholder="Seleciones os Usuarios"  style="width:100%" onchange="ajaxChart(1)"   id="usuariosSelecionado" class="select2 browser-default usuariosSelecionados"  name="usuariosSelecionado"  multiple>
+                             	
+															<?php foreach($ArrayUsuarios as $u): ?>
+																 <option 
+                                       value="<?= $u['id'] ?>"><?= $u['nome'] ." - " . $u['tipo_conta'] ?></option>
+															 <?php endforeach; ?>
+                            </select>
+                  <label class="active" for="medida-principal">Selecione os Usuários</label>
+														<label class="s12 m12 l12 label" for="usuarioSelect" class="active"></label>
+				  </div>	
+				</div>
+				</div> 
+              <div  id="div-filtros-ativos" class="input-field mt-19px">  
+                <label id="add-filtros" class="add-filtros" style="position:relative; ">              
+                	<span onclick="addFiltro()" id="text-filtros">+ Adicionar Filtros</span>
+                </label>									
+              </div>
+							 <div class="selectFiltro" class="row ml-20" style="display:none;"> 
+							  <div class="col s12 m12 l12" style="margin-top:8px">			
+							  <select style="width:100%" onchange="ajaxChart(1)" id="select-filtros" class="select2 js-example-basic-single browser-default select-chart" data-id="0" style="display:none">
+									<option selected disabled  value="0">Selecione o Filtro</option>
+									<option value="1">Data</option>
+									<option id="excecoes" value="2">Exceções Usuários</option>
+								</select>
+							 </div>
+							 </div>
+     				</center>
+				<center>
+           <div class="row" style="margin-bottom:5px !important">    
+             <div style="display:inline-block;" class="s12 m12 l6 btn-dashboard">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+						 </div>
+            <div style="display:inline-block;" class="s12 m12 l6 l-last">
+              <button id="saveCharts"  type="button" class="btn btn-info waves-light">Salvar</button>               
+            </div> 
+          </div>
+         </center>       
+      </aside>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div id="myModal" class="modal fade" tab-index="-1" role="dialog" style="top:17% !important; top: auto;">  
+
+
+</div>
+<!-- FIM MODAL -->

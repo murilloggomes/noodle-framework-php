@@ -1,0 +1,27 @@
+{
+    "require": {
+        "altorouter/altorouter": "1.1.0",
+        "emojione/emojione": "^2.2",
+        "usmanhalalit/pixie": "^2.0",
+        "paragonie/random_compat": "^2.0",
+        "defuse/php-encryption": "^2.0",
+        "gettext/gettext": "^4.8",        
+        "phpmailer/phpmailer": "^6.5",
+        "claviska/simpleimage": "^3.3",
+        "php-ffmpeg/php-ffmpeg": "^0.11.1",
+		"fightbulc/moment": "dev-master"	
+    },
+
+    "config": {
+        "platform": {
+            "php": "7.4.24"
+        }
+    },
+
+    "repositories": [
+        {
+            "url": "https://github.com/fightbulc/moment.php.git",
+            "type": "git"
+        }
+    ]
+}

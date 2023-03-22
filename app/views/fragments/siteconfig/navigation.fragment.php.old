@@ -1,0 +1,343 @@
+<!-- BEGIN: SideNav-->
+    <aside class="sidenav-main nav-expanded nav-lock nav-collapsible sidenav-light sidenav-active-square">
+        <div class="brand-sidebar">
+          <h1 class="logo-wrapper">
+            <a class="brand-logo darken-1" href="<?= APPURL ?>">
+              <img style="width:53px;height:50px" class="hide-on-med-and-down" src="<?= APPURL . "/app-assets/images/logo/icon-peep.png"?>" alt="peep logo" />
+              <span class="logo-text hide-on-med-and-down">Horus</span></a><a class="navbar-toggler" href="javascript:void(0)" data-value="1">
+              <i class="material-icons">radio_button_checked</i>
+            </a>
+          </h1>
+        </div>
+        <ul class="sidenav sidenav-collapsible leftside-navigation collapsible sidenav-fixed menu-shadow" id="slide-out" data-menu="menu-navigation" data-collapsible="menu-accordion">
+            <li class="navigation-header">
+              <a class="navigation-header-text">Navegação</a>
+              <i class="navigation-header-icon material-icons">more_horiz</i>
+            </li>   
+            <li class="bold">
+                 <a class="<?= $Nav->activeMenuFather == "dashboard" ? "active" : "" ?> waves-effect waves-cyan" href="<?= APPURL ?>">
+                   <i class="material-icons">apps</i>
+                   <span class="menu-title" data-i18n="Documentation">Dashboard</span>                 
+                 </a>
+               </li>
+               <li class="bold">
+                 <a class="<?= $Nav->activeMenuFather == "atividades" ? "active" : "" ?> waves-effect waves-cyan" href="<?= APPURL ?>">
+                   <i class="material-icons">event</i>
+                   <span class="menu-title" data-i18n="Documentation">Atividades</span>                 
+                 </a>
+               </li>
+<!--               <li class="bold">
+                 <a class="<?= $Nav->activeMenuFather == "clientes" ? "active" : "" ?> waves-effect waves-cyan" href="<?= APPURL . "/clientes" ?>">
+                   <i class="material-icons">wc</i>
+                   <span class="menu-title" data-i18n="Documentation">Clientes</span>                 
+                 </a>
+            </li>   -->
+            
+<!--             <li class="<?= $Nav->activeMenuFather == "indicadores" ? "active bold" : "" ?>">
+             <a class="collapsible-header waves-effect waves-cyan " href="JavaScript:void(0)" tabindex="0">
+               <i class="material-icons">equalizer</i>
+               <span class="menu-title" data-i18n="Configuration">Indicadores</span>
+             </a>
+          <div class="collapsible-body">
+            <ul class="collapsible collapsible-sub" data-collapsible="accordion">
+              <li>
+                <a class="<?= $Nav->activeMenuFather == "indicadores" ? "active bold" : "" ?>" href="<?= APPURL . "/indicadores" ?>">
+                  <i class="material-icons font-s8">fiber_manual_record</i>
+                  <span data-i18n="Second level">Cadastrar Indicadores</span>
+                </a>
+              </li>
+              <li>
+                <a class="<?= $Nav->activeMenuFirst == "indicadores" ? "active bold" : "" ?> collapsible-header waves-effect waves-cyan" href="JavaScript:void(0)" tabindex="0">
+                  <i class="material-icons">group_work</i>
+                  <span data-i18n="Second level child">Configurações</span>
+                </a>
+                <div class="collapsible-body">
+                  <ul class="collapsible" data-collapsible="accordion">
+                    <li>
+                      <a href="<?= APPURL . "/indicadores/dados" ?>">
+                        <i class="material-icons font-s8">fiber_manual_record</i>
+                        <span data-i18n="Third level">Adicionar Desempenho</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="<?= APPURL . "/indicadores/config" ?>">
+                        <i class="material-icons font-s8">fiber_manual_record</i>
+                        <span data-i18n="Third level">Criar Campos Personalizados</span>
+                      </a>
+                    </li>  
+                  </ul>
+                </div>
+              </li>     
+            </ul>
+          </div>
+        </li> -->            
+<!--             <li hidden class="bold">
+              <a class="collapsible-header waves-effect waves-cyan" href="javascript:void(0)">
+                <i class="material-icons">content_paste</i><span class="menu-title" data-i18n="Pages">Relatórios</span>
+              </a>
+                <div class="collapsible-body">
+                    <ul class="collapsible collapsible-sub" data-collapsible="accordion">
+                        <li class="active">
+                          <a href="<?= APPURL ?>">
+                            <i class="material-icons font-s8">fiber_manual_record</i>
+                            <span data-i18n="Second level">Gerar Relatórios</span>
+                          </a>
+                        </li>                                            
+                    </ul>
+                </div>
+            </li> -->
+<!--             <li class="navigation-header">
+              <a class="navigation-header-text">Administrador</a>
+              <i class="navigation-header-icon material-icons">more_horiz</i>
+            </li>  -->
+              <li class="bold">
+                 <a class="<?= $Nav->activeMenuFather == "usuarios" ? "active" : "" ?> waves-effect waves-cyan" href="<?= APPURL . "/users" ?>">
+                   <i class="material-icons">supervisor_account</i>
+                   <span class="menu-title" data-i18n="Documentation">Usuários</span>                 
+                 </a>
+            </li>          
+          <?php if(isset($_COOKIE["nplhA"])): ?>
+                     <li class="bold">
+                 <a ref="javascript:void(0)" id="VoltarSessao" class="waves-effect waves-cyan">
+                   <i class="material-icons">arrow_back</i>
+                   <span class="menu-title" data-i18n="Documentation">Voltar Admin</span>                 
+                 </a>
+            </li>  
+                             
+                       
+                        <?php endif; ?>
+<!--            <li class="<?= $Nav->activeMenuFather == "config" ? "active bold" : "" ?>">
+             <a class="collapsible-header waves-effect waves-cyan " href="JavaScript:void(0)" tabindex="0">
+               <i class="material-icons">build</i>
+               <span class="menu-title" data-i18n="Configuration">Configurações</span>
+             </a>
+          <div class="collapsible-body">
+            <ul class="collapsible collapsible-sub" data-collapsible="accordion">
+              <li>
+                <a class="<?= $Nav->activeMenuFirst == "config" ? "active bold" : "" ?>" href="<?= APPURL . "/config" ?>">
+               <i class="material-icons font-s8">fiber_manual_record</i> 
+                  <span data-i18n="Second level">Geral</span>
+                </a>
+              </li>
+              <li>
+                <a class="<?= $Nav->activeMenuFirst == "config-conta" ? "active bold" : "" ?> collapsible-header waves-effect waves-cyan" href="JavaScript:void(0)" tabindex="0">
+                  <i class="material-icons">group_work</i> 
+                  <span data-i18n="Second level child">Contas</span>
+                </a>
+                <div class="collapsible-body">
+                  <ul class="collapsible" data-collapsible="accordion">
+                    <li>
+                      <a href="<?= APPURL . "/config/conta" ?>">
+                        <i class="material-icons font-s8">fiber_manual_record</i>
+                        <span data-i18n="Third level">Centro de Custo</span>
+                      </a>
+                    </li>
+                    
+                    <li>
+                      <a href="<?= APPURL . "/config/conta" ?>">
+                     <i class="material-icons font-s8">fiber_manual_record</i> 
+                        <span data-i18n="Third level">Cargo</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="<?= APPURL . "/config/conta" ?>">
+                        <i class="material-icons font-s8">fiber_manual_record</i> 
+                        <span data-i18n="Third level">Categoria de Cliente</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="<?= APPURL . "/config/conta" ?>">
+                     <i class="material-icons font-s8">fiber_manual_record</i>
+                        <span data-i18n="Third level">Unidade de Negócio</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="<?= APPURL . "/config/conta" ?>">
+                       <i class="material-icons font-s8">fiber_manual_record</i> 
+                        <span data-i18n="Third level">Qualificação</span>
+                      </a>
+                    </li>
+                     <li>
+                      <a href="<?= APPURL . "/config/conta" ?>">
+                        <i class="material-icons font-s8">fiber_manual_record</i> 
+                        <span data-i18n="Third level">Segmento de Atuação</span>
+                      </a>
+                    </li>
+                     <li>
+                      <a href="<?= APPURL . "/config/conta" ?>">
+                        <i class="material-icons font-s8">fiber_manual_record</i> 
+                        <span data-i18n="Third level">Origem de Cliente</span>
+                      </a>
+                    </li>
+                     <li>
+                      <a href="<?= APPURL . "/config/conta" ?>">
+                        <i class="material-icons font-s8">fiber_manual_record</i> 
+                        <span data-i18n="Third level">Tipo de Endereço</span>
+                      </a>
+                      </li>
+                      <li>
+                      <a href="<?= APPURL . "/config/conta" ?>">
+                         <i class="material-icons font-s8">fiber_manual_record</i> 
+                        <span data-i18n="Third level">Tipo de Imóvel</span>
+                      </a>
+                      </li>
+                      <li>
+                      <a href="<?= APPURL . "/config/conta" ?>">
+                       <i class="material-icons font-s8">fiber_manual_record</i> 
+                        <span data-i18n="Third level">Tipo de Residência</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <a class="<?= $Nav->activeMenuFirst == "config-empresa" ? "active bold" : "" ?> collapsible-header waves-effect waves-cyan" href="JavaScript:void(0)" tabindex="0">
+                  <i class="material-icons">group_work</i> 
+                  <span data-i18n="Second level child">Empresas</span>
+                </a>
+                <div class="collapsible-body">
+                  <ul class="collapsible" data-collapsible="accordion">
+                    <li>
+                      <a href="<?= APPURL . "/config/config-empresa" ?>">
+                     <i class="material-icons font-s8">fiber_manual_record</i> 
+                        <span data-i18n="Third level">Atividade da Empresa</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <a class="<?= $Nav->activeMenuFirst == "config-financeiro" ? "active bold" : "" ?> collapsible-header waves-effect waves-cyan" href="JavaScript:void(0)" tabindex="0">
+                   <i class="material-icons">attach_money</i> 
+                  <span data-i18n="Second level child">Financeiro</span>
+                </a>
+                <div class="collapsible-body">
+                  <ul class="collapsible" data-collapsible="accordion">
+                    <li>
+                      <a href="<?= APPURL . "/config/financeiro#icms" ?>">
+                         <i class="material-icons font-s8">fiber_manual_record</i>
+                        <span data-i18n="Third level">Bancos</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="<?= APPURL . "/config/financeiro" ?>">
+                         <i class="material-icons font-s8">fiber_manual_record</i> 
+                        <span data-i18n="Third level">Condições Pagamento</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="<?= APPURL . "/config/financeiro#icms" ?>">
+                        <i class="material-icons font-s8">fiber_manual_record</i> 
+                        <span data-i18n="Third level">ICMS</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="<?= APPURL . "/config/financeiro" ?>">
+                        <i class="material-icons font-s8">fiber_manual_record</i> 
+                        <span data-i18n="Third level">Benefício Fiscal</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="<?= APPURL . "/config/financeiro" ?>">
+                         <i class="material-icons font-s8">fiber_manual_record</i> 
+                        <span data-i18n="Third level">Subs. Tributária</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="<?= APPURL . "/config/financeiro" ?>">
+                        <i class="material-icons font-s8">fiber_manual_record</i> 
+                        <span data-i18n="Third level">Perfil Tributário</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="<?= APPURL . "/config/financeiro" ?>">
+                        <i class="material-icons font-s8">fiber_manual_record</i> 
+                        <span data-i18n="Third level">Regime Tributário</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <a class="<?= $Nav->activeMenuFirst == "config-produto" ? "active bold" : "" ?> collapsible-header waves-effect waves-cyan" href="JavaScript:void(0)" tabindex="0">
+                   <i class="material-icons">view_comfy</i> 
+                  <span data-i18n="Second level child">Produto</span>
+                </a>
+                <div class="collapsible-body">
+                  <ul class="collapsible" data-collapsible="accordion">
+                    <li>
+                      <a href="<?= APPURL . "/config/produto" ?>">
+                         <i class="material-icons font-s8">fiber_manual_record</i>
+                        <span data-i18n="Third level">NCM</span></a>
+                    </li>
+                    <li>
+                      <a href="<?= APPURL . "/config/produto#kit-produto" ?>">
+                         <i class="material-icons">fiber_manual_record</i>
+                        <span data-i18n="Third level">Kit Produto</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="<?= APPURL . "/config/produto#segmento-produto" ?>">
+                        <i class="material-icons font-s8">fiber_manual_record</i> 
+                        <span data-i18n="Third level">Segmento Produto</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="<?= APPURL . "/config/produto#tipo-produto" ?>">
+                         <i class="material-icons font-s8">fiber_manual_record</i> 
+                        <span data-i18n="Third level">Tipo Produto</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="<?= APPURL . "/config/produto#modelo-produto" ?>">
+                        <i class="material-icons font-s8">fiber_manual_record</i> 
+                        <span data-i18n="Third level">Modelo Produto</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="<?= APPURL . "/config/produto#origem-produto" ?>">
+                        <i class="material-icons font-s8">fiber_manual_record</i> 
+                        <span data-i18n="Third level">Origem Produto</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="<?= APPURL . "/config/produto#fabricante-produto" ?>">
+                         <i class="material-icons font-s8">fiber_manual_record</i> 
+                        <span data-i18n="Third level">Fabricante Produto</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+      <li>
+                <a class="<?= $Nav->activeMenuFirst == "config-contabilidade" ? "active bold" : "" ?> collapsible-header waves-effect waves-cyan" href="JavaScript:void(0)" tabindex="0">
+               <i class="material-icons">attach_money</i> 
+                  <span data-i18n="Second level child">Contabilidade</span>
+                </a>
+                <div class="collapsible-body">
+                  <ul class="collapsible" data-collapsible="accordion">
+                    <li>
+                      <a href="<?= APPURL . "/config/contabilidade" ?>">
+                       <i class="material-icons font-s8">fiber_manual_record</i>
+                        <span data-i18n="Third level">SPED</span>
+                      </a>
+                    </li>
+                   
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </li> -->
+
+          
+            <li class="bold">
+              <a class="<?= $Nav->activeMenuFather == "logs" ? "active" : "" ?> waves-effect waves-cyan" href="<?= APPURL ."/logs" ?>">
+                <i class="material-icons">help_outline</i>
+                <span class="menu-title" data-i18n="Support">Logs do Sistema</span>
+              </a>
+            </li>
+        </ul>
+        <div class="navigation-background"></div>
+    </aside>
+<!-- END: SideNav-->
