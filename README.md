@@ -63,7 +63,8 @@ define("DB_NAME", "nome_banco");
 define("DB_USER", "usuario_banco");
 define("DB_PASS", "senha_banco");
 define("DB_ENCODING", "utf8");
-´´´´
+```
+
 ## Casos de Uso
 
 Depois disso pode ir direto pro login e acessar com o usuário e senha que você cadastrou ou rodar o script sql:
