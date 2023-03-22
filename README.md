@@ -43,9 +43,6 @@ Insira os tópicos do README em links para facilitar a navegação do leitor
 
 :warning: [PHP 8.0.1](https://php.net/) 
 :warning: [Maria DB 10.3.35](https://mariadb.org/)
-...
-
-Liste todas as dependencias e libs que o usuário deve ter instalado na máquina antes de rodar a aplicação 
 
 ## Como rodar a aplicação :arrow_forward:
 
@@ -54,10 +51,7 @@ No terminal, clone o projeto:
 ```
 git clone git@github.com:murilloggomes/noodle-open-source-framework-php-82.git
 ```
-
-... 
-
-Coloque um passo a passo para rodar a sua aplicação. **Dica: clone o próprio projeto e verfique se o passo a passo funciona**
+cd no arquivo do projeto (que deve ser baixa na pasta raiz realmente da aplicação)
 
 ## Como rodar os testes
 
