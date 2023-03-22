@@ -1,2 +1,6 @@
+.ssh
+.git
 .htaccess
 assets/uploads/*
+app/config/db.config.php
+LICENSE
