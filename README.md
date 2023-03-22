@@ -41,7 +41,7 @@ Insira os tópicos do README em links para facilitar a navegação do leitor
 
 ## Pré-requisitos
 
-:warning: [PHP](https://php.net/)
+:warning: [PHP 8.0.1](https://php.net/) 
 
 ...
 
