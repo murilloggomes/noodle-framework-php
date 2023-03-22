@@ -55,7 +55,7 @@ class LoginController extends Controller
                     setcookie("nplrmm", "1", time() - 30*86400, "/");
                 }
 
-               header("Location: ".APPURL."/dashboard");
+               header("Location: ".APPURL."/users");
                 exit; 
 
             } else {

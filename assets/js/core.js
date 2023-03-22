@@ -1,21 +1,21 @@
 
 
-var Noodle = {};
+var NextPost = {};
 
 $(function() {	
-    Noodle.General();
-    Noodle.Skeleton();
-    Noodle.ContextMenu();
-    Noodle.Tooltip();
-    Noodle.Tabs();
-    Noodle.Forms();
-    Noodle.FileManager();
-    Noodle.LoadMore();
-    Noodle.Popups();    
-    Noodle.Brand();
-    Noodle.RemoveListItem();
-    Noodle.AsideList();
-		Noodle.Enter();
+    NextPost.General();
+    NextPost.Skeleton();
+    NextPost.ContextMenu();
+    NextPost.Tooltip();
+    NextPost.Tabs();
+    NextPost.Forms();
+    NextPost.FileManager();
+    NextPost.LoadMore();
+    NextPost.Popups();    
+    NextPost.Brand();
+    NextPost.RemoveListItem();
+    NextPost.AsideList();
+		NextPost.Enter();
 	
 		$(".notificacao").on("click", function(){
 			if ($(".model-notificacao").val() == 0){
@@ -341,7 +341,7 @@ console.log(qntPainel);
 	
 }
 
-Noodle.Enter = function () {
+NextPost.Enter = function () {
    $('input').keypress(function (e) {
         var code = null;
         code = (e.keyCode ? e.keyCode : e.which);                
@@ -352,7 +352,7 @@ Noodle.Enter = function () {
 /**
  * General
  */
-Noodle.General = function() {
+NextPost.General = function() {
     // Mobile menu
     $(".topbar-mobile-menu-icon").on("click", function() {
         $("body").toggleClass('mobile-menu-open');
@@ -368,7 +368,7 @@ Noodle.General = function() {
 }
 
 
-Noodle.Users = function() {	
+NextPost.Users = function() {	
 	
     $('body').on('click', ".tab-user" ,function(e){
 		console.log("#"+$(this).attr("id")+ "_tab");
@@ -457,7 +457,7 @@ Noodle.Users = function() {
 }
 
 
-Noodle.Skeleton = function() {
+NextPost.Skeleton = function() {
     if ($(".skeleton--full").length > 0) {
         var $elems = $(".skeleton--full").find(".skeleton-aside, .skeleton-content");
         $(window).on("resize", function() {
@@ -471,7 +471,7 @@ Noodle.Skeleton = function() {
 
 
 
-Noodle.ContextMenu = function() {
+NextPost.ContextMenu = function() {
     $("body").on("click", ".context-menu-wrapper", function(event) {
         var menu = $(this).find(".context-menu");
 
@@ -492,7 +492,7 @@ Noodle.ContextMenu = function() {
 /**
  * ToolTips
  */
-Noodle.Tooltip = function() {
+NextPost.Tooltip = function() {
     $(".tippy").each(function() {
         var dom = $(this)[0];
 
@@ -513,7 +513,7 @@ Noodle.Tooltip = function() {
 /**
  * Tabs
  */
-Noodle.Tabs = function() {
+NextPost.Tabs = function() {
     $("body").on("click", ".tabheads a", function() {
         var tab = $(this).data("tab");
         var $tabs = $(this).parents(".tabs");
@@ -536,7 +536,7 @@ Noodle.Tabs = function() {
 /**
  * General form functions
  */
-Noodle.Forms = function() {
+NextPost.Forms = function() {
     $("body").on("input focus", ":input", function() {
         $(this).removeClass("error");
     });
@@ -551,18 +551,18 @@ Noodle.Forms = function() {
         $(this).removeClass('error');
     });
 
-    Noodle.DatePicker();
-    Noodle.Combobox();
-    Noodle.Combobox3();
-    Noodle.AjaxForms();
-		Noodle.Enter();
+    NextPost.DatePicker();
+    NextPost.Combobox();
+    NextPost.Combobox3();
+    NextPost.AjaxForms();
+		NextPost.Enter();
 }
 
 
 /**
  * Combobox select 2
  */
-Noodle.Combobox = function()
+NextPost.Combobox = function()
 {
      $(".select2").each(function() {
 		 	$(".select2").select2({});
@@ -573,7 +573,7 @@ Noodle.Combobox = function()
 /**
  * Combobox select 3
  */
-Noodle.Combobox3 = function()
+NextPost.Combobox3 = function()
 {
      $(".select3").each(function() {
 		 	$(".select3").select3({});
@@ -584,7 +584,7 @@ Noodle.Combobox3 = function()
 /**
  * Date time pickers
  */
-Noodle.DatePicker = function() {
+NextPost.DatePicker = function() {
     $(".js-datepicker").each(function() {
         $(this).removeClass("js-datepicker");
 
@@ -609,7 +609,7 @@ Noodle.DatePicker = function() {
 
 
 var __form_result_timer = null;
-Noodle.DisplayFormResult = function($form, type, msg) {
+NextPost.DisplayFormResult = function($form, type, msg) {
     var $resobj = $form.find(".form-result");
     msg = msg || "";
     type = type || "error";
@@ -657,7 +657,7 @@ Noodle.DisplayFormResult = function($form, type, msg) {
 /**
  * Ajax forms
  */
-Noodle.AjaxForms = function() {
+NextPost.AjaxForms = function() {
     var $form;
     var $result;
     var result_timer = 0;
@@ -684,7 +684,7 @@ Noodle.AjaxForms = function() {
                 data: $form.serialize(),
                 error: function() {
                     $("body").removeClass("onprogress");
-                    Noodle.DisplayFormResult($form, "error", __("Oops! An error occured. Please try again later!"));
+                    NextPost.DisplayFormResult($form, "error", __("Oops! An error occured. Please try again later!"));
                 },
 
                 success: function(resp) {
@@ -695,7 +695,7 @@ Noodle.AjaxForms = function() {
                         var reset = resp.reset || 0;
                         switch (result) {
                             case 1: //
-                                Noodle.DisplayFormResult($form, "success", resp.msg);
+                                NextPost.DisplayFormResult($form, "success", resp.msg);
                                 if (reset) {
                                     $form[0].reset();
                                 }
@@ -703,22 +703,22 @@ Noodle.AjaxForms = function() {
                                 break;
 
                             case 2: //
-                                Noodle.DisplayFormResult($form, "info", resp.msg);
+                                NextPost.DisplayFormResult($form, "info", resp.msg);
                                 break;
 
                             default:
-                                Noodle.DisplayFormResult($form, "error", resp.msg);
+                                NextPost.DisplayFormResult($form, "error", resp.msg);
                                 break;
                         }
                         $("body").removeClass("onprogress");
                     } else {
                         $("body").removeClass("onprogress");
-                        Noodle.DisplayFormResult($form, "error", __("Oops! An error occured. Please try again later!"));
+                        NextPost.DisplayFormResult($form, "error", __("Oops! An error occured. Please try again later!"));
                     }
                 }
             });
         } else {
-            Noodle.DisplayFormResult($form, "error", __("Fill required fields"));
+            NextPost.DisplayFormResult($form, "error", __("Fill required fields"));
         }
 
         return false;
@@ -728,7 +728,7 @@ Noodle.AjaxForms = function() {
 
 
 window.loadmore = {}
-Noodle.LoadMore = function() {
+NextPost.LoadMore = function() {
     $("body").on("click", ".js-loadmore-btn", function() {
         var _this = $(this);
         var _parent = _this.parents(".loadmore");
@@ -780,7 +780,7 @@ Noodle.LoadMore = function() {
 /**
  * Popups
  */
-Noodle.Popups = function() {
+NextPost.Popups = function() {
     var w = scrollbarWidth();
 
     $(window).on("resize", function() {
@@ -815,13 +815,13 @@ Noodle.Popups = function() {
     });
 }
 
-Noodle.RemoveListItem = function() {
+NextPost.RemoveListItem = function() {
     $("body").on("click", "a.js-remove-list-item", function() {
         var item = $(this).parents(".js-list-item");
         var id = $(this).data("id");
         var url = $(this).data("url");
 
-        Noodle.Confirm({
+        NextPost.Confirm({
             confirm: function() {
                 $.ajax({
                     url: url,
@@ -845,7 +845,7 @@ Noodle.RemoveListItem = function() {
 /**
  * Actions related to aside list items
  */
-Noodle.AsideList = function() {
+NextPost.AsideList = function() {
     // Load content for selected aside list item
     $(".skeleton-aside").on("click", ".js-ajaxload-content", function() {
         var item = $(this).parents(".aside-list-item");
@@ -872,11 +872,11 @@ Noodle.AsideList = function() {
         return false;
     });
 		
-    Noodle.AsideListSearch();
+    NextPost.AsideListSearch();
 		
 }
 
-Noodle.AsideListSearch = function() {
+NextPost.AsideListSearch = function() {
   
     var prev_search_query;
 
@@ -945,7 +945,7 @@ Noodle.AsideListSearch = function() {
     });
 }
 
-Noodle.FileManager = function() {
+NextPost.FileManager = function() {
 
 
     // Device file browser
@@ -1001,14 +1001,14 @@ Noodle.FileManager = function() {
     // there is no need to call method here.
 
     // File Pickers (Browse buttons)
-    Noodle.FilePickers();
+    NextPost.FilePickers();
 }
 
 
 /**
  * File Pickers (Browse buttons)
  */
-Noodle.FilePickers = function() {
+NextPost.FilePickers = function() {
     var acceptor;
 
     $("body").on("click", ".js-fm-filepicker", function() {				
@@ -1033,7 +1033,7 @@ Noodle.FilePickers = function() {
 /**
  * Confirm
  */
-Noodle.Confirm = function(data = {}) {
+NextPost.Confirm = function(data = {}) {
     data = $.extend({}, {
             title: __("Você tem certeza que deseja excluir essa informação?"),
             content: __("Não será possivel recuperar os dados após apagado!"),
@@ -1073,7 +1073,7 @@ Noodle.Confirm = function(data = {}) {
  */
 
 
-Noodle.Confirm3 = function(data = {}) {
+NextPost.Confirm3 = function(data = {}) {
     data = $.extend({}, {
             title: __("Digite a média de KwH:"),
             content: __("<center><input class='input fielSearchKwP' style='width:500px !important' type='text'></center>"),
@@ -1112,7 +1112,7 @@ Noodle.Confirm3 = function(data = {}) {
 /**
  * Alert
  */
-Noodle.Alert = function(data = {}) {
+NextPost.Alert = function(data = {}) {
     data = $.extend({}, {
         title: __("Error"),
         content: __("Oops! An error occured. Please try again later!"),
@@ -1143,7 +1143,7 @@ Noodle.Alert = function(data = {}) {
     });
 }
 
-Noodle.Logs = function() {	
+NextPost.Logs = function() {	
   
    $(document).ready( function () {
           $('#table_id').DataTable( {
@@ -1180,7 +1180,7 @@ Noodle.Logs = function() {
 /**
  * Combobox select 2
  */
-Noodle.Frete = function()
+NextPost.Frete = function()
 {
 	
 	 $(".tipo_frete").on("change", function() {
@@ -1223,7 +1223,7 @@ Noodle.Frete = function()
 	});
 }
 
-Noodle.Orders = function() {	
+NextPost.Orders = function() {	
 
 		$(".duplicar-orcamento").on("click", function(){
 			console.log($(this).data("id"));
@@ -1233,7 +1233,7 @@ Noodle.Orders = function() {
 
 
 
-Noodle.Order = function() {	
+NextPost.Order = function() {	
 		
 		var $form = $(".js-ajax-form-order");
 		var url = document.baseURI;
@@ -1361,7 +1361,7 @@ Noodle.Order = function() {
 		$("body").on("click", ".remove-line", function() {         
       var tr = $(this).closest('tr');	
 			
-			 Noodle.Alert({
+			 NextPost.Alert({
 					title: __("Eii..."),
 					content: "Deseja realmente excluir essa linha?",
 					confirmText: __("Sim"),
@@ -3841,7 +3841,7 @@ $("body").on("change", ".changeAcoplador", function() {
 		
         var url = document.baseURI;
 				
-        Noodle.Confirm3({
+        NextPost.Confirm3({
 					confirm: function() {						
 						
 					}		
@@ -4292,7 +4292,7 @@ else
 /**
  * Settings
  */
-Noodle.Settings = function() {
+NextPost.Settings = function() {
     $(".js-settings-menu").on("click", function() {
         $(".asidenav").toggleClass("mobile-visible");
         $(this).toggleClass("mdi-menu-down mdi-menu-up");
@@ -4319,7 +4319,7 @@ Noodle.Settings = function() {
 }
 
 
-Noodle.Benefits = function() {
+NextPost.Benefits = function() {
 	
 	//Descçaramdp voriáveis
   var url = document.baseURI;
@@ -4421,7 +4421,7 @@ Noodle.Benefits = function() {
                 error: function() {
                     $("body").removeClass("onprogress");
 
-                    Noodle.Alert({
+                    NextPost.Alert({
                         title:  __("Oops..."),
                         content:  __("Um erro aconteceu!"),
                         confirmText: __("Fechar")
@@ -4473,7 +4473,7 @@ Noodle.Benefits = function() {
                     } else {
                         $("body").removeClass("onprogress");
 
-                        Noodle.Alert({
+                        NextPost.Alert({
                             title: __("Oops..."),
                             content: resp.msg,
                             confirmText: __("Close"),
@@ -4734,14 +4734,14 @@ Noodle.Benefits = function() {
           },
           error: function() {
               $("body").removeClass("onprogress");
-              Noodle.DisplayFormResult($form, "error", __("Oops! An error occured. Please try again later!"));
+              NextPost.DisplayFormResult($form, "error", __("Oops! An error occured. Please try again later!"));
           },
 
           success: function(resp) {            
               if (resp.result == 1) {
-                  Noodle.DisplayFormResult($form, "success", resp.msg);
+                  NextPost.DisplayFormResult($form, "success", resp.msg);
               } else {
-                  Noodle.DisplayFormResult($form, "error", resp.msg);
+                  NextPost.DisplayFormResult($form, "error", resp.msg);
               }
 
               $("body").removeClass("onprogress");
@@ -4754,7 +4754,7 @@ Noodle.Benefits = function() {
 
 
 
-Noodle.Brand = function() {
+NextPost.Brand = function() {
 
     $(':input[name="category_brand"]').on('keypress', function(){
       var targetBranca = [];
@@ -4892,7 +4892,7 @@ Noodle.Brand = function() {
           }
       })
 	});
-Noodle.Client = function() {	
+NextPost.Client = function() {	
 
 	$("body").on("blur", ".cnpjField", function() { 
 	
@@ -4932,7 +4932,7 @@ Noodle.Client = function() {
 /**
  * Check NCM
  */
-Noodle.Ncm = function(data = {}) {
+NextPost.Ncm = function(data = {}) {
 
   $("body").on("change", ":input[name='select_cod_ncm']", function() {
 
@@ -4953,7 +4953,7 @@ Noodle.Ncm = function(data = {}) {
 /**
  * JS PRODUCT VIEW
  */
-Noodle.Product = function() {
+NextPost.Product = function() {
 
   var url = document.baseURI;
   var $form = $(".js-ajax-form");
@@ -5017,7 +5017,7 @@ Noodle.Product = function() {
 /**
  * JS Page Product Segments
  */
-Noodle.ProductSegments = function() {
+NextPost.ProductSegments = function() {
 	
 		//Descçaramdp voriáveis
   var url = document.baseURI;
@@ -5047,7 +5047,7 @@ Noodle.ProductSegments = function() {
 /**
  * JS Page Product Segments
  */
-Noodle.ProductKits = function() {
+NextPost.ProductKits = function() {
 	
 		//Descçaramdp voriáveis
   var url = document.baseURI;
@@ -5077,7 +5077,7 @@ Noodle.ProductKits = function() {
 /**
  * Profile
  */
-Noodle.Profile = function() {
+NextPost.Profile = function() {
     $(".js-resend-verification-email").on("click", function() {
         var $this = $(this);
         var $alert = $this.parents(".alert");
@@ -5554,7 +5554,7 @@ function msg() {
 }
 
 
-Noodle.Confirm2 = function(data = {}) {
+NextPost.Confirm2 = function(data = {}) {
     data = $.extend({}, {
             title: "Porque deseja excluir o orçamento? Conte em detalhes abaixo:",
             content: "<textarea class='input detalhesExclusao' type='text'></textarea>",

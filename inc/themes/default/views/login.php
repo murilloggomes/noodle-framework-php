@@ -14,7 +14,7 @@
                 
         <link rel="stylesheet" type="text/css" href="<?= APPURL . "/inc/themes/default/assets/styles/main.css" ?>">
 
-        <title>Horus - Gestão Inteligente</title>
+        <title><?= site_settings("site_name") ?></title>
     </head>
 
     <body>

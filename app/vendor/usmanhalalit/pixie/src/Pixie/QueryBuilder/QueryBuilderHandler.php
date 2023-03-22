@@ -16,6 +16,17 @@ class QueryBuilderHandler
      * @var Connection
      */
     protected $connection;
+	
+	/**
+     * @var adapter
+     */
+    protected $adapter;
+	
+	/**
+     * @var adapterConfig
+     */
+    protected $adapterConfig;
+
 
     /**
      * @var array
@@ -68,7 +79,7 @@ class QueryBuilderHandler
         $this->pdo = $this->connection->getPdoInstance();
         $this->adapter = $this->connection->getAdapter();
         $this->adapterConfig = $this->connection->getAdapterConfig();
-        echo "FOI:" . $this->adapter;
+
         $this->setFetchMode($fetchMode);
 
         if (isset($this->adapterConfig['prefix'])) {

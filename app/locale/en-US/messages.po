@@ -4,7 +4,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: POEditor.com\n"
-"Project-Id-Version: Noodle v.3 - Main\n"
+"Project-Id-Version: Nextpost v.3 - Main\n"
 "Language: en-us\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 

@@ -16,7 +16,7 @@ class IndexController extends Controller
             exit;
         } 
 
-        header("Location: ".APPURL."/dashboard");
+        header("Location: ".APPURL."/user");
         exit;
     }
 }
