@@ -45,13 +45,13 @@
 No terminal, clone o projeto: 
 
 ```
-git clone git@github.com:murilloggomes/noodle-open-source-framework-php-82.git
+run: sudo git clone git@github.com:murilloggomes/noodle-open-source-framework-php-82.git
 ```
 run: "cd" no caminho da pasta do projeto (que deve ser baixa na pasta raiz realmente da aplicação)
 
 ## Como rodar os testes
 ```
-nano /app/config/database.config.php;
+sudo nano /app/config/database.config.php;
 ```
 ```
 define("DB_HOST", "localhost");
@@ -65,7 +65,7 @@ define("DB_ENCODING", "utf8");
 
 Depois disso pode ir direto pro login e acessar com o usuário e senha que você cadastrou ou rodar o script sql:
 
-TESTE
+
 ## Contribuições
 
 [Buy Me A Coffee](https://www.buymeacoffee.com/murilloggo)
