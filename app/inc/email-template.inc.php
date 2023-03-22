@@ -1,3 +1,4 @@
+<?php if (!defined('APP_VERSION')) die("Yo, what's up?"); ?>
 <!DOCTYPE html>
 <html>
 <head>
