@@ -1,0 +1,77 @@
+.app-features {
+    padding-bottom: 135px;
+    .single-app-features {
+        i {
+            color: #666666;
+            font-size: 45px;
+            transition: all .4s ease;
+            line-height: 1;
+        }
+        h3,
+        p {
+            margin: 0;
+        }
+        h3 {
+            font-size: 20px;
+            font-weight: 500;
+            color: #150A33;
+            margin-top: 17px;
+            margin-bottom: 17px;
+        }
+        p {
+            letter-spacing: .01em;
+            color: #656565;
+            margin-bottom: 50px;
+        }
+        .line {
+            width: 100%;
+            height: 4px;
+            @include thmGradient();
+            transform: scale(0);
+            transition: all .4s ease;
+        }
+        &:hover {
+            i {
+                @include thmGradientText();
+            }
+            .line {
+                transform: scale(1);
+            }
+        }
+    }
+    .center {
+        .single-app-features {
+            i {
+                @include thmGradientText();
+            }
+            .line {
+                transform: scale(1);
+            }
+        }
+    }
+    .owl-theme .owl-nav {
+        margin: 0;
+    }
+    .owl-theme .owl-nav [class*=owl-] {
+        background: #E9E8E8;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        margin: 0;
+        padding: 0;
+        line-height: 38px;
+        font-size: 14px;
+        position: absolute;
+        top: 40%;
+        transform: translateY(-100%);
+        i {
+            @include thmGradientText();
+        }
+    }
+    .owl-theme .owl-nav .owl-prev {
+        left: 0;
+    }
+    .owl-theme .owl-nav .owl-next {
+        right: 0;
+    }
+}

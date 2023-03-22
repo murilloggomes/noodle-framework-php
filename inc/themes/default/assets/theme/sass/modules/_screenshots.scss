@@ -1,0 +1,51 @@
+.app-secreenshots {
+  .sec-title {margin-bottom: 70px;}
+}
+.swiper-slider-area .container {
+    position: relative;
+}
+
+.swiper-wrapper {
+    height: 630px;
+    width: 320px;
+}
+
+.row.appScreenshotCarousel-container.swiper-container-horizontal.swiper-container-3d.swiper-container-coverflow {
+    position: relative;
+}
+
+.swiper-slide.swiper-slide-active {
+    border-radius: 35px;
+}
+
+.screen-mobile-image {
+    background-image: url(../img/iphone-moc.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: block;
+    height: 645px;
+    left: calc(50% + 0.5px);
+    position: absolute;
+    top: 24px;
+    transform: translateX(-50%);
+    width: 301px;
+    z-index: 2;
+    box-shadow: drop-shadow-converter(#000, $angle: 90, $distance: 23px, $spread: 0, $size: 42px, $opacity: 20%);
+    border-radius: 40px;
+}
+
+.swiper-slide.swiper-slide-active {
+    background-size: 100% 100%;
+}
+
+.swiper-wrapper {
+    padding: 30px 0 40px;
+}
+
+.swiper-slide.swiper-slide-next {
+    box-shadow: 30px 0px 20px rgba(0, 0, 0, 0.18);
+}
+
+.swiper-slide.swiper-slide-prev {
+    box-shadow: -30px 0px 20px rgba(0, 0, 0, 0.18)
+}

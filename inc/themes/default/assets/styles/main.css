@@ -1,0 +1,375 @@
+* {
+    outline: 0;
+}
+body {
+    font-family: "Fira Sans", sans-serif;
+    overflow-x: hidden;
+    background: #1D232B;
+}
+a,
+a:focus,
+a:hover {
+    color: inherit;
+    text-decoration: none;
+}
+.image-horus {
+    background: url(../images/HORUS-15.png) center no-repeat;
+    min-height: 110px;
+    background-size: contain;
+    padding-bottom: 40px;
+}
+.heading-title {
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 500;
+    font-size: 36px;
+    color: #2a3f54;
+    letter-spacing: -0.6px;
+}
+.desc-text {
+    font-family: "Fira Sans", sans-serif;
+    font-size: 14px;
+    color: #6d7784;
+    line-height: 20px;
+}
+.color-danger {
+    color: #ff3d3d;
+}
+.form-result {
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 40px;
+}
+.form-result > div {
+    margin-bottom: 5px;
+}
+.form-result > div:last-child {
+    margin-bottom: 0;
+}
+.button-style {
+    display: inline-block;
+    font-family: "Opens Sans", sans-serif;
+    color: #fff;
+    font-size: 18px;
+    background: #437859;
+    border-radius: 2px;
+    padding: 19px 50px;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+.button-style:hover {
+    color: #fff;
+}
+.button-style.purple {
+    transition: 0.3s ease;
+}
+.clearfix:after,
+.clearfix:before {
+    content: "";
+    display: block;
+    clear: both;
+}
+.form-element {
+    margin-bottom: 32px;
+}
+.form-element:last-child {
+    margin-bottom: 0;
+}
+.form-element .input-wrapper {
+    position: relative;
+    z-index: 2;
+}
+.form-element .input-wrapper .input-style {
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    position: static;
+    height: 50px;
+    padding: 0px 10px 0px 10px;
+    width: -webkit-fill-available;
+    background: #171b21;
+    border-radius: 6px;
+    flex: none;
+    /* order: 1; */
+    align-self: stretch;
+    flex-grow: 1;
+    margin: 6px 0px;
+    border: none;
+    color: #ffffff;
+}
+.form-element .input-wrapper .placeholder {
+    position: absolute;
+    color: #b5bed0;
+    left: 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    font-weight: 300;
+    z-index: -1;
+    transition: 0.3s ease;
+}
+#signin .page-holder .float-left {
+    float: left;
+}
+#signin .page-holder .signin {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100%;      
+    box-sizing: border-box;
+}
+#signin .page-holder .signin:after {
+    content: "\e066";
+    font-family: simple-line-icons;
+    font-size: 40px;
+    position: absolute;
+    right: 50px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    color: #2a3f54;
+    opacity: 0;
+    transition: 1s ease;
+}
+#signin .page-holder .signin .signin-form {
+    min-width: 420px;
+}
+#signin .page-holder .signin .signin-form .reset-pass a {
+    display: block;
+    font-weight: 300;
+    font-size: 14px;
+    color: #b5bed0;
+    transition: 0.3s ease;
+}
+#signin .page-holder .signin .signin-form .reset-pass a:hover {
+    color: #8a919f;
+}
+#signin .page-holder .signup {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: 50%;
+    background-color:#171b21;
+    padding-left: 125px;
+    box-sizing: border-box;
+    transition: 1s ease;
+}
+#signin .page-holder .signup .details {
+    position: relative;
+    z-index: 32;
+    color: #fff;
+    transition: 0.4s ease;
+    margin-right: auto;
+}
+#signin .page-holder .signup .details .desc-text,
+#signin .page-holder .signup .details .heading-title {
+    color: #fff;
+}
+#signin .page-holder .signup .details .heading-title {
+    font-size: 36px;
+    margin-bottom: 15px;
+    transition: 1s ease;
+    transform-origin: left center;
+}
+#signin .page-holder .signup .details .desc-text {
+    font-size: 19px;
+    font-weight: 300;
+    line-height: 25px;
+    letter-spacing: 0.5px;
+}
+#signin .page-holder .signup .details .sign-up {
+    display: inline-block;
+    width: 100%;
+    padding: 15px 12px;
+    font-family: "Fira Sans", sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 18px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #fff;
+    border: 1px solid #437859;
+    outline: none;
+    background-color: #437859;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all ease 0.2s;
+    -moz-transition: all ease 0.2s;
+    transition: all ease 0.2s;
+}
+#signin .page-holder .signup .signup-form {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate3d(-50%, -45%, 0);
+    transform: translate3d(-50%, -45%, 0);
+    opacity: 0;
+    transition: 0.8s ease;
+}
+#signin .page-holder .signup .signup-form.active {
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+    opacity: 1 !important;
+}
+#signin .page-holder .signup .signup-form .form-holder {
+    text-align: center;
+    color: #fff;
+}
+#signin .page-holder .signup .signup-form .form-holder .title {
+    font-weight: 300;
+    font-size: 32px;
+    margin-bottom: 50px;
+}
+#signin .page-holder .signup .signup-form .form-holder .form {
+    padding: 60px;
+    background: #0000004a;
+    min-width: 420px;
+    box-sizing: border-box;
+}
+#signin .page-holder .signup .signup-form .agreement {
+    font-weight: 300;
+    font-size: 12px;
+    color: #fff;
+    letter-spacing: 0;
+    line-height: 24px;
+    margin-top: 40px;
+}
+#signin .page-holder .signup[data-active="open"] {
+    width: 100%;
+}
+
+#signin .page-holder .signup[data-active="open"] .signup-form {
+    opacity: 1 !important;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+}
+
+#signin .page-holder .submit button.button-style {
+    width: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+}
+#signin .page-holder .submit button.button-style {
+    display: inline-block;
+    width: 100%;
+    padding: 15px 12px;
+    font-family: "Fira Sans", sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 18px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #fff;
+    border: 1px solid #ff7f00;
+    outline: none;
+    background-color: #ff7f00;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all ease 0.2s;
+    -moz-transition: all ease 0.2s;
+    transition: all ease 0.2s;
+}
+
+@media screen and (max-width:415px) {
+  .signin-form {
+    padding:40px;
+  }
+}
+@media screen and (min-width:1024px) {
+    .cadastre {
+    display:none !important;
+  }  
+}
+
+@media screen and (max-width: 1024px) {
+
+    #signin .page-holder .side {
+        position: relative !important;
+        width: 100% !important;
+        padding: 0 20px !important;
+        height: auto !important;
+        min-height: 100vh;
+    }
+    #signin .page-holder .side.signin {
+        padding-right: 0;
+    }
+    #signin .page-holder .signup .details {
+        margin-right: auto;
+    }
+    #signin .page-holder .side.signin[data-active="false"] {
+        display: none;
+    }
+    #signin .page-holder .signup .details {
+        display: none;
+    }
+    #signin .page-holder .signup div.signup-form {
+        display: block;
+        opacity: 1 !important;
+        position: relative !important;
+        -webkit-transform: translateZ(0) !important;
+        transform: translateZ(0) !important;
+        left: 0;
+        top: 0;
+        margin: 50px auto;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #signin .signin-form,
+    #signin .signup-form {
+        min-width: 0 !important;
+        width: 100%;
+    }
+    #signin .signin-form div.form,
+    #signin .signup-form div.form {
+        min-width: 100% !important;
+    }
+}
+
+.recover-sent {
+    color: #303030 !important;
+}
+
+
+/* custom */
+.pos-signin {
+    margin-top: 10%;
+    float: right;
+    text-align-last: center;
+    margin-right: 12%;
+    min-width: 420px;
+}
+
+.pos-signup {
+    width: 40% ;
+    float: right ;
+    margin-right: 60px ;
+    margin-top: 100px ;
+}
+
+  .cadastre {
+    display:block;
+    font-weight: 300;
+    font-size: 14px;
+    color: #b5bed0;
+    transition: 0.3s ease;
+    margin-top: 5px; 
+    }
+
+.cadastre:hover {
+  color: #437859;
+  text-decoration:underline;
+}
+
+.reset-pass{
+  color: #437859 !important;
+  text-decoration:underline !important;
+}
+    

@@ -1,0 +1,226 @@
+.how-app-work-section {
+    .title {
+        margin-bottom: 40px;
+        h3 {
+            margin: 0;
+            color: #170B35;
+            font-size: 32px;
+            font-weight: 600;
+        }
+    }
+    .how-app-work-content-wrap {
+        padding-left: 85px;
+    }
+    .how-app-work-content {
+        padding-top: 30px;
+        padding-bottom: 45px;
+        margin-bottom: 40px;
+        position: relative;
+        &:before {
+            content: '';
+            width: 2px;
+            height: 100%;
+            background: url(../img/gradient-sep.png) no-repeat center center;
+            position: absolute;
+            top: 0;
+            left: 45px;
+        }
+    }
+    .single-how-app-work {
+        padding-left: 10px;
+        +.single-how-app-work {
+            margin-top: 60px;
+        }
+        .icon-box,
+        .text-box {
+            display: table-cell;
+            vertical-align: middle;
+        }
+        .icon-box {
+            .inner {
+                width: 74px;
+                height: 74px;
+                @include thmGradient();
+                position: relative;
+                border-radius: 50%;
+                text-align: center;
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: 2px;
+                    left: 2px;
+                    right: 2px;
+                    bottom: 2px;
+                    border-radius: 50%;
+                    background: #fff;
+                    opacity: 1;
+                    transition: all .4s ease;
+                }
+                i {
+                    @include thmGradientText();
+                    line-height: 74px;
+                    font-size: 44px;
+                    position: relative;
+                }
+                
+                &:hover {
+                	box-shadow: drop-shadow-converter(#d43297, $angle: 90, $distance: 18px, $spread: 0, $size: 37px, $opacity: 20%);
+                    i {
+                        color: #fff;
+                        -webkit-text-fill-color: #fff;
+                    }
+                    &:before {
+                        opacity: 0;
+                    }
+                }
+            }
+
+            .active {
+                .inner {
+                	box-shadow: drop-shadow-converter(#d43297, $angle: 90, $distance: 18px, $spread: 0, $size: 37px, $opacity: 20%);
+                    i {
+                        color: #fff;
+                        -webkit-text-fill-color: #fff;
+                    }
+                    &:before {
+                        opacity: 0;
+                    }
+                }
+        	}
+        }
+        .text-box {
+            padding-left: 40px;
+            h4,
+            p {
+                margin: 0;
+            }
+            h4 {
+                font-size: 20px;
+                color: #150A33;
+                font-weight: 500;
+            }
+            p {
+                font-size: 14px;
+                line-height: 27px;
+                color: #656565;
+                margin-top: 10px;
+            }
+        }
+    }
+    .download-btn {
+        display: inline-block;
+        vertical-align: middle;
+        @include thmGradient();
+        position: relative;
+        padding: 12px 0;
+        padding-left: 80px;
+        border-radius: 28px;
+        padding-right: 40px;
+        &:before {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            right: 2px;
+            bottom: 2px;
+            border-radius: 28px;
+            background: #fff;
+            opacity: 1;
+            transition: all .4s ease;
+        }
+        i.fab {
+            font-size: 30px;
+            @include thmGradientText();
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 35px;
+            transition: all .4s ease;
+        }
+        span.inner {
+            position: relative;
+            display: block;
+        }
+        span.avail,
+        span.store-name {
+            display: block;
+            @include thmGradientText();
+            font-weight: 600;
+            line-height: 1em;
+            transition: all .4s ease;
+        }
+        span.avail {
+            font-size: 12.5px;
+        }
+        span.store-name {
+            text-transform: uppercase;
+            font-size: 16px;
+            margin-top: 5px;
+        }
+        &.active,
+        &:hover {
+        	box-shadow: drop-shadow-converter(#d43297, $angle: 90, $distance: 15px, $spread: 0, $size: 30px, $opacity: 27%);
+            &:before {
+                opacity: 0;
+            }
+            i.fab,
+            span.avail,
+            span.store-name {
+                color: #fff;
+                -webkit-text-fill-color: #fff;
+            }
+        }
+        &.active {margin-right: 15px;}
+    }
+    .how-app-work-slider-wrapper {
+    	position: relative;width: 305px;
+    	height: 655px;
+    	overflow: hidden;
+    	margin-left: auto;
+    	margin-right: auto;
+    	border-radius: 50px;
+    	box-shadow: drop-shadow-converter(#d43297, $angle: 90, $distance: 18px, $spread: 0, $size: 37px, $opacity: 20%);
+    }
+    .how-app-work-screen-mobile-image {
+    	background-image: url(../img/fature-moc.png);
+	    background-repeat: no-repeat;
+	    background-size: 100% 100%;
+	    display: block;
+	    height: 655px;
+	    left: calc(50% + 0.5px);
+	    position: absolute;
+	    top: 0px;
+	    transform: translateX(-50%);
+	    width: 310px;
+	    z-index: 2;
+    }
+    .bx-wrapper {border: none;box-shadow: none;border-radius: 50px;
+		.slide-item {
+			text-align: center;
+			img {margin-left: auto;margin-right: auto;border-radius: 50px;}
+		}
+    }
+    .pager-item {display: block;
+		+.pager-item {
+            margin-top: 60px;
+        }
+        &.active {
+        	.icon-box .inner:before {opacity: 0;}
+        	.icon-box .inner i {
+    		    color: #fff;
+				-webkit-text-fill-color: #fff;
+        	}
+        }
+    }
+    .how-app-work-slider-content {
+    	position: relative;
+    	img.circled-img {
+    		position: absolute;
+    		// top:0;
+    		// left: -100px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+    	}
+    }
+}

@@ -1,0 +1,387 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: POEditor.com\n"
+"Project-Id-Version: Nextpost v3.0 - Default Theme\n"
+"Language: id\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: 
+msgid "About"
+msgstr "About"
+
+#: 
+msgid "Features"
+msgstr "Features"
+
+#: 
+msgid "Pricing"
+msgstr "Pricing"
+
+#: 
+msgid "Hi, %s"
+msgstr "Hi, %s"
+
+#: 
+msgid "Login"
+msgstr "Login"
+
+#: 
+msgid "Sign up"
+msgstr "Sign up"
+
+#: 
+msgid "Save time managing your Instagram accounts"
+msgstr "Save time managing your Instagram accounts"
+
+#: 
+msgid "A Smarter way to auto post on instagram"
+msgstr "A Smarter way to auto post on instagram"
+
+#: 
+msgid "Schedule your posts to any future date"
+msgstr "Schedule your posts to any future date"
+
+#: 
+msgid "A Smarter way to <br> Auto Post on Instagram"
+msgstr "A Smarter way to <br> Auto Post on Instagram"
+
+#: 
+msgid "Get started"
+msgstr "Get started"
+
+#: 
+msgid "Manage your accounts"
+msgstr "Manage your accounts"
+
+#: 
+msgid "The following features to help you save time"
+msgstr "The following features to help you save time"
+
+#: 
+msgid "Multi Instagram Accounts"
+msgstr "Multi Instagram Accounts"
+
+#: 
+msgid "Post the same content to all accounts"
+msgstr "Post the same content to all accounts"
+
+#: 
+msgid "Photo, Story, Video & Album"
+msgstr "Photo, Story, Video & Album"
+
+#: 
+msgid "Automatically post all content"
+msgstr "Automatically post all content"
+
+#: 
+msgid "Schedule Posts"
+msgstr "Schedule Posts"
+
+#: 
+msgid "You don't need to worry about managment"
+msgstr "You don't need to worry about managment"
+
+#: 
+msgid "Future starts today"
+msgstr "Future starts today"
+
+#: 
+msgid "Firstname"
+msgstr "Firstname"
+
+#: 
+msgid "Lastname"
+msgstr "Lastname"
+
+#: 
+msgid "Email"
+msgstr "Email"
+
+#: 
+msgid "Password"
+msgstr "Password"
+
+#: 
+msgid "Confirm password"
+msgstr "Confirm password"
+
+#: 
+msgid "Select your timezone"
+msgstr "Select your timezone"
+
+#: 
+msgid "Welcome!"
+msgstr "Welcome!"
+
+#: 
+msgid "You've been <br> logged in successfully."
+msgstr "You've been <br> logged in successfully."
+
+#: 
+msgid "Go to dashboard"
+msgstr "Go to dashboard"
+
+#: 
+msgid "Make the difference"
+msgstr "Make the difference"
+
+#: 
+msgid "Here are features for you"
+msgstr "Here are features for you"
+
+#: 
+msgid "Unique Design"
+msgstr "Unique Design"
+
+#: 
+msgid "Auto Post Content"
+msgstr "Auto Post Content"
+
+#: 
+msgid "Secure password hash"
+msgstr "Secure password hash"
+
+#: 
+msgid "Mobile Responsive"
+msgstr "Mobile Responsive"
+
+#: 
+msgid "Payment Gateways"
+msgstr "Payment Gateways"
+
+#: 
+msgid "Emoji Compatibility"
+msgstr "Emoji Compatibility"
+
+#: 
+msgid "Nextpost has additional modules to automate some process"
+msgstr "Nextpost has additional modules to automate some process"
+
+#: 
+msgid "Auto Follow, Auto Unfollow, Auto Like, Auto Comment, Auto Direct Message, Auto Repost"
+msgstr "Auto Follow, Auto Unfollow, Auto Like, Auto Comment, Auto Direct Message, Auto Repost"
+
+#: 
+msgid "Auto Follow "
+msgstr "Auto Follow "
+
+#: 
+msgid "Auto Unfollow "
+msgstr "Auto Unfollow "
+
+#: 
+msgid "Auto Comment "
+msgstr "Auto Comment "
+
+#: 
+msgid "Auto Like "
+msgstr "Auto Like "
+
+#: 
+msgid "Direct Message "
+msgstr "Direct Message "
+
+#: 
+msgid "Auto Repost "
+msgstr "Auto Repost "
+
+#: 
+msgid "Insert images from Cloud Drives."
+msgstr "Insert images from Cloud Drives."
+
+#: 
+msgid "Nextpost allows you to import images from your <br> Google Drive, Dropbox and OneDrive account"
+msgstr "Nextpost allows you to import images from your <br> Google Drive, Dropbox and OneDrive account"
+
+#: 
+msgid "How much does it cost to use Nextpost"
+msgstr "How much does it cost to use Nextpost"
+
+#: 
+msgid "Auto Follow"
+msgstr "Auto Follow"
+
+#: 
+msgid "Auto Unfollow"
+msgstr "Auto Unfollow"
+
+#: 
+msgid "Auto Like"
+msgstr "Auto Like"
+
+#: 
+msgid "Auto Comment"
+msgstr "Auto Comment"
+
+#: 
+msgid "Auto DM (New Followers)"
+msgstr "Auto DM (New Followers)"
+
+#: 
+msgid "Auto Repost"
+msgstr "Auto Repost"
+
+#: 
+msgid "per month"
+msgstr "per month"
+
+#: 
+msgid "Save %s when paid annualy"
+msgstr "Save %s when paid annualy"
+
+#: 
+msgid "Only 1 account"
+msgid_plural "Up to %s accounts"
+msgstr[0] "Only 1 account"
+
+#: 
+msgid "Unlimited accounts"
+msgstr "Unlimited accounts"
+
+#: 
+msgid "Zero accounts"
+msgstr "Zero accounts"
+
+#: 
+msgid "Post Types"
+msgstr "Post Types"
+
+#: 
+msgid "Photo"
+msgstr "Photo"
+
+#: 
+msgid "Video"
+msgstr "Video"
+
+#: 
+msgid "Story"
+msgstr "Story"
+
+#: 
+msgid "Photo+Video"
+msgstr "Photo+Video"
+
+#: 
+msgid "Photo only"
+msgstr "Photo only"
+
+#: 
+msgid "Video only"
+msgstr "Video only"
+
+#: 
+msgid "Album"
+msgstr "Album"
+
+#: 
+msgid "Cloud Import"
+msgstr "Cloud Import"
+
+#: 
+msgid "Not available"
+msgstr "Not available"
+
+#: 
+msgid "Modules"
+msgstr "Modules"
+
+#: 
+msgid "Spintax Support"
+msgstr "Spintax Support"
+
+#: 
+msgid "Storage"
+msgstr "Storage"
+
+#: 
+msgid "Unlimited"
+msgstr "Unlimited"
+
+#: 
+msgid "Nextpost allows you to schedule your posts at a future date to save <br> time. You don't even need to log-in and out of various platforms"
+msgstr "Nextpost allows you to schedule your posts at a future date to save <br> time. You don't even need to log-in and out of various platforms"
+
+#: 
+msgid "Login credentials didn't match!"
+msgstr "Login credentials didn't match!"
+
+#: 
+msgid "Login with Facebook"
+msgstr "Login with Facebook"
+
+#: 
+msgid "Email address"
+msgstr "Email address"
+
+#: 
+msgid "Sign in"
+msgstr "Sign in"
+
+#: 
+msgid "Forgot your password?"
+msgstr "Forgot your password?"
+
+#: 
+msgid "It's absolutely free and takes <br> less than 30 seconds."
+msgstr "It's absolutely free and takes <br> less than 30 seconds."
+
+#: 
+msgid "Get Started"
+msgstr "Get Started"
+
+#: 
+msgid "By creating an acount you agree to our terms of service."
+msgstr "By creating an acount you agree to our terms of service."
+
+#: 
+msgid "Already have an account?"
+msgstr "Already have an account?"
+
+#: 
+msgid "Password Reset"
+msgstr "Password Reset"
+
+#: 
+msgid "New Password"
+msgstr "New Password"
+
+#: 
+msgid "Password confirm"
+msgstr "Password confirm"
+
+#: 
+msgid "Reset Password"
+msgstr "Reset Password"
+
+#: 
+msgid "Success!"
+msgstr "Success!"
+
+#: 
+msgid "You've successfully reset your password!"
+msgstr "You've successfully reset your password!"
+
+#: 
+msgid "Password Recovery"
+msgstr "Password Recovery"
+
+#: 
+msgid "Your e-mail address"
+msgstr "Your e-mail address"
+
+#: 
+msgid "Submit"
+msgstr "Submit"
+
+#: 
+msgid "Email Sent!"
+msgstr "Email Sent!"
+
+#: 
+msgid "Password reset instruction sent to your email address."
+msgstr "Password reset instruction sent to your email address."
+

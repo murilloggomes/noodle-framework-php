@@ -1,0 +1,66 @@
+.intigration-section {
+	.intigration-content {padding-top: 40px;}
+    h3 {
+        margin: 0;
+        color: #150A33;
+        font-size: 32px;
+        line-height: 48px;
+        margin-top: 25px;
+        margin-bottom: 20px;
+    }
+    p {
+        font-size: 16px;
+        line-height: 27px;
+        color: #656565;
+        letter-spacing: .01em;
+        margin: 0;
+        margin-bottom: 20px;
+    }
+    a.more {        
+        color: #6B40BF;
+        font-size: 16px;
+        font-weight: 600;
+        transition: all .3s ease;
+        i {            
+            margin-left: 5px;
+            vertical-align: middle;
+        }
+        &:hover {
+            color: #d43297;
+        }
+    }    
+    .intigration-img-box {
+        position: relative;
+        display: block;
+        min-height: 360px;
+        img {position: absolute;
+            transform: scale(1.00);
+            transition: all .4s ease;
+            border-radius: 20px;
+            &:hover {
+                transform: scale(1.02);
+                box-shadow: drop-shadow-converter(#d43297, $angle: 90, $distance: 15px, $spread: 0, $size: 30px, $opacity: 27%);
+            }
+            &:nth-child(1) {
+                top: 0;
+                right: 185px;
+            }
+            &:nth-child(2) {
+                top: 48px;
+                right: 60px;
+            }
+            &:nth-child(3) {
+                top: 170px;
+                right: 350px;
+            }
+            &:nth-child(4) {
+                top: 196px;
+                right: 200px;
+            }
+            &:nth-child(5) {
+                bottom: 0px;
+                right: 0px;
+            }
+        }
+    }
+}

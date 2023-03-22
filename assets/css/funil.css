@@ -1,0 +1,222 @@
+.userSelect {
+	background-color: #d9edf7;
+	padding: 24px;
+	border-radius: 15px;
+	color: #31708f;
+}
+
+.paddingModal {
+	padding: 2rem !important;
+	background-color: #ebebeb85;
+}
+
+.deletarLista {
+	float: right;
+	top: -30px !important;
+	position: relative;
+	font-size: 12px;
+	cursor: pointer;
+}
+
+.card-body {
+	cursor: move;
+}
+
+.project_estruture_new {
+	border-radius: 30px;
+  box-sizing: border-box;
+  height: 226px;
+  padding: 16px 20px;
+  align-items: center;
+  display: flex;
+    flex-flow: column;
+  position: relative;
+  transition-duration: .4s;
+}
+
+.project_estruture_new:hover {
+	background: #ffffff0f;
+	transform: translate3d(0, -4px, 0);
+}
+.project_card_new {
+	border-radius: 20px;
+	border: 2px dashed #666262a3; 
+	background: transparent;
+	height: 110px;
+  width: 100%;
+  box-shadow: inset 0 -2px rgb(0 0 0 / 5%);
+  align-items: center;
+  display: flex;
+  fill: #fff;
+  flex-flow: column;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.project_estruture {
+    border-radius: 30px;
+    box-sizing: border-box;
+    height: 226px;
+    padding: 16px 20px;
+    align-items: center;
+    display: flex;
+    flex-flow: column;
+    position: relative;
+    transition-duration: .4s;
+}
+
+.project_estruture_name {
+	margin-top: 10px;
+	
+}
+
+.project_estruture:hover {
+	background: #ffffff0f;
+  transform: translate3d(0, -4px, 0);
+}
+
+.mproject {
+	margin: 0 45px;
+}
+
+
+.project_card {
+	border-radius: 20px;
+	background: #1d232b;
+	height: 120px;
+  width: 100%;
+  box-shadow: inset 0 -2px rgb(0 0 0 / 5%);
+  align-items: center;
+  display: flex;
+  fill: #fff;
+  flex-flow: column;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.swal2-styled.swal2-confirm {
+background:#11151a !important;
+}
+
+.swal2-styled.swal2-confirm:hover {
+	background: orange !important;
+}
+
+.fila_options {
+	float: right;
+  top: -38px !important;
+  position: relative;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.btn-task {
+	width:200px;
+}
+
+/* task  */
+
+.tasks {
+	width:15rem !important;
+	padding: 0px 6px 0px 6px !important;
+}
+
+.tasks .task-header {
+/* 	width: 250px !important; */
+  width: 238px !important;
+/* 	width: inherit !important; */
+  margin-left: -6px !important;
+}
+
+.tasks.tasks:not(:last-child) {
+	margin-right: 3px !important;
+}
+
+.fsize-secundaria {
+ font-size: 11px !important;
+}
+
+.fsize-small {
+ font-size: 10px !important;
+}
+
+.btn-task-pos {
+	margin-left: 12px;
+}
+
+.task-width {
+	width: 225px;
+}
+
+body {
+	font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+
+.bs-none {
+	box-shadow: none !important;
+}
+
+.ml-5 {
+	margin-left: 5px !important;
+}
+
+.ml-auto {
+	margin-left: auto !important;
+}
+
+.invert {
+	height:45px;
+	width: 37px;
+	transform: rotate(90deg);
+	margin-left:5px;
+	margin-right:5px;
+}
+
+.header-group {
+	position:relative;
+	bottom:3px;
+}
+
+.badge-effect {
+	width:35px;
+  transition: width 1s;
+	color:transparent !important;
+}
+
+.badge-effect:hover {
+  width: 100px;
+	color: white !important;
+
+}
+
+.i_badge {
+	color: white !important;
+}
+
+.i_badge:hover {
+	color:transparent !important;
+	display:none;
+}
+
+.badge-effect2 {
+	width:20px;
+  transition: width 1s;
+	float: right;
+	color:transparent !important;
+	margin-top: 4px !important;
+}
+
+.badge-effect2:hover {
+  width: 100px;
+	color:white !important;
+}
+
+.fwhite {
+	color:white !important;
+}
+
+
+
+

@@ -1,0 +1,136 @@
+/***************************************************************************************************************
+||||||||||||||||||||||||||||       MASTER STYLESHEET FOR Appilo               ||||||||||||||||||||||||||||||||||
+****************************************************************************************************************
+||||||||||||||||||||||||||||              TABLE OF CONTENT                  ||||||||||||||||||||||||||||||||||||
+****************************************************************************************************************
+****************************************************************************************************************
+* 1. imported styles 
+* 2. miscelnious styles 
+* 3. header styles 
+* 4. banner styles 
+* 5. fun fact styles 
+* 6. app features styles 
+* 7. features styles 
+* 8. video box styles 
+* 9. pricing styles 
+* 10. intigration styles 
+* 11. blog styles 
+* 12. footer styles 
+* 13. inner banner styles 
+* 14. sidebar styles 
+* 15. testimonials styles 
+* 16. app screenshot styles 
+* 17. how app work styles 
+****************************************************************************************************************
+||||||||||||||||||||||||||||            End TABLE OF CONTENT                ||||||||||||||||||||||||||||||||||||
+****************************************************************************************************************/
+
+
+// math functions are not included in sass
+@import "drop-shadow-converter/mathfunctions";
+// import converter
+@import "drop-shadow-converter/drop-shadow-converter";
+// template sass helper functions
+@import "_helper-function.scss";
+
+/************************** 
+* 1. imported styles 
+***************************/
+
+@import 'modules/_imported';
+
+/************************** 
+* 2. miscelnious styles 
+***************************/
+
+@import 'modules/_miscelnious';
+
+/************************** 
+* 3. header styles 
+***************************/
+
+@import 'modules/_header';
+
+/************************** 
+* 4. banner styles 
+***************************/
+
+@import 'modules/_banner';
+
+/************************** 
+* 5. fun fact styles 
+***************************/
+
+@import 'modules/_fun-fact';
+
+/************************** 
+* 6. app features styles 
+***************************/
+
+@import 'modules/_app-features';
+
+/************************** 
+* 7. features styles 
+***************************/
+
+@import 'modules/_features';
+
+/************************** 
+* 8. video box styles 
+***************************/
+
+@import 'modules/_video-box';
+
+/************************** 
+* 9. pricing styles 
+***************************/
+
+@import 'modules/_pricing';
+
+/************************** 
+* 10. intigration styles 
+***************************/
+
+@import 'modules/_intigration';
+
+/************************** 
+* 11. blog styles 
+***************************/
+
+@import 'modules/_blog';
+
+/************************** 
+* 12. footer styles 
+***************************/
+
+@import 'modules/_footer';
+
+/************************** 
+* 13. inner banner styles 
+***************************/
+
+@import 'modules/_inner-banner';
+
+/************************** 
+* 14. sidebar styles 
+***************************/
+
+@import 'modules/_sidebar';
+
+/************************** 
+* 15. testimonials styles 
+***************************/
+
+@import 'modules/_testimonials';
+
+/************************** 
+* 16. app screenshot styles 
+***************************/
+
+@import 'modules/_screenshots';
+
+/************************** 
+* 17. how app work styles 
+***************************/
+
+@import 'modules/_how_app_work';

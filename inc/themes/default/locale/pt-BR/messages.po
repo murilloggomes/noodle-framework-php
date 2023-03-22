@@ -1,0 +1,388 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: POEditor.com\n"
+"Project-Id-Version: Nextpost v3.0 - Default Theme\n"
+"Language: pt-br\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: 
+msgid "About"
+msgstr "Sobre"
+
+#: 
+msgid "Features"
+msgstr "Características"
+
+#: 
+msgid "Pricing"
+msgstr "Planos"
+
+#: 
+msgid "Hi, %s"
+msgstr "Olá, %s"
+
+#: 
+msgid "Login"
+msgstr "Entrar"
+
+#: 
+msgid "Sign up"
+msgstr "Cadastre-se"
+
+#: 
+msgid "Save time managing your Instagram accounts"
+msgstr "Economize tempo gerenciando suas contas do Instagram"
+
+#: 
+msgid "A Smarter way to auto post on instagram"
+msgstr "Uma maneira mais inteligente de publicação automática no instagram"
+
+#: 
+msgid "Schedule your posts to any future date"
+msgstr "Agende suas postagens para qualquer data futura"
+
+#: 
+msgid "A Smarter way to <br> Auto Post on Instagram"
+msgstr "Automatize o crescimento do seu <br> Instagram"
+
+#: 
+msgid "Get started"
+msgstr "Iniciar"
+
+#: 
+msgid "Manage your accounts"
+msgstr "Gerencie suas contas"
+
+#: 
+msgid "The following features to help you save time"
+msgstr "Os seguintes recursos para ajudá-lo a economizar tempo"
+
+#: 
+msgid "Multi Instagram Accounts"
+msgstr "Auto Unfollow"
+
+#: 
+msgid "Post the same content to all accounts"
+msgstr "Poste o mesmo conteúdo para todas as contas"
+
+#: 
+msgid "Photo, Story, Video & Album"
+msgstr "Foto, Story, Vídeo e Álbum"
+
+#: 
+msgid "Automatically post all content"
+msgstr "Postar automaticamente todo o conteúdo"
+
+#: 
+msgid "Schedule Posts"
+msgstr "Calendário Programado"
+
+#: 
+msgid "You don't need to worry about managment"
+msgstr "Você não precisa se preocupar com a gestão"
+
+#: 
+msgid "Future starts today"
+msgstr "O futuro começa hoje"
+
+#: 
+msgid "Firstname"
+msgstr "Primeiro nome"
+
+#: 
+msgid "Lastname"
+msgstr "Último nome"
+
+#: 
+msgid "Email"
+msgstr "Email"
+
+#: 
+msgid "Password"
+msgstr "Senha"
+
+#: 
+msgid "Confirm password"
+msgstr "Confirme a Senha"
+
+#: 
+msgid "Select your timezone"
+msgstr "Selecione seu fuso horário"
+
+#: 
+msgid "Welcome!"
+msgstr "Bem-Vindo(a)!"
+
+#: 
+msgid "You've been <br> logged in successfully."
+msgstr "Você foi <br> logado com sucesso."
+
+#: 
+msgid "Go to dashboard"
+msgstr "Ir para a painel"
+
+#: 
+msgid "Make the difference"
+msgstr "Ferramentas do NextPost"
+
+#: 
+msgid "Here are features for you"
+msgstr "Aqui estão os recursos para você"
+
+#: 
+msgid "Unique Design"
+msgstr "Auto Follow"
+
+#: 
+msgid "Auto Post Content"
+msgstr "Conteúdo de postagem automática"
+
+#: 
+msgid "Secure password hash"
+msgstr "Comentários Automáticos"
+
+#: 
+msgid "Mobile Responsive"
+msgstr "Curtidas Automáticas"
+
+#: 
+msgid "Payment Gateways"
+msgstr "Mensagens via Direct"
+
+#: 
+msgid "Emoji Compatibility"
+msgstr "Repost"
+
+#: 
+msgid "Nextpost has additional modules to automate some process"
+msgstr "NextPost possui módulos adicionais para automatizar algum processo"
+
+#: 
+msgid "Auto Follow, Auto Unfollow, Auto Like, Auto Comment, Auto Direct Message, Auto Repost"
+msgstr "Auto Follow, Auto Unfollow, Auto Like, Auto Comment, Auto Direct Message, Auto Repost"
+
+#: 
+msgid "Auto Follow "
+msgstr "Auto Follow "
+
+#: 
+msgid "Auto Unfollow "
+msgstr "Auto Unfollow "
+
+#: 
+msgid "Auto Comment "
+msgstr "Auto Comment "
+
+#: 
+msgid "Auto Like "
+msgstr "Auto Like "
+
+#: 
+msgid "Direct Message "
+msgstr "Direct Message "
+
+#: 
+msgid "Auto Repost "
+msgstr "Auto Repost "
+
+#: 
+msgid "Insert images from Cloud Drives."
+msgstr "Insira imagens da Cloud Drives."
+
+#: 
+msgid "Nextpost allows you to import images from your <br> Google Drive, Dropbox and OneDrive account"
+msgstr "O NextPost permite importar imagens da sua conta <br> Google Drive, Dropbox e OneDrive"
+
+#: 
+msgid "How much does it cost to use Nextpost"
+msgstr "Escolha AGORA o melhor para você!"
+
+#: 
+msgid "Auto Follow"
+msgstr "Auto Follow"
+
+#: 
+msgid "Auto Unfollow"
+msgstr "Auto Unfollow"
+
+#: 
+msgid "Auto Like"
+msgstr "Auto Like"
+
+#: 
+msgid "Auto Comment"
+msgstr "Auto Comment"
+
+#: 
+msgid "Auto DM (New Followers)"
+msgstr "Auto DM (New Followers)"
+
+#: 
+msgid "Auto Repost"
+msgstr "Auto Repost"
+
+#: 
+msgid "per month"
+msgstr "por mês"
+
+#: 
+msgid "Save %s when paid annualy"
+msgstr "Economize %s pagando anualmente"
+
+#: 
+msgid "Apenas 1 conta"
+msgid_plural "Até %s contas"
+msgstr[0] "Apenas 1 conta"
+msgstr[1] "Até %s contas"
+
+#: 
+msgid "Unlimited accounts"
+msgstr "Contas Ilimitadas"
+
+#: 
+msgid "Zero accounts"
+msgstr "0 Contas"
+
+#: 
+msgid "Post Types"
+msgstr "Tipos de postagem"
+
+#: 
+msgid "Photo"
+msgstr "Foto"
+
+#: 
+msgid "Video"
+msgstr "Vídeo"
+
+#: 
+msgid "Story"
+msgstr "Story"
+
+#: 
+msgid "Photo+Video"
+msgstr "Foto+Vídeo"
+
+#: 
+msgid "Photo only"
+msgstr "Somente Foto"
+
+#: 
+msgid "Video only"
+msgstr "Somente Vídeo"
+
+#: 
+msgid "Album"
+msgstr "Album"
+
+#: 
+msgid "Cloud Import"
+msgstr "Importar da Nuvem"
+
+#: 
+msgid "Not available"
+msgstr "Não disponível"
+
+#: 
+msgid "Modules"
+msgstr "Módulos"
+
+#: 
+msgid "Spintax Support"
+msgstr "Suporte Spintax"
+
+#: 
+msgid "Storage"
+msgstr "Armazenamento"
+
+#: 
+msgid "Unlimited"
+msgstr "Ilimitado"
+
+#: 
+msgid "Nextpost allows you to schedule your posts at a future date to save <br> time. You don't even need to log-in and out of various platforms"
+msgstr "NextPost permite que você agende suas postagens em uma data futura para economizar <br> tempo. Você nem precisa fazer logon e sair de várias plataformas"
+
+#: 
+msgid "Login credentials didn't match!"
+msgstr "As credenciais de login não coincidiram!"
+
+#: 
+msgid "Login with Facebook"
+msgstr "Entrar com o Facebook"
+
+#: 
+msgid "Email address"
+msgstr "Endereço de e-mail"
+
+#: 
+msgid "Sign in"
+msgstr "Logar"
+
+#: 
+msgid "Forgot your password?"
+msgstr "Esqueceu sua senha ?"
+
+#: 
+msgid "It's absolutely free and takes <br> less than 30 seconds."
+msgstr "É absolutamente grátis e leva menos de 30 segundos."
+
+#: 
+msgid "Get Started"
+msgstr "Iniciar"
+
+#: 
+msgid "By creating an acount you agree to our terms of service."
+msgstr "Ao criar uma conta, você concorda com nossos termos de serviço."
+
+#: 
+msgid "Already have an account?"
+msgstr "Já tem uma conta ?"
+
+#: 
+msgid "Password Reset"
+msgstr "Resetar a senha"
+
+#: 
+msgid "New Password"
+msgstr "Nova senha"
+
+#: 
+msgid "Password confirm"
+msgstr "Confirmação de senha"
+
+#: 
+msgid "Reset Password"
+msgstr "Redefinir Senha"
+
+#: 
+msgid "Success!"
+msgstr "Sucesso!"
+
+#: 
+msgid "You've successfully reset your password!"
+msgstr "Você redefiniu com sucesso sua senha!"
+
+#: 
+msgid "Password Recovery"
+msgstr "Recuperação de senha"
+
+#: 
+msgid "Your e-mail address"
+msgstr "Seu endereço de email"
+
+#: 
+msgid "Submit"
+msgstr "Enviar"
+
+#: 
+msgid "Email Sent!"
+msgstr "E-mail enviado!"
+
+#: 
+msgid "Password reset instruction sent to your email address."
+msgstr "Instruções de reinicialização de senha enviadas para o seu endereço de e-mail."
+

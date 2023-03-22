@@ -1,0 +1,211 @@
+body {
+    font-family: 'Poppins';
+    color: #656565;
+    font-size: 14px;
+    line-height: 27px;
+}
+
+a:hover,
+a:visited,
+a:focus,
+a:active {
+    text-decoration: none !important;
+    outline: none !important;
+}
+
+.container {
+    transition: none;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.sec-pad {
+    padding: 120px 0;
+}
+
+.p0 {
+    padding: 0 !important;
+}
+
+.pt0 {
+    padding-top: 0 !important;
+}
+
+.pt70 {
+    padding-top: 70px !important;
+}
+
+.pb0 {
+    padding-bottom: 0 !important;
+}
+
+.mb80 {
+    margin-bottom: 80px !important;
+}
+
+.gray-bg {
+    background: #F4F9FD;
+}
+
+
+[class^="flaticon-"]:before,
+[class*=" flaticon-"]:before,
+[class^="flaticon-"]:after,
+[class*=" flaticon-"]:after {
+    margin-left: 0;
+    font-size: inherit;
+}
+
+
+.sec-title {
+    margin-bottom: 100px;
+    h2, p {margin: 0;}
+    h2 {font-size: 32px;color: #170B35;font-weight: 600;}
+    p {font-size: 16px;line-height: 26px;color: #656565;margin-top: 20px;}
+}
+
+.thm-btn {
+    display: inline-block;
+    border: none;
+    outline: none;
+    @include thmGradient();
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all .4s ease;
+    border-radius: 28px;
+    padding: 15px 29px;
+    position: relative;
+    &:before {
+        content: '';
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        right: 2px;
+        bottom: 2px;
+        border-radius: 28px;
+        background: #fff;
+        opacity: 0;
+        transition: all .4s ease;
+    }    
+    &:hover {
+        color: #190A32;
+        &:before {
+            opacity: 1;
+        }            
+    }
+    > span {position: relative;}
+    &.borderd {        
+        color: #190A32;
+        &:before {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            right: 2px;
+            bottom: 2px;
+            border-radius: 28px;
+            background: #fff;
+            opacity: 1;
+            transition: all .4s ease;
+        }
+        &:hover {
+            color: #fff;
+            &:before {
+                opacity: 0;
+            }            
+        }
+    }
+}
+
+.separator {
+    display: block;
+    width: 100%;
+    max-width: 1170px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 1px;
+    background:rgba(#535253,.15);
+    &.full-width {max-width: 100%;}
+    &.no-border {background-color: transparent;}
+    &.mt135 {margin-top: 135px;}
+    &.mb135 {margin-bottom: 135px;}
+
+    &.mt115 {margin-top: 115px;}
+    &.mb115 {margin-bottom: 115px;}
+
+    &.mt100 {margin-top: 100px;}
+    &.mb100 {margin-bottom: 100px;}
+
+    &.mt90 {margin-top: 90px;}
+    &.mb90 {margin-bottom: 90px;}
+}
+
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    @include thmGradient();
+    color: #fff;
+    font-size: 17px;
+    line-height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    box-shadow: drop-shadow-converter(#000000, $angle: 90, $distance: 23px, $spread: 0, $size: 42px, $opacity: 20%);
+    transition: all .4s ease;
+}
+
+.preloader {
+    @include thmGradient();
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999999;
+    .spinner {
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -30px;
+        margin-left: -30px;
+        background-color: #fff;
+        border-radius: 100%;
+        -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
+        animation: sk-scaleout 1.0s infinite ease-in-out;
+    }
+
+    @-webkit-keyframes sk-scaleout {
+        0% {
+            -webkit-transform: scale(0)
+        }
+        100% {
+            -webkit-transform: scale(1.0);
+            opacity: 0;
+        }
+    }
+    @keyframes sk-scaleout {
+        0% {
+            -webkit-transform: scale(0);
+            transform: scale(0);
+        }
+        100% {
+            -webkit-transform: scale(1.0);
+            transform: scale(1.0);
+            opacity: 0;
+        }
+    }
+}

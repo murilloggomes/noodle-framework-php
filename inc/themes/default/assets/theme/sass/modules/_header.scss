@@ -1,0 +1,157 @@
+.header {
+	position: absolute;
+	top: 50px;
+	left:0;
+	width: 100%;
+	z-index: 999;
+}
+.header-navigation {
+	background-color: transparent;margin-bottom: 0;border: none;border-radius: 0;min-height: auto;
+	.container {background:transparent;position: relative;padding-right: 130px;
+		.navbar-brand {height: auto;padding: 4px 0;margin-left: 0;
+			.default-logo {display: block;}
+			.stick-logo {display: none;}
+		}
+		.main-navigation {text-align: right;padding: 0;}
+		.right-side-box {
+			position: absolute;top:50%;right: 0;transform: translateY(-50%);
+			a {display: inline-block;border: none;outline: none;background:#fff;color: #190A32;font-weight: 600;font-size: 15px;border-radius: 18px;display: inline-block;padding: 4.5px 21.5px;transition: all .4s ease;				
+				&:hover {@include thmGradient();color: #fff;}
+			}
+		}
+	}
+	ul.navigation-box {float: none;display: inline-block;vertical-align: middle;
+		li a .sub-nav-toggler {display: none;}
+		> li {position: relative;padding: 7px 0;}
+		> li.show-mobile {display: none;
+			@media(max-width: 450px) {display: block;}
+		}
+		> li + li {margin-left: 35px;}		
+		> li > a {padding: 5px 0;color: #FFFFFF;font-size: 15px;font-weight: 600;transition: all .4s ease; letter-spacing: .01em;}
+		> li.active > a,
+		> li.current > a,
+		> li > a:active,
+		> li > a:focus,
+		> li:hover > a {			
+			color: #190A32;
+		}
+		> li > ul.sub-menu {
+			position: absolute;
+			top: 100%;
+			left: 0;
+			z-index: 1000;
+			float: left;
+			min-width: 200px;
+			padding: 0px 0px;
+			text-align: left;
+			list-style: none;
+			background-color: #F4F4F6;
+			background-clip: padding-box;
+			// border-top: 4px solid #ff7f45;
+			opacity: 0;
+			visibility: hidden;
+			-webkit-transition: opacity .4s ease, visibility .4s ease;
+			transition: opacity .4s ease, visibility .4s ease;
+		}
+		> li > ul.sub-menu.right-align {left: auto;right: 0;}
+		> li:hover > ul.sub-menu {
+			opacity: 1;
+				visibility: visible;
+		}
+		> li > ul.sub-menu > li {
+			display: block;
+				position: relative;
+		}
+		> li > ul.sub-menu > li > a {
+			font-size: 15px;
+			color: #2d2d2d;
+			// font-weight: 500;
+			padding: 8px 0;
+			display: block;
+			line-height: 26px;
+			padding-left: 27px;
+			// letter-spacing: .02em;
+			white-space: nowrap;
+			-webkit-transition: all .4s ease;
+			      transition: all .4s ease;
+		}
+		> li > .sub-menu li + li {
+			border-top: 1px solid #E2E2E2;
+			// margin-top: 12px;
+		}
+		> li > .sub-menu li:hover > a {
+			background:#6B40BF;
+			color: #fff;
+			// border-color: #ff7f45;
+			position: relative;
+		}
+		
+		> li > .sub-menu > li > ul.sub-menu {
+			position: absolute;
+			top: 0%;
+			left: 100%;
+			z-index: 1000;
+			float: left;
+			min-width: 239px;
+			padding: 0px 0px;
+			text-align: left;
+			list-style: none;
+			background-color: #F4F4F6;
+			background-clip: padding-box;
+			// border-top: 4px solid #ff7f45;
+			opacity: 0;
+			visibility: hidden;
+			-webkit-transition: opacity .4s ease, visibility .4s ease;
+			transition: opacity .4s ease, visibility .4s ease;
+		}
+		> li > .sub-menu > li:hover > ul.sub-menu {
+			opacity: 1;
+				visibility: visible;
+		}
+		> li > .sub-menu > li > ul.sub-menu > li {
+			display: block;
+				position: relative;
+		}
+		> li > .sub-menu > li > ul.sub-menu > li > a {
+			font-size: 16px;
+			color: #2d2d2d;
+			font-family: "Open Sans", sans-serif;
+			// font-weight: 500;
+			padding: 8px 0;
+			display: block;
+			line-height: 26px;
+			padding-left: 27px;
+			// letter-spacing: .02em;
+			white-space: nowrap;
+			-webkit-transition: all .4s ease;
+			      transition: all .4s ease;
+		}
+		> li > .sub-menu > li > .sub-menu li + li {
+			border-top: 1px solid #E2E2E2;
+			// margin-top: 12px;
+		}
+		> li > .sub-menu > li > .sub-menu li:hover > a {
+			background: #6270EA;
+			color: #fff;
+			// border-color: #ff7f45;
+			position: relative;
+		}
+	}
+	&.stricky-fixed {
+		position: fixed;
+		top:0;left: 0;
+		width: 100%;
+		z-index: 99999;
+		background:#0E0F1F;
+		box-shadow: drop-shadow-converter(#000000, $angle: 90, $distance: 0px, $spread: 0, $size: 16px, $opacity: 32%);
+		.container .navbar-brand {padding-top: 22px;padding-bottom: 22px;
+			.default-logo {display: none;}
+			.stick-logo {display: block;}
+		}
+		ul.navigation-box > li {padding-top: 30px;padding-bottom: 30px;}
+		ul.navigation-box > li > a {padding: 0;}
+		ul.navigation-box > li.active > a, ul.navigation-box > li.current > a, ul.navigation-box > li > a:active, ul.navigation-box > li > a:focus, ul.navigation-box > li:hover > a {
+			color: #d13497;
+		}
+	}
+}

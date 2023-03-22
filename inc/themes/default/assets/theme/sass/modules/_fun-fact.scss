@@ -1,0 +1,22 @@
+.fun-fact {
+	.single-fun-fact {
+		text-align: center;
+		p {color: #656565;font-size: 18px;font-weight: 600;margin: 0;}
+		span.counter {
+			@include thmGradientText();
+			font-weight: 200;
+			font-size: 53px;
+		}
+	}
+	.separator {
+		display: block;
+		width: 100%;
+		max-width: 1170px;
+		margin-left: auto;
+		margin-right: auto;
+		height: 1px;
+		background:rgba(#535253,.15);
+		margin-top: 70px;
+		margin-bottom: 135px;
+	}
+}

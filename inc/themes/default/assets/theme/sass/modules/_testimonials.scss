@@ -1,0 +1,89 @@
+.testimonials-style-one {
+	.container {max-width: 970px;padding: 49px 0 0; position: relative;
+		> img.testi-thumb {position: absolute;top:0;left: 0;}
+	}
+	.title {
+		margin-bottom: 15px;
+		h3 {margin: 0;color: #170B35;font-size: 32px;line-height: 48px;font-weight: 600;padding-left: 35px;}
+	}
+}
+.single-testimonial {
+	padding-top: 10px;
+	.img-box, .text-box {
+		display: table-cell;
+		vertical-align: top;
+	}
+	.img-box {
+		width: 450px;
+		margin-bottom: 30px;
+		img {max-width: none;width: auto;margin-left: auto;margin-right: auto;position: relative;top: 0px;box-shadow: drop-shadow-converter(#d43297, $angle: 90, $distance: 15px, $spread: 20, $size: 42px, $opacity: 30%);border-radius: 50%;}
+	}
+	.text-box {
+		img {max-width: none;width: auto;}
+		p {font-size: 18px;color: #656565;line-height: 26px;letter-spacing: .01em;margin: 0;margin-top: 25px;margin-bottom: 20px;}
+		h3 {margin: 0;color: #170B35;font-size: 20px;font-weight: 500;margin-bottom: 10px;}
+		span {color: #6B40BF;font-size: 16px;}
+	}
+}
+
+.testimonials-slider {
+	.bx-wrapper {border: none;box-shadow: none; background-color: transparent;margin-bottom: 0;
+		ul.slider {
+			padding: 0;
+			margin: 0;
+		}
+	}
+	.bx-wrapper .bx-controls-direction {text-align: center;}
+	.bx-wrapper .bx-controls-direction a {
+        text-indent: 0;
+        background-image: none;
+        color: #6B40BF;
+        font-size: 27px;
+        position: relative;
+        top: 10px;
+        transition: all .4s ease;
+        &:hover {
+            color: #d43297;
+        }
+    }
+    .bx-wrapper .bx-prev {
+        left: 0px;
+        margin-right: 25px;
+    }
+    .bx-wrapper .bx-next {
+        right: 0px;
+    }
+}
+
+#testimonials-slider-pager {
+	a.pager-item {position: absolute;top:0;left: 0;z-index: 99;
+		&:nth-child(1) {
+			top: 92%;
+    		left: 33%;
+		}
+		&:nth-child(2) {
+			top: 94%;
+    		left: 18%;
+		}
+		&:nth-child(3) {
+			top: 74%;
+			left: 2%;
+		}
+		&:nth-child(4) {
+			top: 36%;
+			left: 0;
+		}
+		&:nth-child(5) {
+			top: 18%;
+			left: 11%;
+		}
+		&:nth-child(6) {
+			top: 9%;
+    		left: 25%;
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	#testimonials-slider-pager {display: none;}
+}
