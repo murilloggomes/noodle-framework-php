@@ -26,7 +26,7 @@ Insira os tópicos do README em links para facilitar a navegação do leitor
 ## Descrição do projeto 
 
 <p align="justify">
-  Descrição breve do projeto compondo um paragrafo ou dois. 
+  Framework leve e extremamente potente para se extrair da melhor forma o php 8.2, baseado em MVC muitos já vão estar familizados! 
 </p>
 
 ## Funcionalidades
