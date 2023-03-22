@@ -41,7 +41,7 @@ Insira os tópicos do README em links para facilitar a navegação do leitor
 
 ## Pré-requisitos
 
-:warning: [Node](https://nodejs.org/en/download/)
+:warning: [PHP](https://php.net/)
 
 ...
 
