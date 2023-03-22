@@ -52,7 +52,7 @@ function decrypt($valor){
 
 function htmlchars($string = "")
 {
-  return htmlspecialchars($string, ENT_QUOTES, "UTF-8");
+  return htmlspecialchars($string, ENT_QUOTES, 'UTF-8', false);
 }
 
  function custom($auth = false, $coluna = false){	 
@@ -64,28 +64,6 @@ function htmlchars($string = "")
 	 
    return $configRetorno;
  } 
-
-
-function acessoPag($uri,$permissoesPagina){
-  
-  $idPagina = 0;
-  $paginas = Controller::model("Paginas");
-  $paginas->orderBy("id", "DESC")
-        ->where(DB::raw(" status = '1' AND uri LIKE '%$uri'"))
-        ->limit(1)
-        ->fetchData();
-  
-   foreach($paginas->getDataAs("Pagina") as $pag){
-    $idPagina = $pag->get("id");
-   }
-   $decodePaginaPermissao = json_decode($permissoesPagina,true);
-
-   if(in_array($idPagina,$decodePaginaPermissao) != true){
-   return  header("Location: ".APPURL."/dashboard");
-    exit;
-   }
-
-}
 
 function logs($id_user,$situacao,$pagina,$detalhes){
     $Log = Controller::model("Log");   
@@ -488,9 +466,8 @@ function general_data($name, $field = null)
         $GLOBALS["General_Data"][$name] = $settings;
     }
 
-    if (is_string($field)) {
-        $text = $settings->get("data.".$field) ?? '';
-        return htmlspecialchars($text, ENT_QUOTES, 'UTF-8', false);
+    if (is_string($field)) {      
+        return htmlchars($settings->get("data.".$field));
     }
 
     return $settings;
