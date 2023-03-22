@@ -61,7 +61,7 @@
         <!-- Begin page -->
             <!-- ========== Left Sidebar Start ========== -->            
         <div class="wrapper" >
-            <?php require(APPPATH.'/views/fragments/siteconfig/navigation.fragment.php'); ?>
+            <!-- <?php require(APPPATH.'/views/fragments/siteconfig/navigation.fragment.php'); ?> -->
             <?php require(APPPATH.'/views/fragments/siteconfig/topbar.fragment.php'); ?>
           <div class="content-page">
 						<div class="content">
