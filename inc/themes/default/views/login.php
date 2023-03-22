@@ -82,8 +82,8 @@
                                 <div class="reset-pass">
                                     <a href="<?= APPURL."/recovery" ?>"><?= "Esqueceu sua senha?" ?></a>
                                 </div>
-                                <div class="reset-pass">
-                                    <p><?= APP_VERSION ?></p>
+                                <div style="color:#fff">
+                                    <p>Noodle Framework PHP - Versão: <?= APP_VERSION ?></p>
                                 </div>
                             </div>
                         </form>
