@@ -467,7 +467,7 @@ function general_data($name, $field = null)
     }
 
     if (is_string($field)) {      
-        return htmlchars($settings->get("data.".$field));
+        return $settings->get("data.".$field);
     }
 
     return $settings;
