@@ -65,7 +65,7 @@ define("DB_ENCODING", "utf8");
 
 Depois disso pode ir direto pro login e acessar com o usuário e senha que você cadastrou ou rodar o script sql:
 
-
+TESTE
 ## Contribuições
 
 [Buy Me A Coffee](https://www.buymeacoffee.com/murilloggo)
