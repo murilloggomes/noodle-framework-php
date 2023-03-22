@@ -19,10 +19,6 @@
 
 :small_blue_diamond: [Como rodar a aplicação](#como-rodar-a-aplicação-arrow_forward)
 
-... 
-
-Insira os tópicos do README em links para facilitar a navegação do leitor
-
 ## Descrição do projeto 
 
 <p align="justify">
@@ -51,7 +47,7 @@ No terminal, clone o projeto:
 ```
 git clone git@github.com:murilloggomes/noodle-open-source-framework-php-82.git
 ```
-cd no arquivo do projeto (que deve ser baixa na pasta raiz realmente da aplicação)
+run: "cd" no caminho da pasta do projeto (que deve ser baixa na pasta raiz realmente da aplicação)
 
 ## Como rodar os testes
 ```
@@ -73,5 +69,3 @@ Depois disso pode ir direto pro login e acessar com o usuário e senha que você
 ## Contribuições
 
 [Buy Me A Coffee](https://www.buymeacoffee.com/murilloggo)
-
-Para doações em BRL, utilize o Paypal:
