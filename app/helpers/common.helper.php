@@ -489,7 +489,7 @@ function general_data($name, $field = null)
     }
 
     if (is_string($field)) {
-        return htmlspecialchars($settings->get("data.".$field));
+        return htmlspecialchars($settings->get("data.".$field), ENT_NOQUOTES, 'UTF-8');
     }
 
     return $settings;
