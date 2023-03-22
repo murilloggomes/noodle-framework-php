@@ -42,7 +42,7 @@ Insira os tópicos do README em links para facilitar a navegação do leitor
 ## Pré-requisitos
 
 :warning: [PHP 8.0.1](https://php.net/) 
-
+:warning: [Maria DB 10.3.35](https://mariadb.org/)
 ...
 
 Liste todas as dependencias e libs que o usuário deve ter instalado na máquina antes de rodar a aplicação 
