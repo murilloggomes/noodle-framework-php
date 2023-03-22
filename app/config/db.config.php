@@ -4,8 +4,8 @@
  */
 define("DB_HOST", "localhost");
 define("DB_NAME", "admin_frame");
-define("DB_USER", "admin_frame");
-define("DB_PASS", "senha_frame");
+define("DB_USER", "root");
+define("DB_PASS", "");
 define("DB_ENCODING", "utf8");
 // DB connnection charset
 /**

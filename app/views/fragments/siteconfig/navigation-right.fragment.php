@@ -27,20 +27,6 @@
                         <input class="form-check-input configTema" type="checkbox" name="color-scheme-mode" value="dark" id="dark-mode-check" data-target="modo_tema">
                         <label class="form-check-label" for="dark-mode-check">Modo Escuro</label>
                     </div>
-       
-
-                    <!-- Width -->
-<!--                     <h5 class="mt-4">Largura da tela</h5>
-                    <hr class="mt-1" />
-                    <div class="form-check form-switch mb-1">
-                        <input class="form-check-input configTema" type="checkbox" name="width" value="fluid" id="fluid-check" data-target="largura_tela">
-                        <label class="form-check-label" for="fluid-check">Widescreen</label>
-                    </div>
-
-                    <div class="form-check form-switch mb-1">
-                        <input class="form-check-input configTema" type="checkbox" name="width" value="boxed" id="boxed-check" data-target="largura_tela">
-                        <label class="form-check-label" for="boxed-check">Box</label>
-                    </div> -->
         
 
                     <!-- Left Sidebar-->

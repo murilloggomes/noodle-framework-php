@@ -1,9 +1,0 @@
-<!-- BEGIN: Footer-->
-    <footer class="page-footer footer footer-static black-background gradient-shadow navbar-border navbar-shadow">
-        <div class="footer-copyright">
-            <div class="container"><span><a href="https://www.storgetec.com.br" class="white-font" target="_blank">Desenvolvido por Storgetec LTDA</span></div>
-            <div class="container"><span><a href="https://www.erp.storgetec.com.br/notas/atualizacoes" class="white-font" target="_blank" style="float: right;">versão do sistema: <?= APP_VERSION ?></span></div>
-        </div>
-    </footer>
-
-    <!-- END: Footer-->
