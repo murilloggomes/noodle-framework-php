@@ -4,7 +4,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: POEditor.com\n"
-"Project-Id-Version: Nextpost v3.0 - Default Theme\n"
+"Project-Id-Version: Noodle v3.0 - Default Theme\n"
 "Language: es\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
@@ -157,8 +157,8 @@ msgid "Emoji Compatibility"
 msgstr "Emoji Compatibility"
 
 #: 
-msgid "Nextpost has additional modules to automate some process"
-msgstr "Nextpost has additional modules to automate some process"
+msgid "Noodle has additional modules to automate some process"
+msgstr "Noodle has additional modules to automate some process"
 
 #: 
 msgid "Auto Follow, Auto Unfollow, Auto Like, Auto Comment, Auto Direct Message, Auto Repost"
@@ -193,12 +193,12 @@ msgid "Insert images from Cloud Drives."
 msgstr "Insert images from Cloud Drives."
 
 #: 
-msgid "Nextpost allows you to import images from your <br> Google Drive, Dropbox and OneDrive account"
-msgstr "Nextpost allows you to import images from your <br> Google Drive, Dropbox and OneDrive account"
+msgid "Noodle allows you to import images from your <br> Google Drive, Dropbox and OneDrive account"
+msgstr "Noodle allows you to import images from your <br> Google Drive, Dropbox and OneDrive account"
 
 #: 
-msgid "How much does it cost to use Nextpost"
-msgstr "How much does it cost to use Nextpost"
+msgid "How much does it cost to use Noodle"
+msgstr "How much does it cost to use Noodle"
 
 #: 
 msgid "Auto Follow"
@@ -303,8 +303,8 @@ msgid "Unlimited"
 msgstr "Unlimited"
 
 #: 
-msgid "Nextpost allows you to schedule your posts at a future date to save <br> time. You don't even need to log-in and out of various platforms"
-msgstr "Nextpost allows you to schedule your posts at a future date to save <br> time. You don't even need to log-in and out of various platforms"
+msgid "Noodle allows you to schedule your posts at a future date to save <br> time. You don't even need to log-in and out of various platforms"
+msgstr "Noodle allows you to schedule your posts at a future date to save <br> time. You don't even need to log-in and out of various platforms"
 
 #: 
 msgid "Login credentials didn't match!"

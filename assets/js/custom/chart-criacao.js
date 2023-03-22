@@ -1,4 +1,4 @@
-var NextPost = {};
+var Noodle = {};
 $(function(){
     var retorno = 1;
 });

@@ -4,7 +4,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: POEditor.com\n"
-"Project-Id-Version: Nextpost v3.0 - Default Theme\n"
+"Project-Id-Version: Noodle v3.0 - Default Theme\n"
 "Language: pt-br\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
@@ -126,7 +126,7 @@ msgstr "Ir para a painel"
 
 #: 
 msgid "Make the difference"
-msgstr "Ferramentas do NextPost"
+msgstr "Ferramentas do Noodle"
 
 #: 
 msgid "Here are features for you"
@@ -157,8 +157,8 @@ msgid "Emoji Compatibility"
 msgstr "Repost"
 
 #: 
-msgid "Nextpost has additional modules to automate some process"
-msgstr "NextPost possui módulos adicionais para automatizar algum processo"
+msgid "Noodle has additional modules to automate some process"
+msgstr "Noodle possui módulos adicionais para automatizar algum processo"
 
 #: 
 msgid "Auto Follow, Auto Unfollow, Auto Like, Auto Comment, Auto Direct Message, Auto Repost"
@@ -193,11 +193,11 @@ msgid "Insert images from Cloud Drives."
 msgstr "Insira imagens da Cloud Drives."
 
 #: 
-msgid "Nextpost allows you to import images from your <br> Google Drive, Dropbox and OneDrive account"
-msgstr "O NextPost permite importar imagens da sua conta <br> Google Drive, Dropbox e OneDrive"
+msgid "Noodle allows you to import images from your <br> Google Drive, Dropbox and OneDrive account"
+msgstr "O Noodle permite importar imagens da sua conta <br> Google Drive, Dropbox e OneDrive"
 
 #: 
-msgid "How much does it cost to use Nextpost"
+msgid "How much does it cost to use Noodle"
 msgstr "Escolha AGORA o melhor para você!"
 
 #: 
@@ -303,8 +303,8 @@ msgid "Unlimited"
 msgstr "Ilimitado"
 
 #: 
-msgid "Nextpost allows you to schedule your posts at a future date to save <br> time. You don't even need to log-in and out of various platforms"
-msgstr "NextPost permite que você agende suas postagens em uma data futura para economizar <br> tempo. Você nem precisa fazer logon e sair de várias plataformas"
+msgid "Noodle allows you to schedule your posts at a future date to save <br> time. You don't even need to log-in and out of various platforms"
+msgstr "Noodle permite que você agende suas postagens em uma data futura para economizar <br> tempo. Você nem precisa fazer logon e sair de várias plataformas"
 
 #: 
 msgid "Login credentials didn't match!"
