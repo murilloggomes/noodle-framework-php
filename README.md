@@ -1,2 +1,7 @@
-# framework-php
-Framework based in MVC but more simple,
+# framework-php MVA (Based in Laravel) - Spartech - PHP 8.2
+FREE - Framework MVC - PHP 8.2 (NEW)
+     - Themes
+     - Dashbord
+     - Archtiture MVC - Based on Laravel
+     - Running PHP 8.2
+                            - 22/03/2023
