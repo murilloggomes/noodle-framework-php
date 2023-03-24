@@ -32,7 +32,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-sourcemaps": "^1.5.2",
     "gulp-uglify": "^1.4.1",
-    "webpack": "^1.12.1",
-    "webpack-stream": "^2.1.0"
+    "webpack": "^5.76.3",
+    "webpack-stream": "^7.0.0"
   }
 }
