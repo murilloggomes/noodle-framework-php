@@ -28,7 +28,7 @@ class QueryBuilderHandler
     protected $pdo;
 
     /**
-     * @var null|PDOStatement
+     * @var null|\PDOStatement
      */
     protected $pdoStatement = null;
 
@@ -381,7 +381,7 @@ class QueryBuilderHandler
     /**
      * @param $data
      *
-     * @return $this
+     * @return array|string
      */
     public function update($data)
     {
@@ -1015,7 +1015,7 @@ class QueryBuilderHandler
     /**
      * @param          $event
      * @param string $table
-     * @param callable $action
+     * @param \Closure $action
      *
      * @return void
      */
