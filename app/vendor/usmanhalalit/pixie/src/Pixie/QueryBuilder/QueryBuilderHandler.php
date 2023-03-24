@@ -80,8 +80,6 @@ class QueryBuilderHandler
             '\\Pixie\\QueryBuilder\\Adapters\\' . ucfirst($adapter),
             array($this->connection)
         );
-
-        $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
 
     /**
