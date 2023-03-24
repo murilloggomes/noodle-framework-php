@@ -5,7 +5,7 @@
 class App
 {
     protected $router;
-    protected $controller;   
+    protected $controller;      
 
     // An array of the URL routes
     protected static $routes = [];
@@ -361,6 +361,8 @@ class App
 
         $this->controller = new $controller;
         $this->controller->setVariable("Route", $route);
+
+        return $this;
     }
 
 
@@ -385,10 +387,7 @@ class App
      */
     public function process()
     {
-        // Define global variables
-        $GLOBALS["PaymentGateways"] = [];
-
-
+        
         /**
          * Create database connection
          */
@@ -403,11 +402,6 @@ class App
          * Auth.
          */
         $AuthUser = $this->auth();
-
-        /**
-         * Load plugins
-         */
-        //$this->loadPlugins();
 
         /**
          * Load active theme

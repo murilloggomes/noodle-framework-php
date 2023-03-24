@@ -95,15 +95,16 @@ class Controller
   
     /**
      * Use TOAST Notification in Controllers Pages
-     * @return App 
+     * @return string 
      */
-    public function jstoast($msg, $type = "success")
+    public function jsToast($msg, $type = "success")
     {
         $toast = "<script>setTimeout(function() {
                 M.toast({
                   html: '".$msg."'
                 })
-              }, 600)</script>";        
+              }, 600)</script>";   
+
         return $toast;
     }
 

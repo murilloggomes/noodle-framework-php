@@ -16,17 +16,6 @@ class QueryBuilderHandler
      * @var Connection
      */
     protected $connection;
-	
-	/**
-     * @var adapter
-     */
-    protected $adapter;
-	
-	/**
-     * @var adapterConfig
-     */
-    protected $adapterConfig;
-
 
     /**
      * @var array
@@ -77,18 +66,18 @@ class QueryBuilderHandler
         $this->connection = $connection;
         $this->container = $this->connection->getContainer();
         $this->pdo = $this->connection->getPdoInstance();
-        $this->adapter = $this->connection->getAdapter();
-        $this->adapterConfig = $this->connection->getAdapterConfig();
+        $adapter = $this->connection->getAdapter();
+        $adapterConfig = $this->connection->getAdapterConfig();
 
         $this->setFetchMode($fetchMode);
 
-        if (isset($this->adapterConfig['prefix'])) {
-            $this->tablePrefix = $this->adapterConfig['prefix'];
+        if (isset($adapterConfig['prefix'])) {
+            $this->tablePrefix = $adapterConfig['prefix'];
         }
 
         // Query builder adapter instance
         $this->adapterInstance = $this->container->build(
-            '\\Pixie\\QueryBuilder\\Adapters\\' . ucfirst($this->adapter),
+            '\\Pixie\\QueryBuilder\\Adapters\\' . ucfirst($adapter),
             array($this->connection)
         );
 

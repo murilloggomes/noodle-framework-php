@@ -1,22 +1,19 @@
-# PHP FFmpeg
+# PHP-FFMPEG
 
-[![Build Status](https://secure.travis-ci.org/PHP-FFMpeg/PHP-FFMpeg.png?branch=master)](http://travis-ci.org/PHP-FFMpeg/PHP-FFMpeg)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/PHP-FFMpeg/PHP-FFMpeg.svg?style=flat-square)](https://packagist.org/packages/PHP-FFMpeg/PHP-FFMpeg)
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
+![run-tests](https://github.com/PHP-FFMpeg/PHP-FFMpeg/workflows/run-tests/badge.svg)
+[![Total Downloads](https://img.shields.io/packagist/dt/PHP-FFMpeg/PHP-FFMpeg.svg?style=flat-square)](https://packagist.org/packages/PHP-FFMpeg/PHP-FFMpeg)
 
-[![SensioLabsInsight](https://insight.sensiolabs.com/projects/607f3111-e2d7-44e8-8bcc-54dd64521983/big.png)](https://insight.sensiolabs.com/projects/607f3111-e2d7-44e8-8bcc-54dd64521983)
-
-An Object Oriented library to convert video/audio files with FFmpeg / AVConv.
-
-Check another amazing repo: [PHP FFMpeg extras](https://github.com/alchemy-fr/PHP-FFMpeg-Extras), you will find lots of Audio/Video formats there.
+An Object-Oriented library to convert video/audio files with FFmpeg / AVConv.
 
 ## Your attention please
 
 ### How this library works:
 
-This library requires a working FFMpeg install. You will need both FFMpeg and FFProbe binaries to use it.
+This library requires a working [FFMpeg install](https://ffmpeg.org/download.html). You will need both FFMpeg and FFProbe binaries to use it.
 Be sure that these binaries can be located with system PATH to get the benefit of the binary detection,
 otherwise you should have to explicitly give the binaries path on load.
-
-For Windows users : Please find the binaries at http://ffmpeg.zeranoe.com/builds/.
 
 ### Known issues:
 
@@ -25,6 +22,8 @@ For Windows users : Please find the binaries at http://ffmpeg.zeranoe.com/builds
 appear in latest ffmpeg version.
 
 ## Installation
+
+This library requires PHP 8.0 or higher. For older versions of PHP, check out the [0.x-branch](https://github.com/PHP-FFMpeg/PHP-FFMpeg/tree/0.x).
 
 The recommended way to install PHP-FFMpeg is through [Composer](https://getcomposer.org).
 
@@ -80,6 +79,14 @@ $ffmpeg = FFMpeg\FFMpeg::create(array(
 ), $logger);
 ```
 
+You may pass a `temporary_directory` key to specify a path for temporary files.
+
+```php
+$ffmpeg = FFMpeg\FFMpeg::create(array(
+    'temporary_directory' => '/var/ffmpeg-tmp'
+), $logger);
+```
+
 ### Manipulate media
 
 `FFMpeg\FFMpeg` creates media based on URIs. URIs could be either a pointer to a
@@ -111,7 +118,7 @@ video. Frames can be extracted.
 You can transcode videos using the `FFMpeg\Media\Video:save` method. You will
 pass a `FFMpeg\Format\FormatInterface` for that.
 
-Please note that audio and video bitrate are set on the format.
+Please note that audio and video bitrate are set on the format. You can disable the `-b:v` option by setting the kilo bitrate to 0.
 
 ```php
 $format = new FFMpeg\Format\Video\X264();
@@ -128,7 +135,7 @@ $video->save($format, 'video.avi');
 ```
 
 Transcoding progress can be monitored in realtime, see Format documentation
-below for more informations.
+below for more information.
 
 ##### Extracting image
 
@@ -144,7 +151,7 @@ $frame = $video->frame(FFMpeg\Coordinate\TimeCode::fromSeconds(42));
 $frame->save('image.jpg');
 ```
 
-If you want to extract multiple images from your video, you can use the following filter:
+If you want to extract multiple images from the video, you can use the following filter:
 
 ```php
 $video
@@ -154,6 +161,38 @@ $video
 
 $video
     ->save(new FFMpeg\Format\Video\X264(), '/path/to/new/file');
+```
+By default, this will save the frames as `jpg` images.
+
+You are able to override this using `setFrameFileType` to save the frames in another format:
+```php
+$frameFileType = 'jpg'; // either 'jpg', 'jpeg' or 'png'
+$filter = new ExtractMultipleFramesFilter($frameRate, $destinationFolder);
+$filter->setFrameFileType($frameFileType);
+
+$video->addFilter($filter);
+```
+
+##### Clip
+
+Cuts the video at a desired point. Use input seeking method. It is faster option than use filter clip.
+
+```php
+$clip = $video->clip(FFMpeg\Coordinate\TimeCode::fromSeconds(30), FFMpeg\Coordinate\TimeCode::fromSeconds(15));
+$clip->save(new FFMpeg\Format\Video\X264(), 'video.avi');
+```
+
+The clip filter takes two parameters:
+
+- `$start`, an instance of `FFMpeg\Coordinate\TimeCode`, specifies the start point of the clip
+- `$duration`, optional, an instance of `FFMpeg\Coordinate\TimeCode`, specifies the duration of the clip
+
+On clip you can apply same filters as on video. For example resizing filter.
+
+```php
+$clip = $video->clip(FFMpeg\Coordinate\TimeCode::fromSeconds(30), FFMpeg\Coordinate\TimeCode::fromSeconds(15));
+$clip->filters()->resize(new FFMpeg\Coordinate\Dimension(320, 240), FFMpeg\Filters\Video\ResizeFilter::RESIZEMODE_INSET, true);
+$clip->save(new FFMpeg\Format\Video\X264(), 'video.avi');
 ```
 
 ##### Generate a waveform
@@ -165,7 +204,7 @@ This code returns a `FFMpeg\Media\Waveform` instance.
 You can optionally pass dimensions as the first two arguments and an array of hex string colors for ffmpeg to use for the waveform, see dedicated
 documentation below for more information.
 
-The ouput file MUST use the PNG extension.
+The output file MUST use the PNG extension.
 
 ```php
 $waveform = $audio->waveform(640, 120, array('#00FF00'));
@@ -293,7 +332,7 @@ $video->filters()->framerate($framerate, $gop);
 
 The framerate filter takes two parameters:
 
-- `$framerate`, an instance of `FFMpeg\Coordinate\Framerate`
+- `$framerate`, an instance of `FFMpeg\Coordinate\FrameRate`
 - `$gop`, a [GOP](https://wikipedia.org/wiki/Group_of_pictures) value (integer)
 
 ###### Synchronize
@@ -301,7 +340,7 @@ The framerate filter takes two parameters:
 Synchronizes audio and video.
 
 Some containers may use a delay that results in desynchronized outputs. This
-filters solves this issue.
+filter solves this issue.
 
 ```php
 $video->filters()->synchronize();
@@ -361,7 +400,7 @@ $audio->save($format, 'track.flac');
 ```
 
 Transcoding progress can be monitored in realtime, see Format documentation
-below for more informations.
+below for more information.
 
 ##### Filters
 
@@ -414,7 +453,7 @@ The resample filter takes two parameters :
 
 #### Frame
 
-A frame is a image at a timecode of a video ; see documentation above about
+A frame is an image at a timecode of a video; see documentation above about
 frame extraction.
 
 You can save frames using the `FFMpeg\Media\Frame::save` method.
@@ -424,7 +463,7 @@ $frame->save('target.jpg');
 ```
 
 This method has a second optional boolean parameter. Set it to true to get
-accurate images ; it takes more time to execute.
+accurate images; it takes more time to execute.
 
 #### Gif
 
@@ -462,7 +501,7 @@ To concatenate videos encoded with the same codec, do as follow:
 
 ```php
 // In order to instantiate the video object, you HAVE TO pass a path to a valid video file.
-// We recommand that you put there the path of any of the video you want to use in this concatenation.
+// We recommend that you put there the path of any of the video you want to use in this concatenation.
 $video = $ffmpeg->open( '/path/to/video' );
 $video
     ->concat(array('/path/to/video1', '/path/to/video2'))
@@ -471,11 +510,11 @@ $video
 
 The boolean parameter of the save function allows you to use the copy parameter which accelerates drastically the generation of the encoded file.
 
-To concatenate videos encoded with the same codec, do as follow:
+To concatenate videos encoded with the different codec, do as follow:
 
 ```php
 // In order to instantiate the video object, you HAVE TO pass a path to a valid video file.
-// We recommand that you put there the path of any of the video you want to use in this concatenation.
+// We recommend that you put there the path of any of the video you want to use in this concatenation.
 $video = $ffmpeg->open( '/path/to/video' );
 
 $format = new FFMpeg\Format\Video\X264();
@@ -488,16 +527,92 @@ $video
 
 More details about concatenation in FFMPEG can be found [here](https://trac.ffmpeg.org/wiki/Concatenate), [here](https://ffmpeg.org/ffmpeg-formats.html#concat-1) and [here](https://ffmpeg.org/ffmpeg.html#Stream-copy).
 
+### AdvancedMedia
+AdvancedMedia may have multiple inputs and multiple outputs.
+
+This class has been developed primarily to use with `-filter_complex`.
+
+So, its `filters()` method accepts only filters that can be used inside `-filter_complex` command.
+AdvancedMedia already contains some built-in filters.
+
+#### Base usage
+For example:
+
+```php
+$advancedMedia = $ffmpeg->openAdvanced(array('video_1.mp4', 'video_2.mp4'));
+$advancedMedia->filters()
+    ->custom('[0:v][1:v]', 'hstack', '[v]');
+$advancedMedia
+    ->map(array('0:a', '[v]'), new X264('aac', 'libx264'), 'output.mp4')
+    ->save();
+```
+
+This code takes 2 input videos, stacks they horizontally in 1 output video and adds to this new video the audio from the first video.
+(It is impossible with simple filtergraph that has only 1 input and only 1 output).
+
+
+#### Complicated example
+A more difficult example of possibilities of the AdvancedMedia. Consider all input videos already have the same resolution and duration. ("xstack" filter has been added in the 4.1 version of the ffmpeg).
+
+```php
+$inputs = array(
+    'video_1.mp4',
+    'video_2.mp4',
+    'video_3.mp4',
+    'video_4.mp4',
+);
+
+$advancedMedia = $ffmpeg->openAdvanced($inputs);
+$advancedMedia->filters()
+    ->custom('[0:v]', 'negate', '[v0negate]')
+    ->custom('[1:v]', 'edgedetect', '[v1edgedetect]')
+    ->custom('[2:v]', 'hflip', '[v2hflip]')
+    ->custom('[3:v]', 'vflip', '[v3vflip]')
+    ->xStack('[v0negate][v1edgedetect][v2hflip][v3vflip]', XStackFilter::LAYOUT_2X2, 4, '[resultv]');
+$advancedMedia
+    ->map(array('0:a'), new Mp3(), 'video_1.mp3')
+    ->map(array('1:a'), new Flac(), 'video_2.flac')
+    ->map(array('2:a'), new Wav(), 'video_3.wav')
+    ->map(array('3:a'), new Aac(), 'video_4.aac')
+    ->map(array('[resultv]'), new X264('aac', 'libx264'), 'output.mp4')
+    ->save();
+```
+
+This code takes 4 input videos, then the negates the first video, stores result in `[v0negate]` stream, detects edges in the second video, stores result in `[v1edgedetect]` stream, horizontally flips the third video, stores result in `[v2hflip]` stream, vertically flips the fourth video, stores result in `[v3vflip]` stream, then takes this 4 generated streams ans combine them in one 2x2 collage video.
+Then saves audios from the original videos into the 4 different formats and saves the generated collage video into the separate file.
+
+As you can see, you can take multiple input sources, perform the complicated processing for them and produce multiple output files in the same time, in the one ffmpeg command.
+
+#### Just give me a map!
+You do not have to use `-filter_complex`. You can use only `-map` options. For example, just extract the audio from the video:
+
+```php
+$advancedMedia = $ffmpeg->openAdvanced(array('video.mp4'));
+$advancedMedia
+    ->map(array('0:a'), new Mp3(), 'output.mp3')
+    ->save();
+```
+
+#### Customisation
+If you need you can extra customize the result ffmpeg command of the AdvancedMedia:
+
+```php
+$advancedMedia = $ffmpeg->openAdvanced($inputs);
+$advancedMedia
+    ->setInitialParameters(array('the', 'params', 'that', 'will', 'be', 'added', 'before', '-i', 'part', 'of', 'the', 'command'))
+    ->setAdditionalParameters(array('the', 'params', 'that', 'will', 'be', 'added', 'at', 'the', 'end', 'of', 'the', 'command'));
+```
+
 #### Formats
 
 A format implements `FFMpeg\Format\FormatInterface`. To save to a video file,
 use `FFMpeg\Format\VideoInterface`, and `FFMpeg\Format\AudioInterface` for
 audio files.
 
-Format can also extends `FFMpeg\Format\ProgressableInterface` to get realtime
-informations about the transcoding.
+A format can also extend `FFMpeg\Format\ProgressableInterface` to get realtime
+information about the transcoding.
 
-Predefined formats already provide progress informations as events.
+Predefined formats already provide progress information as events.
 
 ```php
 $format = new FFMpeg\Format\Video\X264();
@@ -519,6 +634,18 @@ The argument of the setAdditionalParameters method is an array.
 ```php
 $format = new FFMpeg\Format\Video\X264();
 $format->setAdditionalParameters(array('foo', 'bar'));
+$video->save($format, 'video.avi');
+```
+
+##### Add initial parameters
+
+You can also add initial parameters to your encoding requests based on your video format. This can be expecially handy in overriding a default input codec in FFMpeg.
+
+The argument of the setInitialParameters method is an array.
+
+```php
+$format = new FFMpeg\Format\Video\X264();
+$format->setInitialParameters(array('-acodec', 'libopus'));
 $video->save($format, 'video.avi');
 ```
 
@@ -557,7 +684,7 @@ class CustomWMVFormat extends FFMpeg\Format\Video\DefaultVideo
 
 #### Coordinates
 
-FFMpeg use many units for time and space coordinates.
+FFMpeg uses many units for time and space coordinates.
 
 - `FFMpeg\Coordinate\AspectRatio` represents an aspect ratio.
 - `FFMpeg\Coordinate\Dimension` represent a dimension.
@@ -596,32 +723,14 @@ $ffprobe = FFMpeg\FFProbe::create();
 $ffprobe->isValid('/path/to/file/to/check'); // returns bool
 ```
 
-## Using with Silex Microframework
-
-Service provider is easy to set up:
-
-```php
-$app = new Silex\Application();
-$app->register(new FFMpeg\FFMpegServiceProvider());
-
-$video = $app['ffmpeg']->open('video.mpeg');
-```
-
-Available options are as follow:
-
-```php
-$app->register(new FFMpeg\FFMpegServiceProvider(), array(
-    'ffmpeg.configuration' => array(
-        'ffmpeg.threads'   => 4,
-        'ffmpeg.timeout'   => 300,
-        'ffmpeg.binaries'  => '/opt/local/ffmpeg/bin/ffmpeg',
-        'ffprobe.timeout'  => 30,
-        'ffprobe.binaries' => '/opt/local/ffmpeg/bin/ffprobe',
-    ),
-    'ffmpeg.logger' => $logger,
-));
-```
-
 ## License
 
 This project is licensed under the [MIT license](http://opensource.org/licenses/MIT).
+
+Music: "Favorite Secrets" by Waylon Thornton
+From the Free Music Archive
+[CC BY NC SA](http://creativecommons.org/licenses/by-nc-sa/3.0/us/)
+
+Music: "Siesta" by Jahzzar
+From the Free Music Archive
+[CC BY SA](https://creativecommons.org/licenses/by-sa/3.0/)

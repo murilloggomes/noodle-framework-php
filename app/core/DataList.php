@@ -151,8 +151,8 @@ class DataList
                 ->limit($this->getPageSize())
                 ->offset(($this->getPage() - 1) * $this->getPageSize());
         } else {
-            $this->setPage(null);
-            $this->setPageCount(null);
+            $this->setPage(0);
+            $this->setPageCount(0);
         }
 
         return $this;

@@ -19,7 +19,7 @@
 		 * @param  string  $input_name 	name of input
 		 * @param  int|bool  $index   	index in input array of treat as $trim
 		 * @param  boolean $trim      	trim input value (if it is string) or not
-		 * @return mix              
+		 * @return //mix              
 		 */
 		public static function getInput($method, $input_name, $index = true, $trim = true)
 		{

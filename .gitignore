@@ -1,6 +1,7 @@
 .ssh
 .git
 .github
+.devcontainer
 .htaccess
 assets/uploads/*
 app/config/db.config.php

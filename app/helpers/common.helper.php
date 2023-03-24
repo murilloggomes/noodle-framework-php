@@ -171,13 +171,13 @@ function url_slug($string = "")
  * Delete file or folder (with content)
  * @param string $path Path to file or folder
  */
-function delete($path)
+function deletePath($path)
 {
     if (is_dir($path) === true) {
         $files = array_diff(scandir($path), array('.', '..'));
 
-        foreach ($files as $file) {
-            delete(realpath($path) . '/' . $file);
+        foreach ($files as $file) {            
+            deletePath(realpath($path) . '/' . $file);
         }
 
         return rmdir($path);
@@ -191,7 +191,7 @@ function delete($path)
 
 /**
  * Format price
- * @param  decimal $price
+ * @param  //decimal $price
  * @param  boolean $zdc Defines the currency mod. TRUE for zero decimal
  *                      currencies, FALSE for regular currencies
  * @return string
@@ -260,29 +260,6 @@ function isValidDate($date, $format = 'Y-m-d H:i:s')
     $d = \DateTime::createFromFormat($format, $date);
     return $d && $d->format($format) == $date;
 }
-
-/**
- * Check if FFMPEG and FFPROBE extensions are installed
- * @return boolean
- */
-function isVideoExtenstionsLoaded()
-{
-    \InstagramAPI\Utils::$ffmpegBin = FFMPEGBIN;
-    \InstagramAPI\Utils::$ffprobeBin = FFPROBEBIN;
-
-    if (\InstagramAPI\Utils::checkFFPROBE()) {
-        try {
-            InstagramAPI\Media\Video\FFmpeg::factory();
-            return true;
-        } catch (\Exception $e) {
-            // FFMPEG not found/installed
-            // Do nothing here, false value will be returned
-        }
-    }
-
-    return false;
-}
-
 
 /**
  * textInitials
