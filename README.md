@@ -45,8 +45,9 @@
 No terminal, clone o projeto: 
 
 ```
-run: sudo git clone git@github.com:murilloggomes/noodle-open-source-framework-php-82.git
+sudo git clone git@github.com:murilloggomes/noodle-open-source-framework-php-82.git
 ```
+
 run: "cd" no caminho da pasta do projeto (que deve ser baixa na pasta raiz realmente da aplicação)
 
 ## Como rodar os testes
