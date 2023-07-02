@@ -4,104 +4,82 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitf9fa5efd484c9e85440f4c334b98896f
+class ComposerStaticInit01aa2a3b93f3203b07ec5bbafdd16f78
 {
     public static $files = array (
+        '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
+        '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
+        'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
         '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
     );
 
     public static $prefixLengthsPsr4 = array (
         'S' => 
         array (
-            'Symfony\\Contracts\\Service\\' => 26,
-            'Symfony\\Contracts\\Cache\\' => 24,
-            'Symfony\\Component\\VarExporter\\' => 30,
+            'Symfony\\Polyfill\\Php80\\' => 23,
+            'Symfony\\Polyfill\\Mbstring\\' => 26,
+            'Symfony\\Polyfill\\Ctype\\' => 23,
             'Symfony\\Component\\Process\\' => 26,
-            'Symfony\\Component\\Cache\\' => 24,
-            'Spatie\\TemporaryDirectory\\' => 26,
+            'Symfony\\Component\\Filesystem\\' => 29,
         ),
         'P' => 
         array (
             'Psr\\Log\\' => 8,
-            'Psr\\Container\\' => 14,
-            'Psr\\Cache\\' => 10,
             'PHPMailer\\PHPMailer\\' => 20,
         ),
         'M' => 
         array (
+            'Monolog\\' => 8,
             'Moment\\' => 7,
-        ),
-        'L' => 
-        array (
-            'League\\ColorExtractor\\' => 22,
         ),
         'G' => 
         array (
             'Gettext\\Languages\\' => 18,
             'Gettext\\' => 8,
         ),
-        'F' => 
-        array (
-            'FFMpeg\\' => 7,
-        ),
         'D' => 
         array (
+            'Doctrine\\Common\\Cache\\' => 22,
             'Defuse\\Crypto\\' => 14,
-        ),
-        'A' => 
-        array (
-            'Alchemy\\BinaryDriver\\' => 21,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'Symfony\\Contracts\\Service\\' => 
+        'Symfony\\Polyfill\\Php80\\' => 
         array (
-            0 => __DIR__ . '/..' . '/symfony/service-contracts',
+            0 => __DIR__ . '/..' . '/symfony/polyfill-php80',
         ),
-        'Symfony\\Contracts\\Cache\\' => 
+        'Symfony\\Polyfill\\Mbstring\\' => 
         array (
-            0 => __DIR__ . '/..' . '/symfony/cache-contracts',
+            0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
         ),
-        'Symfony\\Component\\VarExporter\\' => 
+        'Symfony\\Polyfill\\Ctype\\' => 
         array (
-            0 => __DIR__ . '/..' . '/symfony/var-exporter',
+            0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
         ),
         'Symfony\\Component\\Process\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/process',
         ),
-        'Symfony\\Component\\Cache\\' => 
+        'Symfony\\Component\\Filesystem\\' => 
         array (
-            0 => __DIR__ . '/..' . '/symfony/cache',
-        ),
-        'Spatie\\TemporaryDirectory\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/spatie/temporary-directory/src',
+            0 => __DIR__ . '/..' . '/symfony/filesystem',
         ),
         'Psr\\Log\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/log/src',
-        ),
-        'Psr\\Container\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/psr/container/src',
-        ),
-        'Psr\\Cache\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/psr/cache/src',
+            0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
         ),
         'PHPMailer\\PHPMailer\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
         ),
+        'Monolog\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
+        ),
         'Moment\\' => 
         array (
             0 => __DIR__ . '/..' . '/fightbulc/moment/src',
-        ),
-        'League\\ColorExtractor\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/league/color-extractor/src',
         ),
         'Gettext\\Languages\\' => 
         array (
@@ -111,18 +89,18 @@ class ComposerStaticInitf9fa5efd484c9e85440f4c334b98896f
         array (
             0 => __DIR__ . '/..' . '/gettext/gettext/src',
         ),
-        'FFMpeg\\' => 
+        'Doctrine\\Common\\Cache\\' => 
         array (
-            0 => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg',
+            0 => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache',
         ),
         'Defuse\\Crypto\\' => 
         array (
             0 => __DIR__ . '/..' . '/defuse/php-encryption/src',
         ),
-        'Alchemy\\BinaryDriver\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/Alchemy/BinaryDriver',
-        ),
+    );
+
+    public static $fallbackDirsPsr4 = array (
+        0 => __DIR__ . '/..' . '/league/color-extractor/src',
     );
 
     public static $prefixesPsr0 = array (
@@ -147,6 +125,20 @@ class ComposerStaticInitf9fa5efd484c9e85440f4c334b98896f
                 0 => __DIR__ . '/..' . '/usmanhalalit/pixie/src',
             ),
         ),
+        'N' => 
+        array (
+            'Neutron' => 
+            array (
+                0 => __DIR__ . '/..' . '/neutron/temporary-filesystem/src',
+            ),
+        ),
+        'F' => 
+        array (
+            'FFMpeg' => 
+            array (
+                0 => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src',
+            ),
+        ),
         'E' => 
         array (
             'Evenement' => 
@@ -154,21 +146,33 @@ class ComposerStaticInitf9fa5efd484c9e85440f4c334b98896f
                 0 => __DIR__ . '/..' . '/evenement/evenement/src',
             ),
         ),
+        'A' => 
+        array (
+            'Alchemy' => 
+            array (
+                0 => __DIR__ . '/..' . '/alchemy/binary-driver/src',
+            ),
+        ),
     );
 
     public static $classMap = array (
         'AltoRouter' => __DIR__ . '/..' . '/altorouter/altorouter/AltoRouter.php',
+        'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
-        '©' => __DIR__ . '/..' . '/symfony/cache/Traits/ValueWrapper.php',
+        'PhpToken' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/PhpToken.php',
+        'Stringable' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
+        'UnhandledMatchError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/UnhandledMatchError.php',
+        'ValueError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/ValueError.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitf9fa5efd484c9e85440f4c334b98896f::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitf9fa5efd484c9e85440f4c334b98896f::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInitf9fa5efd484c9e85440f4c334b98896f::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInitf9fa5efd484c9e85440f4c334b98896f::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit01aa2a3b93f3203b07ec5bbafdd16f78::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit01aa2a3b93f3203b07ec5bbafdd16f78::$prefixDirsPsr4;
+            $loader->fallbackDirsPsr4 = ComposerStaticInit01aa2a3b93f3203b07ec5bbafdd16f78::$fallbackDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit01aa2a3b93f3203b07ec5bbafdd16f78::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit01aa2a3b93f3203b07ec5bbafdd16f78::$classMap;
 
         }, null, ClassLoader::class);
     }

@@ -32,7 +32,7 @@ class LoginController extends Controller
     {
         $username = Input::post("username");
         $password = Input::post("password");
-        $remember = Input::post("remember");
+    
 
         if ($username && $password) {
             $User = Controller::model("User");
@@ -44,7 +44,7 @@ class LoginController extends Controller
                 password_verify($password, $User->get("password"))) 
             {
               	$LogMensagem = "Login efetuado pelo usuario " . $User->get("firstname");   
-								logs($User->get("id"),"success","Login",$LogMensagem); 
+		
               
                 $exp = $remember ? time()+86400*30 : 0;
                 setcookie("nplh", $User->get("id").".".md5($User->get("password")), $exp, "/");
@@ -55,18 +55,17 @@ class LoginController extends Controller
                     setcookie("nplrmm", "1", time() - 30*86400, "/");
                 }
 
-               header("Location: ".APPURL."/users");
+               header("Location: ".APPURL."/produtos");
                 exit; 
 
             } else {
               $LogMensagem = "Tentativa de login efetuada pelo usuario " . $User->get("firstname");   
-						  logs($User->get("id"),"erro","Login",$LogMensagem); 
+						  
             }
-        } else {
-             $this->setVariable("semUser", 1);
-        }
+        } 
           
         }
+
         return $this;
     }
 }

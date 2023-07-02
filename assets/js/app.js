@@ -1325,7 +1325,46 @@
         $.App.init();
 
 
+$(".configTema").on("change", function(){
+  
+  console.log("entrou");
+	
+	var valoresCampos = [];
+	
+	setTimeout(function(){ 
+		$(".configTema").each(function() {
+			var coluna = $(this).data("target");
+			var valor = $(this).val();
 
+			if ($(this).is(':checked')){
+			
+				var c = {};             
+				c.valor = valor;			
+				c.coluna = coluna;
+				
+				valoresCampos.push(c);				
+			}
+		});
+		
+		$.ajax({
+			url: window.origin + "/config/tema",
+			type: "POST",
+			dataType: "jsonp",
+			data: {
+				action: "salvarConfigTema",      
+				valores: valoresCampos,	
+			},
+			error: function(resp) {   
+				console.log(resp);
+			},
+			success: function(resp) {		
+				console.log(resp);
+			}
+		});
+	}, 300);
+
+});
 
 
     }(window.jQuery);
+

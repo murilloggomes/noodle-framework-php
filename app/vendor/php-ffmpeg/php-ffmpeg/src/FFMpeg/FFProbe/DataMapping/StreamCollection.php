@@ -11,13 +11,11 @@
 
 namespace FFMpeg\FFProbe\DataMapping;
 
-use Traversable;
-
 class StreamCollection implements \Countable, \IteratorAggregate
 {
     private $streams;
 
-    public function __construct(array $streams = [])
+    public function __construct(array $streams = array())
     {
         $this->streams = array_values($streams);
     }
@@ -26,7 +24,7 @@ class StreamCollection implements \Countable, \IteratorAggregate
      * Returns the first stream of the collection, null if the collection is
      * empty.
      *
-     * @return Stream|null
+     * @return null|Stream
      */
     public function first()
     {
@@ -37,6 +35,8 @@ class StreamCollection implements \Countable, \IteratorAggregate
 
     /**
      * Adds a stream to the collection.
+     *
+     * @param Stream $stream
      *
      * @return StreamCollection
      */
@@ -74,7 +74,7 @@ class StreamCollection implements \Countable, \IteratorAggregate
     /**
      * {@inheritdoc}
      */
-    public function count(): int
+    public function count()
     {
         return count($this->streams);
     }
@@ -92,7 +92,7 @@ class StreamCollection implements \Countable, \IteratorAggregate
     /**
      * {@inheritdoc}
      */
-    public function getIterator(): Traversable
+    public function getIterator()
     {
         return new \ArrayIterator($this->streams);
     }

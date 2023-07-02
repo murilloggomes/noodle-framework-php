@@ -1,11 +1,11 @@
 <?php 
 /**
- * Event System
+ * Sistema de Eventos
  */
 class Event
 {
     /**
-     * Array of binded event callbacks
+     * Matriz de retornos de chamada de eventos vinculados
      * 
      * @var array
      */

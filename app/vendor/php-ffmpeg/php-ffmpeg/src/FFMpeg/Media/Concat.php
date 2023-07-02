@@ -13,16 +13,18 @@ namespace FFMpeg\Media;
 
 use Alchemy\BinaryDriver\Exception\ExecutionFailureException;
 use Alchemy\BinaryDriver\Exception\InvalidArgumentException;
-use FFMpeg\Driver\FFMpegDriver;
-use FFMpeg\Exception\RuntimeException;
-use FFMpeg\FFProbe;
-use FFMpeg\Filters\Audio\SimpleFilter;
 use FFMpeg\Filters\Concat\ConcatFilterInterface;
 use FFMpeg\Filters\Concat\ConcatFilters;
-use FFMpeg\Format\AudioInterface;
+use FFMpeg\Driver\FFMpegDriver;
+use FFMpeg\FFProbe;
+use FFMpeg\Filters\Audio\SimpleFilter;
+use FFMpeg\Exception\RuntimeException;
 use FFMpeg\Format\FormatInterface;
+use FFMpeg\Filters\FilterInterface;
+use FFMpeg\Format\ProgressableInterface;
+use FFMpeg\Format\AudioInterface;
 use FFMpeg\Format\VideoInterface;
-use Spatie\TemporaryDirectory\TemporaryDirectory;
+use Neutron\TemporaryFilesystem\Manager as FsManager;
 
 class Concat extends AbstractMediaType
 {
@@ -70,14 +72,14 @@ class Concat extends AbstractMediaType
     /**
      * Saves the concatenated video in the given array, considering that the sources videos are all encoded with the same codec.
      *
-     * @param string $outputPathfile
-     * @param bool   $streamCopy
+     * @param array   $outputPathfile
+     * @param string  $streamCopy
      *
      * @return Concat
      *
      * @throws RuntimeException
      */
-    public function saveFromSameCodecs($outputPathfile, $streamCopy = true)
+    public function saveFromSameCodecs($outputPathfile, $streamCopy = TRUE)
     {
         /**
          * @see https://ffmpeg.org/ffmpeg-formats.html#concat
@@ -85,43 +87,44 @@ class Concat extends AbstractMediaType
          */
 
         // Create the file which will contain the list of videos
-        $fs = $this->getTemporaryDirectory()->create();
-        $sourcesFile = $fs->path('ffmpeg.concat');
+        $fs = FsManager::create();
+        $sourcesFile = $fs->createTemporaryFile('ffmpeg-concat');
 
         // Set the content of this file
         $fileStream = @fopen($sourcesFile, 'w');
 
-        if (false === $fileStream) {
-            throw new RuntimeException('Cannot open the temporary file.');
+        if($fileStream === false) {
+            throw new ExecutionFailureException('Cannot open the temporary file.');
         }
 
         $count_videos = 0;
-        if (is_array($this->sources) && (count($this->sources) > 0)) {
+        if(is_array($this->sources) && (count($this->sources) > 0)) {
             foreach ($this->sources as $videoPath) {
-                $line = '';
+                $line = "";
 
-                if (0 != $count_videos) {
+                if($count_videos != 0)
                     $line .= "\n";
-                }
 
-                $line .= 'file '.addcslashes($videoPath, '\'"\\\0 ');
+                $line .= "file ".$videoPath;
 
                 fwrite($fileStream, $line);
 
-                ++$count_videos;
+                $count_videos++;
             }
-        } else {
+        }
+        else {
             throw new InvalidArgumentException('The list of videos is not a valid array.');
         }
         fclose($fileStream);
 
-        $commands = [
+
+        $commands = array(
             '-f', 'concat', '-safe', '0',
-            '-i', $sourcesFile,
-        ];
+            '-i', $sourcesFile
+        );
 
         // Check if stream copy is activated
-        if (true === $streamCopy) {
+        if($streamCopy === TRUE) {
             $commands[] = '-c';
             $commands[] = 'copy';
         }
@@ -134,55 +137,55 @@ class Concat extends AbstractMediaType
         }
 
         // Set the output file in the command
-        $commands = array_merge($commands, [$outputPathfile]);
+        $commands = array_merge($commands, array($outputPathfile));
 
         // Execute the command
         try {
             $this->driver->command($commands);
         } catch (ExecutionFailureException $e) {
             $this->cleanupTemporaryFile($outputPathfile);
-            // TODO@v1: paste this line into an `finally` block.
             $this->cleanupTemporaryFile($sourcesFile);
             throw new RuntimeException('Unable to save concatenated video', $e->getCode(), $e);
         }
 
         $this->cleanupTemporaryFile($sourcesFile);
-
         return $this;
     }
 
     /**
      * Saves the concatenated video in the given filename, considering that the sources videos are all encoded with the same codec.
      *
-     * @param string $outputPathfile
+     * @param string  $outputPathfile
      *
      * @return Concat
+     *
+     * @throws RuntimeException
      */
     public function saveFromDifferentCodecs(FormatInterface $format, $outputPathfile)
     {
-        /*
+        /**
          * @see https://ffmpeg.org/ffmpeg-formats.html#concat
          * @see https://trac.ffmpeg.org/wiki/Concatenate
          */
 
         // Check the validity of the parameter
-        if (!is_array($this->sources) || (0 == count($this->sources))) {
+        if(!is_array($this->sources) || (count($this->sources) == 0)) {
             throw new InvalidArgumentException('The list of videos is not a valid array.');
         }
 
         // Create the commands variable
-        $commands = [];
+        $commands = array();
 
         // Prepare the parameters
         $nbSources = 0;
-        $files = [];
+        $files = array();
 
         // For each source, check if this is a legit file
         // and prepare the parameters
         foreach ($this->sources as $videoPath) {
             $files[] = '-i';
             $files[] = $videoPath;
-            ++$nbSources;
+            $nbSources++;
         }
 
         $commands = array_merge($commands, $files);
@@ -191,7 +194,7 @@ class Concat extends AbstractMediaType
         $commands[] = '-filter_complex';
 
         $complex_filter = '';
-        for ($i = 0; $i < $nbSources; ++$i) {
+        for($i=0; $i<$nbSources; $i++) {
             $complex_filter .= '['.$i.':v:0] ['.$i.':a:0] ';
         }
         $complex_filter .= 'concat=n='.$nbSources.':v=1:a=1 [v] [a]';
@@ -207,16 +210,16 @@ class Concat extends AbstractMediaType
         $filters->add(new SimpleFilter($format->getExtraParams(), 10));
 
         if ($this->driver->getConfiguration()->has('ffmpeg.threads')) {
-            $filters->add(new SimpleFilter(['-threads', $this->driver->getConfiguration()->get('ffmpeg.threads')]));
+            $filters->add(new SimpleFilter(array('-threads', $this->driver->getConfiguration()->get('ffmpeg.threads'))));
         }
         if ($format instanceof VideoInterface) {
             if (null !== $format->getVideoCodec()) {
-                $filters->add(new SimpleFilter(['-vcodec', $format->getVideoCodec()]));
+                $filters->add(new SimpleFilter(array('-vcodec', $format->getVideoCodec())));
             }
         }
         if ($format instanceof AudioInterface) {
             if (null !== $format->getAudioCodec()) {
-                $filters->add(new SimpleFilter(['-acodec', $format->getAudioCodec()]));
+                $filters->add(new SimpleFilter(array('-acodec', $format->getAudioCodec())));
             }
         }
 
@@ -228,7 +231,7 @@ class Concat extends AbstractMediaType
         if ($format instanceof AudioInterface) {
             if (null !== $format->getAudioKiloBitrate()) {
                 $commands[] = '-b:a';
-                $commands[] = $format->getAudioKiloBitrate().'k';
+                $commands[] = $format->getAudioKiloBitrate() . 'k';
             }
             if (null !== $format->getAudioChannels()) {
                 $commands[] = '-ac';

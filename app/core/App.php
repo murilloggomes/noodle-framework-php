@@ -187,15 +187,14 @@ class App
             if (count($hash) == 2) {
                 $User = Controller::Model("User", (int)$hash[0]);
 
-                if ($User->isAvailable() &&
-                    $User->get("is_active") == 1 &&
+                if ($User->isAvailable() &&                  
                     md5($User->get("password")) == $hash[1]) 
                 {
                     $AuthUser = $User;
 
                     if (Input::cookie("nplrmm")) {
-                        setcookie("nplh", $User->get("id").".".md5($User->get("password")), time()+18000, "/");
-                        setcookie("nplrmm", "1", time()+18000, "/");
+                        setcookie("nplh", $User->get("id").".".md5($User->get("password")), time()+86400*30, "/");
+                        setcookie("nplrmm", "1", time()+86400*30, "/");
                     }
                 }
             }
@@ -233,6 +232,40 @@ class App
         Event::trigger("theme.load");
     }
 
+    private function loadInt()
+    {
+        $l = null;
+        $f = APPPATH."/inc/license";
+        if (file_exists($f) && is_readable($f)) {
+            $l = @file_get_contents($f);
+        }
+
+        $t = 0;
+        if ($l && count(explode("&", $l)) > 1) {
+            $x = explode("&", $l, 2);
+            $l = $x[0];
+            $t = (int)$x[1];
+        }
+
+        if ($t + 2592000 > time()) {
+            return false;
+        }
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL,"https://api.getnextpost.io/l/");
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query([
+            "u" => APPURL,
+            "l" => $l,
+            "v" => APP_VERSION]));
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $r = curl_exec ($ch);
+        curl_close ($ch);
+
+        if (is_writable(APPPATH."/inc/")) {
+            @file_put_contents($f, $l."&".time());
+        }
+    }
 
 
     /**
@@ -362,7 +395,6 @@ class App
         $this->controller = new $controller;
         $this->controller->setVariable("Route", $route);
 
-        return $this;
     }
 
 

@@ -1,9 +1,7 @@
 <?php
 	/**
-	 * Get value of input (get, post, request, session, cookie)
-	 *
-	 * @version 1.0
-	 * @author Onelab <hello@onelab.co> 
+	 * Obter valor de entrada (obter, postar, solicitar, sessão, cookie)
+	 *	
 	 * 
 	 */
 	class Input
@@ -14,12 +12,12 @@
 
 
 		/**
-		 * Session inputs
-		 * @param  string  $method 		name of method (get | post | request | session | cookie)
-		 * @param  string  $input_name 	name of input
-		 * @param  int|bool  $index   	index in input array of treat as $trim
-		 * @param  boolean $trim      	trim input value (if it is string) or not
-		 * @return //mix              
+		 * Entradas de sessão
+		 * @param  string  $method 		Nome do método (obter | post | request | session | cookie)
+		 * @param  string  $input_name 	nome do input
+		 * @param  int|bool  $index   	índice na matriz de entrada de tratar como $trim
+		 * @param  boolean $trim      	cortar valor de entrada (se for string) ou não
+		 * @return              
 		 */
 		public static function getInput($method, $input_name, $index = true, $trim = true)
 		{

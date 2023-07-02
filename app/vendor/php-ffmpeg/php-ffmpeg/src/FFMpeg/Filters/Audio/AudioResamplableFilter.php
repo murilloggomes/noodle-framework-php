@@ -18,7 +18,7 @@ class AudioResamplableFilter implements AudioFilterInterface
 {
     /** @var string */
     private $rate;
-    /** @var int */
+    /** @var integer */
     private $priority;
 
     public function __construct($rate, $priority = 0)
@@ -36,7 +36,8 @@ class AudioResamplableFilter implements AudioFilterInterface
     }
 
     /**
-     * @return int
+     *
+     * @return Integer
      */
     public function getRate()
     {
@@ -48,6 +49,6 @@ class AudioResamplableFilter implements AudioFilterInterface
      */
     public function apply(Audio $audio, AudioInterface $format)
     {
-        return ['-ac', 2, '-ar', $this->rate];
+        return array('-ac', 2, '-ar', $this->rate);
     }
 }

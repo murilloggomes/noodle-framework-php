@@ -1,8 +1,8 @@
 <?php 
 /**
- * Get active theme path.
+ * Pega a pasta do thema ativo
  * 
- * @deprecated since v4.1. Use active_theme($param) instead. See ./theme.helper.php
+ * 
  * @return string 
  */
 function active_theme_path()
@@ -14,8 +14,8 @@ function active_theme_path()
 
 
 /**
- * Get active theme url
- * @deprecated since v4.1. Use active_theme($param) instead. See ./theme.helper.php
+ * Pega a url do the ativo
+ * 
  * @return string 
  */
 function active_theme_url()

@@ -22,13 +22,13 @@ class Point
             $this->x = $x;
             $this->y = $y;
         } else {
-            $this->x = (int) $x;
-            $this->y = (int) $y;
+            $this->x = (int)$x;
+            $this->y = (int)$y;
         }
     }
 
     /**
-     * @return int
+     * @return integer
      */
     public function getX()
     {
@@ -36,7 +36,7 @@ class Point
     }
 
     /**
-     * @return int
+     * @return integer
      */
     public function getY()
     {

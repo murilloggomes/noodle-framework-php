@@ -11,13 +11,13 @@
 
 namespace FFMpeg\Filters\Video;
 
+use FFMpeg\Coordinate\Point;
+use FFMpeg\Media\Video;
+use FFMpeg\Coordinate\TimeCode;
 use FFMpeg\Coordinate\Dimension;
 use FFMpeg\Coordinate\FrameRate;
-use FFMpeg\Coordinate\Point;
-use FFMpeg\Coordinate\TimeCode;
-use FFMpeg\Filters\Audio\AudioFilters;
 use FFMpeg\Filters\Audio\AudioResamplableFilter;
-use FFMpeg\Media\Video;
+use FFMpeg\Filters\Audio\AudioFilters;
 
 class VideoFilters extends AudioFilters
 {
@@ -29,8 +29,9 @@ class VideoFilters extends AudioFilters
     /**
      * Resizes a video to a given dimension.
      *
-     * @param string $mode
-     * @param bool   $forceStandards
+     * @param Dimension $dimension
+     * @param string    $mode
+     * @param Boolean   $forceStandards
      *
      * @return VideoFilters
      */
@@ -44,7 +45,8 @@ class VideoFilters extends AudioFilters
     /**
      * Changes the video framerate.
      *
-     * @param int $gop
+     * @param FrameRate $framerate
+     * @param Integer      $gop
      *
      * @return VideoFilters
      */
@@ -56,10 +58,10 @@ class VideoFilters extends AudioFilters
     }
 
     /**
-     * Extract multiple frames from the video.
+     * Extract multiple frames from the video
      *
      * @param string $frameRate
-     * @param string $destinationFolder
+     * @param string  $destinationFolder
      *
      * @return $this
      */
@@ -100,7 +102,7 @@ class VideoFilters extends AudioFilters
     /**
      * Resamples the audio file.
      *
-     * @param int $rate
+     * @param Integer $rate
      *
      * @return AudioFilters
      */
@@ -113,6 +115,8 @@ class VideoFilters extends AudioFilters
 
     /**
      * Adds padding (black bars) to a video.
+     *
+     * @param Dimension $dimension
      *
      * @return VideoFilters
      */
@@ -131,7 +135,10 @@ class VideoFilters extends AudioFilters
     }
 
     /**
-     * Crops the video.
+     * Crops the video
+     *
+     * @param Point $point
+     * @param Dimension $dimension
      *
      * @return VideoFilters
      */
@@ -144,10 +151,11 @@ class VideoFilters extends AudioFilters
 
     /**
      * @param string $imagePath
+     * @param array  $coordinates
      *
      * @return $this
      */
-    public function watermark($imagePath, array $coordinates = [])
+    public function watermark($imagePath, array $coordinates = array())
     {
         $this->media->addFilter(new WatermarkFilter($imagePath, $coordinates));
 
@@ -155,9 +163,9 @@ class VideoFilters extends AudioFilters
     }
 
     /**
-     * Applies a custom filter: -vf foo bar.
+     * Applies a custom filter: -vf foo bar
      *
-     * @param string $parameters
+     * @param string    $parameters
      *
      * @return VideoFilters
      */

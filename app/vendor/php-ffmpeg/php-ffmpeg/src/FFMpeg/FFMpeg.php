@@ -15,7 +15,6 @@ use Alchemy\BinaryDriver\ConfigurationInterface;
 use FFMpeg\Driver\FFMpegDriver;
 use FFMpeg\Exception\InvalidArgumentException;
 use FFMpeg\Exception\RuntimeException;
-use FFMpeg\Media\AdvancedMedia;
 use FFMpeg\Media\Audio;
 use FFMpeg\Media\Video;
 use Psr\Log\LoggerInterface;
@@ -104,18 +103,6 @@ class FFMpeg
     }
 
     /**
-     * Opens multiple input sources.
-     *
-     * @param string[] $inputs array of files to be opened
-     *
-     * @return AdvancedMedia
-     */
-    public function openAdvanced($inputs)
-    {
-        return new AdvancedMedia($inputs, $this->driver, $this->ffprobe);
-    }
-
-    /**
      * Creates a new FFMpeg instance.
      *
      * @param array|ConfigurationInterface $configuration
@@ -124,7 +111,7 @@ class FFMpeg
      *
      * @return FFMpeg
      */
-    public static function create($configuration = [], LoggerInterface $logger = null, FFProbe $probe = null)
+    public static function create($configuration = array(), LoggerInterface $logger = null, FFProbe $probe = null)
     {
         if (null === $probe) {
             $probe = FFProbe::create($configuration, $logger, null);

@@ -11,11 +11,11 @@
 
 namespace FFMpeg\FFProbe;
 
-use FFMpeg\Exception\InvalidArgumentException;
 use FFMpeg\FFProbe;
 use FFMpeg\FFProbe\DataMapping\Format;
-use FFMpeg\FFProbe\DataMapping\Stream;
 use FFMpeg\FFProbe\DataMapping\StreamCollection;
+use FFMpeg\FFProbe\DataMapping\Stream;
+use FFMpeg\Exception\InvalidArgumentException;
 
 class Mapper implements MapperInterface
 {
@@ -30,7 +30,9 @@ class Mapper implements MapperInterface
             case FFProbe::TYPE_STREAMS:
                 return $this->mapStreams($data);
             default:
-                throw new InvalidArgumentException(sprintf('Invalid type `%s`.', $type));
+                throw new InvalidArgumentException(sprintf(
+                    'Invalid type `%s`.', $type
+                ));
         }
     }
 

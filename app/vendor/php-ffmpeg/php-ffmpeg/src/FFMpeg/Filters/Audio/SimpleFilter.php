@@ -11,8 +11,8 @@
 
 namespace FFMpeg\Filters\Audio;
 
-use FFMpeg\Format\AudioInterface;
 use FFMpeg\Media\Audio;
+use FFMpeg\Format\AudioInterface;
 
 class SimpleFilter implements AudioFilterInterface
 {

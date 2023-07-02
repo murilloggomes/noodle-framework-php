@@ -16,7 +16,6 @@ use Alchemy\BinaryDriver\Configuration;
 use Alchemy\BinaryDriver\ConfigurationInterface;
 use Alchemy\BinaryDriver\Exception\ExecutableNotFoundException as BinaryDriverExecutableNotFound;
 use FFMpeg\Exception\ExecutableNotFoundException;
-use FFMpeg\Exception\RuntimeException;
 use Psr\Log\LoggerInterface;
 
 class FFMpegDriver extends AbstractBinary
@@ -37,13 +36,13 @@ class FFMpegDriver extends AbstractBinary
      *
      * @return FFMpegDriver
      */
-    public static function create(LoggerInterface $logger = null, $configuration = [])
+    public static function create(LoggerInterface $logger = null, $configuration = array())
     {
         if (!$configuration instanceof ConfigurationInterface) {
             $configuration = new Configuration($configuration);
         }
 
-        $binaries = $configuration->get('ffmpeg.binaries', ['avconv', 'ffmpeg']);
+        $binaries = $configuration->get('ffmpeg.binaries', array('avconv', 'ffmpeg'));
 
         if (!$configuration->has('timeout')) {
             $configuration->set('timeout', 300);
@@ -54,22 +53,5 @@ class FFMpegDriver extends AbstractBinary
         } catch (BinaryDriverExecutableNotFound $e) {
             throw new ExecutableNotFoundException('Unable to load FFMpeg', $e->getCode(), $e);
         }
-    }
-
-    /**
-     * Get ffmpeg version.
-     *
-     * @return string
-     *
-     * @throws RuntimeException
-     */
-    public function getVersion()
-    {
-        preg_match('#version\s(\S+)#', $this->command('-version'), $version);
-        if (!isset($version[1])) {
-            throw new RuntimeException('Cannot to parse the ffmpeg version!');
-        }
-
-        return $version[1];
     }
 }

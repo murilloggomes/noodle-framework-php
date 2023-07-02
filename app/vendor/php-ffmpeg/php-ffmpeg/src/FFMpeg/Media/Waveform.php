@@ -12,16 +12,16 @@
 namespace FFMpeg\Media;
 
 use Alchemy\BinaryDriver\Exception\ExecutionFailureException;
-use FFMpeg\Driver\FFMpegDriver;
 use FFMpeg\Exception\InvalidArgumentException;
-use FFMpeg\Exception\RuntimeException;
-use FFMpeg\FFProbe;
 use FFMpeg\Filters\Waveform\WaveformFilterInterface;
 use FFMpeg\Filters\Waveform\WaveformFilters;
+use FFMpeg\Driver\FFMpegDriver;
+use FFMpeg\FFProbe;
+use FFMpeg\Exception\RuntimeException;
 
 class Waveform extends AbstractMediaType
 {
-    public const DEFAULT_COLOR = '#000000';
+    const DEFAULT_COLOR = '#000000';
 
     /** @var Video */
     protected $audio;
@@ -33,7 +33,7 @@ class Waveform extends AbstractMediaType
      */
     protected $colors;
 
-    public function __construct(Audio $audio, FFMpegDriver $driver, FFProbe $ffprobe, $width, $height, $colors = [self::DEFAULT_COLOR])
+    public function __construct(Audio $audio, FFMpegDriver $driver, FFProbe $ffprobe, $width, $height, $colors = array(self::DEFAULT_COLOR))
     {
         parent::__construct($audio->getPathfile(), $driver, $ffprobe);
         $this->audio = $audio;
@@ -80,11 +80,15 @@ class Waveform extends AbstractMediaType
      * example #FFFFFF or #000000. By default the color is set to black. Keep in mind that if you save the waveform
      * as jpg file, it will appear completely black and to avoid this you can set the waveform color to white (#FFFFFF).
      * Saving waveforms to png is strongly suggested.
+     *
+     * @param array $colors
      */
     public function setColors(array $colors)
     {
-        foreach ($colors as $row => $value) {
-            if (!preg_match('/^#(?:[0-9a-fA-F]{6})$/', $value)) {
+        foreach ($colors as $row => $value)
+        {
+            if (!preg_match('/^#(?:[0-9a-fA-F]{6})$/', $value))
+            {
                 //invalid color
                 //unset($colors[$row]);
 
@@ -92,7 +96,8 @@ class Waveform extends AbstractMediaType
             }
         }
 
-        if (count($colors)) {
+        if (count($colors))
+        {
             $this->colors = $colors;
         }
     }
@@ -122,7 +127,7 @@ class Waveform extends AbstractMediaType
     /**
      * Saves the waveform in the given filename.
      *
-     * @param string $pathfile
+     * @param string  $pathfile
      *
      * @return Waveform
      *
@@ -131,21 +136,20 @@ class Waveform extends AbstractMediaType
     public function save($pathfile)
     {
         /**
-         * might be optimized with http://ffmpeg.org/trac/ffmpeg/wiki/Seeking%20with%20FFmpeg.
-         *
+         * might be optimized with http://ffmpeg.org/trac/ffmpeg/wiki/Seeking%20with%20FFmpeg
          * @see http://ffmpeg.org/ffmpeg.html#Main-options
          */
-        $commands = [
+        $commands = array(
             '-y', '-i', $this->pathfile, '-filter_complex',
             'showwavespic=colors='.$this->compileColors().':s='.$this->width.'x'.$this->height,
-            '-frames:v', '1',
-        ];
+            '-frames:v', '1'
+        );
 
         foreach ($this->filters as $filter) {
             $commands = array_merge($commands, $filter->apply($this));
         }
 
-        $commands = array_merge($commands, [$pathfile]);
+        $commands = array_merge($commands, array($pathfile));
 
         try {
             $this->driver->command($commands);

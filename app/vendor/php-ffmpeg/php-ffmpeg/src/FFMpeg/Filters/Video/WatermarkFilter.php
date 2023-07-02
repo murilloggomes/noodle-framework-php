@@ -12,21 +12,19 @@
 namespace FFMpeg\Filters\Video;
 
 use FFMpeg\Exception\InvalidArgumentException;
-use FFMpeg\Filters\AdvancedMedia\ComplexCompatibleFilter;
 use FFMpeg\Format\VideoInterface;
-use FFMpeg\Media\AdvancedMedia;
 use FFMpeg\Media\Video;
 
-class WatermarkFilter implements VideoFilterInterface, ComplexCompatibleFilter
+class WatermarkFilter implements VideoFilterInterface
 {
     /** @var string */
     private $watermarkPath;
     /** @var array */
     private $coordinates;
-    /** @var int */
+    /** @var integer */
     private $priority;
 
-    public function __construct($watermarkPath, array $coordinates = [], $priority = 0)
+    public function __construct($watermarkPath, array $coordinates = array(), $priority = 0)
     {
         if (!file_exists($watermarkPath)) {
             throw new InvalidArgumentException(sprintf('File %s does not exist', $watermarkPath));
@@ -46,45 +44,9 @@ class WatermarkFilter implements VideoFilterInterface, ComplexCompatibleFilter
     }
 
     /**
-     * Get name of the filter.
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return 'watermark';
-    }
-
-    /**
-     * Get minimal version of ffmpeg starting with which this filter is supported.
-     *
-     * @return string
-     */
-    public function getMinimalFFMpegVersion()
-    {
-        return '0.8';
-    }
-
-    /**
      * {@inheritdoc}
      */
     public function apply(Video $video, VideoInterface $format)
-    {
-        return $this->getCommands();
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function applyComplex(AdvancedMedia $media)
-    {
-        return $this->getCommands();
-    }
-
-    /**
-     * @return array
-     */
-    protected function getCommands()
     {
         $position = isset($this->coordinates['position']) ? $this->coordinates['position'] : 'absolute';
 
@@ -93,7 +55,7 @@ class WatermarkFilter implements VideoFilterInterface, ComplexCompatibleFilter
                 if (isset($this->coordinates['top'])) {
                     $y = $this->coordinates['top'];
                 } elseif (isset($this->coordinates['bottom'])) {
-                    $y = 'main_h - '.$this->coordinates['bottom'].' - overlay_h';
+                    $y = sprintf('main_h - %d - overlay_h', $this->coordinates['bottom']);
                 } else {
                     $y = 0;
                 }
@@ -101,7 +63,7 @@ class WatermarkFilter implements VideoFilterInterface, ComplexCompatibleFilter
                 if (isset($this->coordinates['left'])) {
                     $x = $this->coordinates['left'];
                 } elseif (isset($this->coordinates['right'])) {
-                    $x = 'main_w - '.$this->coordinates['right'].' - overlay_w';
+                    $x = sprintf('main_w - %d - overlay_w', $this->coordinates['right']);
                 } else {
                     $x = 0;
                 }
@@ -113,9 +75,6 @@ class WatermarkFilter implements VideoFilterInterface, ComplexCompatibleFilter
                 break;
         }
 
-        return [
-            '-vf',
-            'movie='.$this->watermarkPath.' [watermark]; [in][watermark] overlay='.$x.':'.$y.' [out]',
-        ];
+        return array('-vf', sprintf('movie=%s [watermark]; [in][watermark] overlay=%s:%s [out]', $this->watermarkPath, $x, $y));
     }
 }

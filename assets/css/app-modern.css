@@ -237,7 +237,7 @@ body[data-layout-color=dark] {
   --ct-body-bg: #343a40;
   --ct-body-color: #aab8c5;
   --ct-link-color: #536de6;
-  --ct-link-hover-color: #ff7f00;
+  --ct-link-hover-color: #475dc4;
   --ct-border-color: #464f5b;
   --ct-box-shadow: 0px 0px 35px 0px rgba(49, 57, 66, 0.5);
   --ct-box-shadow-sm: 0 .125rem .25rem rgba(0, 0, 0, 0.075);
@@ -18383,7 +18383,7 @@ body[data-layout-color=dark] .faq-question {
   position: relative;
 }
 .task-list-items:before {
-  content: "Sem Tarefas";
+  content: "No Tasks";
   position: absolute;
   line-height: 110px;
   width: 100%;

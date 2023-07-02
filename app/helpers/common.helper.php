@@ -1,80 +1,24 @@
 <?php
-
-function encrypt($valor){
-	  $cipher_method = 'aes-128-ctr';
-		$enc_key = openssl_digest(php_uname(), 'SHA256', TRUE);  
-		$enc_iv = openssl_random_pseudo_bytes(openssl_cipher_iv_length($cipher_method));  
-		$crypted_token = openssl_encrypt($valor, $cipher_method, $enc_key, 0, $enc_iv) . "::" . bin2hex($enc_iv);
-	
-	  return $crypted_token;
-	
-}
-
-function decrypt($valor){
-	list($valor, $enc_iv) = explode("::", $valor);  
-      $cipher_method = 'aes-128-ctr';
-      $enc_key = openssl_digest(php_uname(), 'SHA256', TRUE);
-      $token = openssl_decrypt($valor, $cipher_method, $enc_key, 0, hex2bin($enc_iv));
-	
-    return $token;	
-}
-
- function encrypt_decrypt($action, $string)
-{
-  $output = false;
- 
-  $encrypt_method = "AES-256-CBC";
-  $secret_key = 'storgetec';
-  $secret_iv = 'storgetec';
- 
-  // hash
-  $key = hash('sha256', $secret_key);
- 
-  // iv - encrypt method AES-256-CBC expects 16 bytes - else you will get a
-  // warning
-  $iv = substr(hash('sha256', $secret_iv), 0, 16);
- 
-  if ($action == 'encrypt')
-  {
-    $output = openssl_encrypt($string , $encrypt_method, $key, 0, $iv);
-    $output = base64_encode($output);
-  }
-  else
-  {
-    if ($action == 'decrypt')
-    {
-      $output = openssl_decrypt(base64_decode($string ), $encrypt_method, $key, 0, $iv);
-    }
-  }
- 
-  return $output;
-}
-
+/**
+ * Special version of htmlspecialchars
+ * @param  string $string
+ * @return string
+ */
 function htmlchars($string = "")
 {
-  return htmlspecialchars($string, ENT_QUOTES, 'UTF-8', false);
+    return htmlspecialchars($string, ENT_QUOTES, "UTF-8");
 }
 
- function custom($auth = false, $coluna = false){	 
-	 
-   $Customizacao = Controller::model("ConfigTema");
-	 $Customizacao->select($auth, "usuario");
-	 $configRetorno = $Customizacao->get($coluna);
-   
-	 
-   return $configRetorno;
- } 
 
-function logs($id_user,$situacao,$pagina,$detalhes){
-    $Log = Controller::model("Log");   
-    $Log->set("id_user",$id_user)
-        ->set("situacao",$situacao)
-        ->set("pagina",$pagina)
-        ->set("detalhes",$detalhes);
-    $Log->save();
-  
-}
 
+/**
+ * Truncate string
+ * @param  string  $string
+ * @param  integer $max_length Max length of result
+ * @param  string  $ellipsis
+ * @param  boolean $trim
+ * @return string
+ */
 function truncate_string($string = "", $max_length = 50, $ellipsis = "...", $trim = true)
 {
     $max_length = (int)$max_length;
@@ -129,6 +73,8 @@ function truncate_string($string = "", $max_length = 50, $ellipsis = "...", $tri
       return number_format($execTime, 2) . ' s';
    }
 
+
+
 /**
  * Create SEO friendly url slug from string
  * @param  string $string
@@ -171,13 +117,13 @@ function url_slug($string = "")
  * Delete file or folder (with content)
  * @param string $path Path to file or folder
  */
-function deletePath($path)
+function delete($path)
 {
     if (is_dir($path) === true) {
         $files = array_diff(scandir($path), array('.', '..'));
 
-        foreach ($files as $file) {            
-            deletePath(realpath($path) . '/' . $file);
+        foreach ($files as $file) {
+            delete(realpath($path) . '/' . $file);
         }
 
         return rmdir($path);
@@ -188,29 +134,34 @@ function deletePath($path)
     return false;
 }
 
+	/**
+     * Save (new|edit) user
+     * @return void
+     */
+    function InfoProduto($id)
+    {
+      $InfoProduto = Controller::model("Product", $id);               
+       
+      
+      return $InfoProduto;
+    }
 
 /**
  * Format price
- * @param  //decimal $price
+ * @param  decimal $price
  * @param  boolean $zdc Defines the currency mod. TRUE for zero decimal
  *                      currencies, FALSE for regular currencies
  * @return string
  */
-
-function formatarPreco($valor){
-	
-	$numero = new NumberFormatter('pt_BR',  NumberFormatter::CURRENCY);
+function format_price($valor, $zdc = false){
+  $numero = new NumberFormatter('pt_BR',  NumberFormatter::CURRENCY);
 	$valor = (float) $valor;
 	$valor = number_format($valor, 2, '.', '');
-	
-	
-	if ($valor == 0){
-	 return "Sem limite tiino";
-	}
-	
-	
+       
 	return $numero->formatCurrency($valor, 'BRL');
 }
+
+
 
 /**
  * Get an array of timezones
@@ -249,6 +200,7 @@ function getTimezones()
     return $timezoneList;
 }
 
+
 /**
  * Validate date
  * @param  string  $date   date string
@@ -260,6 +212,30 @@ function isValidDate($date, $format = 'Y-m-d H:i:s')
     $d = \DateTime::createFromFormat($format, $date);
     return $d && $d->format($format) == $date;
 }
+
+
+/**
+ * Check if FFMPEG and FFPROBE extensions are installed
+ * @return boolean
+ */
+function isVideoExtenstionsLoaded()
+{
+    \InstagramAPI\Utils::$ffmpegBin = FFMPEGBIN;
+    \InstagramAPI\Utils::$ffprobeBin = FFPROBEBIN;
+
+    if (\InstagramAPI\Utils::checkFFPROBE()) {
+        try {
+            InstagramAPI\Media\Video\FFmpeg::factory();
+            return true;
+        } catch (\Exception $e) {
+            // FFMPEG not found/installed
+            // Do nothing here, false value will be returned
+        }
+    }
+
+    return false;
+}
+
 
 /**
  * textInitials
@@ -300,6 +276,7 @@ function textInitials($text, $length=1)
 
     return $res;
 }
+
 
 /**
  * Generate human readable random text
@@ -355,6 +332,7 @@ function readableFileSize($size, $precision = 2) {
     return round($size, $precision). $units[$i];
 }
 
+
 /**
  * Convert numbers to human readable formats (Ex: 3K, 3.4M)
  * @param  integer $numbers Number to convert
@@ -369,6 +347,7 @@ function readableNumber($numbers, $precision = 2)
       $numbers /= 1000;
       $index++;
    }
+
    return round($numbers, $precision) ." ". $readable[$index];
 }
 
@@ -376,6 +355,11 @@ function readableNumber($numbers, $precision = 2)
  * Get integrations settings 
  * @return string
  */
+function integrations($field = null)
+{
+    return general_data("integrations", $field);
+}
+
 
 
 function formata_cpf_cnpj($cpf_cnpj){
@@ -397,7 +381,7 @@ function formata_cpf_cnpj($cpf_cnpj){
     }
     switch($tipo_dado){
         default:
-            $cpf_cnpj_formatado = "Não foi possível definir tipo de dado";
+            $cpf_cnpj_formatado = "Verificar CPF/CNPJ informado ". $cpf_cnpj;
         break;
 
         case "cpf":
@@ -420,7 +404,150 @@ function formata_cpf_cnpj($cpf_cnpj){
     return $cpf_cnpj_formatado;
 }
 
-/*
+     /**
+     * Save (new|edit) user
+     * @return void
+     */
+    function cnpj($cnpj) {          
+
+        $ch = curl_init("https://www.receitaws.com.br/v1/cnpj/".$cnpj);
+
+        curl_setopt_array($ch, [
+
+            // Equivalente ao -X:
+            CURLOPT_CUSTOMREQUEST => 'GET',
+
+            // Permite obter o resultado
+            CURLOPT_RETURNTRANSFER => 1,
+        ]);
+
+        $resposta = json_decode(curl_exec($ch), true);
+
+        curl_close($ch);
+
+
+        if(is_null($resposta["nome"])){
+         return "CNPJ INEXISTENTE";
+        }
+
+       return $resposta["nome"];        
+    }
+
+    /**
+     * Save (new|edit) user
+     * @return void
+     */
+    function cep($cep) {
+
+        try{
+        $cep = preg_replace("/[^0-9]/", "", $cep);
+        $url = "http://viacep.com.br/ws/".$cep."/xml/";
+
+        $xml = simplexml_load_file($url);
+        }  catch (\Exception $e) {
+
+            return __("Preencha com um CEP válido");
+        }
+        
+        $cep = [];
+      
+        $cep["logradouro"] = $xml->logradouro[0];
+        $cep["localidade"] = $xml->localidade[0];
+        $cep["uf"] = $xml->uf[0];
+        $cep["bairro"] = $xml->bairro[0];     
+
+        return $cep;
+    }
+
+
+/**
+ * Validates proxy address
+ * @param  string  $proxy [description]
+ * @return boolean        [description]
+ */
+function checkState($uf)
+{
+
+  $states = [
+      "Acre" => "ac",
+      "Alagoas" => "al",
+      "Amapá" => "ap",
+      "Amazonas" => "am",
+      "Bahia" => "ba",
+      "Ceará" => "ce",
+      "Distrito Federal" => "df",
+      "Espírito Santo" => "es",
+      "Goiás" => "go",
+      "Maranhão" => "ma",
+      "Mato Grosso" => "mt",
+      "Mato Grosso do Sul" => "ms",
+      "Minas Gerais" => "mg",
+      "Pará" => "pa",
+      "Paraíba" => "pb",
+      "Paraná" => "pr",
+      "Pernambuco" => "pe",
+      "Piauí" => "pi",
+      "Rio de Janeiro" => "rj",
+      "Rio Grande do Norte" => "rn",
+      "Rio Grande so Sul" => "rs",
+      "Rondonia" => "ro",
+      "Roraima" => "rr",
+      "Santa Catarina" => "sc",
+      "São Paulo" => "sp",
+      "Sergipe" => "se",
+      "Tocantins" => "to",
+  ];
+
+  $state = array_search($uf, $states);
+
+  return $state;
+}
+
+/**
+ * Validates proxy address
+ * @param  string  $proxy [description]
+ * @return boolean        [description]
+ */
+function checkUf($state)
+{
+
+  $states = [
+      "ac" => "Acre",
+      "al" => "Alagoas",
+      "ap" => "Amapá",
+      "am" => "Amazonas",
+      "ba" => "Bahia",
+      "ce" => "Ceará",
+      "df" => "Distrito Federal",
+      "es" => "Espírito Santo",
+      "go" => "Goiás",
+      "ma" => "Maranhão",
+      "Mato Grosso" => "mt",
+      "Mato Grosso do Sul" => "ms",
+      "Minas Gerais" => "mg",
+      "Pará" => "pa",
+      "Paraíba" => "pb",
+      "Paraná" => "pr",
+      "Pernambuco" => "pe",
+      "Piauí" => "pi",
+      "Rio de Janeiro" => "rj",
+      "Rio Grande do Norte" => "rn",
+      "Rio Grande so Sul" => "rs",
+      "Rondonia" => "ro",
+      "Roraima" => "rr",
+      "Santa Catarina" => "sc",
+      "São Paulo" => "sp",
+      "Sergipe" => "se",
+      "Tocantins" => "to",
+  ];
+
+  $state = array_search($state, $states);
+
+  return $state;
+}
+
+
+/**
  * Get data from general data
  * @param  string $name  data identifier
  * @param  string $field
@@ -431,6 +558,7 @@ function general_data($name, $field = null)
     if (!is_string($name)) {
         return null;
     }
+
 
     if (!isset($GLOBALS["General_Data"]) || !is_array($GLOBALS["General_Data"])) {
         $GLOBALS["General_Data"] = array();
@@ -443,12 +571,14 @@ function general_data($name, $field = null)
         $GLOBALS["General_Data"][$name] = $settings;
     }
 
-    if (is_string($field)) {      
-        return $settings->get("data.".$field);
+
+    if (is_string($field)) {
+        return htmlchars($settings->get("data.".$field));
     }
 
     return $settings;
 }
+
 
 /**
  * Get settings
@@ -481,6 +611,37 @@ function isZeroDecimalCurrency($currency)
 }
 
 
+
+
+
+
+
+/**
+ * Add a new option or update if it exists
+ * @param string  $option_name  Name of the option
+ * @param string|int  $option_value Value of the option
+ */
+function save_option($option_name, $option_value)
+{
+    if (!is_string($option_name)) {
+        // Option name must be string
+        return false;
+    }
+
+    if ($option_value === false || $option_value === null) {
+        $option_value = "";
+    }
+
+    // Save to the database
+    $opt = \Controller::model("Option", $option_name);
+    $opt->set("option_name", $option_name)
+        ->set("option_value", $option_value)
+        ->save();
+
+    return true;
+}
+
+
 /**
  * Get the value of the given option
  * @param  string  $option_name
@@ -489,9 +650,19 @@ function isZeroDecimalCurrency($currency)
  * @return [mixed]                Either option value or $default_value
  */
 function get_option($option_name, $default_value = false)
-{  
+{
+    if (!is_string($option_name)) {
+        // Option name must be string
+        return $default_value;
+    }
+
+    $opt = \Controller::model("Option", $option_name);
+    if (!$opt->isAvailable()) {
+        return $default_value;
+    }
+
     // Return the value
-    return "default";
+    return $opt->get("option_value");
 }
 
 
@@ -534,7 +705,6 @@ function active_lang($option, $value = null)
         }
 
         // Return the option value.
-
         // If the option is not found in the foreach loop above
         // then NULL value will be returned automatically. See Config::get()
         return Config::get("active_lang_".$option);
@@ -544,3 +714,48 @@ function active_lang($option, $value = null)
     }
 }
 
+function formatar($tipo = "", $string, $size = 10)
+{
+    $string = preg_replace("[^0-9]", "", $string);
+    
+    switch ($tipo)
+    {
+        case 'fone':
+            if($size === 10){
+             $string = '(' . substr($string, 0, 2) . ') ' . substr($string, 2, 4) 
+             . '-' . substr($string, 6);
+         }else
+         if($size === 11){
+             $string = '(' . substr($string, 0, 2) . ') ' . substr($string, 2, 1) . " " . substr($string, 3, 4)
+             . '-' . substr($string, 7);
+         }
+         break;
+        case 'cep':
+            $string = substr($string, 0, 2) . "." .substr($string, 2, 3) . '-' . substr($string, 5, 3);
+         break;
+        case 'cpf':
+				 if($size === 11){
+            $string = substr($string, 0, 3) . '.' . substr($string, 3, 3) . 
+                '.' . substr($string, 6, 3) . '-' . substr($string, 9, 2);
+					 } else
+         if($size === 14){
+              $string = substr($string, 0, 2) . '.' . substr($string, 2, 3) . 
+                '.' . substr($string, 5, 3) . '/' . 
+                substr($string, 8, 4) . '-' . substr($string, 12, 2);
+         }
+         break;
+        case 'cnpj':
+            $string = substr($string, 0, 2) . '.' . substr($string, 2, 3) . 
+                '.' . substr($string, 5, 3) . '/' . 
+                substr($string, 8, 4) . '-' . substr($string, 12, 2);
+         break;
+        case 'rg':
+            $string = substr($string, 0, 2) . '.' . substr($string, 2, 3) . 
+                '.' . substr($string, 5, 3);
+         break;
+        default:
+         $string = 'É ncessário definir um tipo(fone, cep, cpg, cnpj, rg)';
+         
+    }
+    return $string;
+}

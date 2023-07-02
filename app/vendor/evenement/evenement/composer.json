@@ -10,10 +10,10 @@
         }
     ],
     "require": {
-        "php": ">=7.0"
+        "php": ">=5.4.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^6.0"
+        "phpunit/phpunit": "^6.0||^5.7||^4.8.35"
     },
     "autoload": {
         "psr-0": {
@@ -25,5 +25,10 @@
             "Evenement": "tests"
         },
         "files": ["tests/Evenement/Tests/functions.php"]
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.0-dev"
+        }
     }
 }

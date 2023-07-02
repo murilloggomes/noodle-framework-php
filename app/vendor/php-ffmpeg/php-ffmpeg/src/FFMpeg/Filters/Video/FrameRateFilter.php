@@ -12,8 +12,8 @@
 namespace FFMpeg\Filters\Video;
 
 use FFMpeg\Coordinate\FrameRate;
-use FFMpeg\Format\VideoInterface;
 use FFMpeg\Media\Video;
+use FFMpeg\Format\VideoInterface;
 
 class FrameRateFilter implements VideoFilterInterface
 {
@@ -51,7 +51,7 @@ class FrameRateFilter implements VideoFilterInterface
      *
      * @see https://wikipedia.org/wiki/Group_of_pictures
      *
-     * @return int
+     * @return Integer
      */
     public function getGOP()
     {
@@ -63,9 +63,9 @@ class FrameRateFilter implements VideoFilterInterface
      */
     public function apply(Video $video, VideoInterface $format)
     {
-        $commands = ['-r', $this->rate->getValue()];
+        $commands = array('-r', $this->rate->getValue());
 
-        /*
+        /**
          * @see http://sites.google.com/site/linuxencoding/x264-ffmpeg-mapping
          */
         if ($format->supportBFrames()) {

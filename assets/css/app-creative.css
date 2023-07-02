@@ -8,7 +8,7 @@ File: Main Css File
 */
 :root {
   --ct-link-color: #3688fc;
-  --ct-link-hover-color: #ff7f00;
+  --ct-link-hover-color: #2966bd;
   --ct-border-color: #dee2e6;
   --ct-box-shadow: 0px 0px 35px 0px rgba(154, 161, 171, 0.15);
   --ct-box-shadow-sm: 0 .125rem .25rem rgba(0, 0, 0, 0.075);
@@ -18386,7 +18386,7 @@ body[data-layout-color=dark] .faq-question {
   position: relative;
 }
 .task-list-items:before {
-  content: "Sem Tarefas";
+  content: "No Tasks";
   position: absolute;
   line-height: 110px;
   width: 100%;

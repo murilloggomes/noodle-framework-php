@@ -20,13 +20,13 @@ use Symfony\Component\Process\Process;
  */
 class ProcessTimedOutException extends RuntimeException
 {
-    public const TYPE_GENERAL = 1;
-    public const TYPE_IDLE = 2;
+    const TYPE_GENERAL = 1;
+    const TYPE_IDLE = 2;
 
     private $process;
     private $timeoutType;
 
-    public function __construct(Process $process, int $timeoutType)
+    public function __construct(Process $process, $timeoutType)
     {
         $this->process = $process;
         $this->timeoutType = $timeoutType;
@@ -55,10 +55,15 @@ class ProcessTimedOutException extends RuntimeException
 
     public function getExceededTimeout()
     {
-        return match ($this->timeoutType) {
-            self::TYPE_GENERAL => $this->process->getTimeout(),
-            self::TYPE_IDLE => $this->process->getIdleTimeout(),
-            default => throw new \LogicException(sprintf('Unknown timeout type "%d".', $this->timeoutType)),
-        };
+        switch ($this->timeoutType) {
+            case self::TYPE_GENERAL:
+                return $this->process->getTimeout();
+
+            case self::TYPE_IDLE:
+                return $this->process->getIdleTimeout();
+
+            default:
+                throw new \LogicException(sprintf('Unknown timeout type "%d".', $this->timeoutType));
+        }
     }
 }

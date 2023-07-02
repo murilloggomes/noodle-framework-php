@@ -13,27 +13,27 @@ namespace FFMpeg\Filters\Video;
 
 use FFMpeg\Coordinate\Dimension;
 use FFMpeg\Exception\RuntimeException;
-use FFMpeg\Format\VideoInterface;
 use FFMpeg\Media\Video;
+use FFMpeg\Format\VideoInterface;
 
 class ResizeFilter implements VideoFilterInterface
 {
     /** fits to the dimensions, might introduce anamorphosis */
-    public const RESIZEMODE_FIT = 'fit';
+    const RESIZEMODE_FIT = 'fit';
     /** resizes the video inside the given dimension, no anamorphosis */
-    public const RESIZEMODE_INSET = 'inset';
+    const RESIZEMODE_INSET = 'inset';
     /** resizes the video to fit the dimension width, no anamorphosis */
-    public const RESIZEMODE_SCALE_WIDTH = 'width';
+    const RESIZEMODE_SCALE_WIDTH = 'width';
     /** resizes the video to fit the dimension height, no anamorphosis */
-    public const RESIZEMODE_SCALE_HEIGHT = 'height';
+    const RESIZEMODE_SCALE_HEIGHT = 'height';
 
     /** @var Dimension */
     private $dimension;
     /** @var string */
     private $mode;
-    /** @var bool */
+    /** @var Boolean */
     private $forceStandards;
-    /** @var int */
+    /** @var integer */
     private $priority;
 
     public function __construct(Dimension $dimension, $mode = self::RESIZEMODE_FIT, $forceStandards = true, $priority = 0)
@@ -69,7 +69,7 @@ class ResizeFilter implements VideoFilterInterface
     }
 
     /**
-     * @return bool
+     * @return Boolean
      */
     public function areStandardsForced()
     {
@@ -82,7 +82,7 @@ class ResizeFilter implements VideoFilterInterface
     public function apply(Video $video, VideoInterface $format)
     {
         $dimensions = null;
-        $commands = [];
+        $commands = array();
 
         foreach ($video->getStreams() as $stream) {
             if ($stream->isVideo()) {
@@ -90,6 +90,7 @@ class ResizeFilter implements VideoFilterInterface
                     $dimensions = $stream->getDimensions();
                     break;
                 } catch (RuntimeException $e) {
+
                 }
             }
         }
@@ -99,7 +100,8 @@ class ResizeFilter implements VideoFilterInterface
 
             // Using Filter to have ordering
             $commands[] = '-vf';
-            $commands[] = '[in]scale='.$dimensions->getWidth().':'.$dimensions->getHeight().' [out]';
+            $commands[] = '[in]scale=' . $dimensions->getWidth() . ':' . $dimensions->getHeight() . ' [out]';
+            
         }
 
         return $commands;

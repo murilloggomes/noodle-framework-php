@@ -7,16 +7,10 @@ class IndexController extends Controller
     /**
      * Process
      */
-    public function process()    {          
-      
-      $AuthUser = $this->getVariable("AuthUser");
-      
-        if (!$AuthUser) {
-            header("Location: ".APPURL."/login");
-            exit;
-        } 
+    public function process()    {  
+        // Set variables
+        $this->setVariable("Settings", Controller::model("GeneralData", "settings"));    
 
-        header("Location: ".APPURL."/user");
-        exit;
+        $this->view("login", "site");
     }
 }

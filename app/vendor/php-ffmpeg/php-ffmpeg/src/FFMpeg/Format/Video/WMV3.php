@@ -12,7 +12,7 @@
 namespace FFMpeg\Format\Video;
 
 /**
- * The WMV video format.
+ * The WMV video format
  */
 class WMV3 extends DefaultVideo
 {
@@ -36,7 +36,7 @@ class WMV3 extends DefaultVideo
      */
     public function getAvailableAudioCodecs()
     {
-        return ['wmav3'];
+        return array('wmav3');
     }
 
     /**
@@ -44,6 +44,6 @@ class WMV3 extends DefaultVideo
      */
     public function getAvailableVideoCodecs()
     {
-        return ['wmv3'];
+        return array('wmv3');
     }
 }

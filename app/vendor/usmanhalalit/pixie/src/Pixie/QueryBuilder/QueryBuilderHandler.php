@@ -26,11 +26,21 @@ class QueryBuilderHandler
      * @var PDO
      */
     protected $pdo;
-
+  
     /**
-     * @var null|\PDOStatement
+     * @var null|PDOStatement
      */
     protected $pdoStatement = null;
+  
+    /**
+     * @var null|adapterConfig
+     */
+    protected $adapterConfig = null;
+
+    /**
+     * @var null|adapter
+     */
+    protected $adapter = null;
 
     /**
      * @var null|string
@@ -66,20 +76,22 @@ class QueryBuilderHandler
         $this->connection = $connection;
         $this->container = $this->connection->getContainer();
         $this->pdo = $this->connection->getPdoInstance();
-        $adapter = $this->connection->getAdapter();
-        $adapterConfig = $this->connection->getAdapterConfig();
+        $this->adapter = $this->connection->getAdapter();
+        $this->adapterConfig = $this->connection->getAdapterConfig();
 
         $this->setFetchMode($fetchMode);
 
-        if (isset($adapterConfig['prefix'])) {
-            $this->tablePrefix = $adapterConfig['prefix'];
+        if (isset($this->adapterConfig['prefix'])) {
+            $this->tablePrefix = $this->adapterConfig['prefix'];
         }
 
         // Query builder adapter instance
         $this->adapterInstance = $this->container->build(
-            '\\Pixie\\QueryBuilder\\Adapters\\' . ucfirst($adapter),
+            '\\Pixie\\QueryBuilder\\Adapters\\' . ucfirst($this->adapter),
             array($this->connection)
         );
+
+        $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
 
     /**
@@ -381,7 +393,7 @@ class QueryBuilderHandler
     /**
      * @param $data
      *
-     * @return array|string
+     * @return $this
      */
     public function update($data)
     {
@@ -1015,7 +1027,7 @@ class QueryBuilderHandler
     /**
      * @param          $event
      * @param string $table
-     * @param \Closure $action
+     * @param callable $action
      *
      * @return void
      */

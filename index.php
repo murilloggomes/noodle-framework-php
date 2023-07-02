@@ -5,7 +5,7 @@ session_start();
 /**
  * Define very basic constants
  */
-define("ENVIRONMENT", "development"); // [development|production|installation]
+define("ENVIRONMENT", "production"); // [development|production|installation]
 
 
 /**

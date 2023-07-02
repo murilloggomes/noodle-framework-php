@@ -10,6 +10,7 @@ class LogoutController extends Controller
     public function process()
     {
         $this->logout();
+      
     }
 
 

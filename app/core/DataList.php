@@ -1,9 +1,7 @@
 <?php
 /**
- * Data list
+ * Lista de dados
  *
- * @version 1.0
- * @author Onelab <hello@onelab.co> 
  * 
  */
 class DataList
@@ -27,7 +25,7 @@ class DataList
 
 
     /**
-     * Get page count
+     * Pegar Contagem da Pagína
      * @return int 
      */
     public function getPageCount()
@@ -37,7 +35,7 @@ class DataList
 
 
     /**
-     * Set page count
+     * Setar Contagem da Pagína
      * @param int|null $count
      */
     protected function setPageCount($count)
@@ -48,8 +46,8 @@ class DataList
 
 
     /**
-     * Get total count of results
-     * @return [type] [description]
+     * Obter contagem total de resultados
+     * @return [tipo] [descrição]
      */
     public function getTotalCount()
     {
@@ -65,8 +63,8 @@ class DataList
 
 
     /**
-     * Set current page
-     * @param int $page Page number
+     * Definir página atual
+     * @param int $page Numéro da Página
      */
     public function setPage($page)
     {
@@ -76,7 +74,7 @@ class DataList
 
 
     /**
-     * Get current page number
+     * Pegar página atual
      * @return int 
      */
     public function getPage()
@@ -86,7 +84,7 @@ class DataList
 
 
     /**
-     * Set page size
+     * Seta tamanho de página
      * @param integer $page_size 
      */
     public function setPageSize($page_size = 20)
@@ -99,7 +97,7 @@ class DataList
     }
 
     /**
-     * Get page size
+     * Buscar tamanho de página
      * @return int|null 
      */
     public function getPageSize()
@@ -109,7 +107,7 @@ class DataList
 
 
     /**
-     * Get query
+     * Buscar query
      */
     public function getQuery()
     {
@@ -118,7 +116,7 @@ class DataList
 
 
     /**
-     * Set query
+     * Seta query
      */
     protected function setQuery($query)
     {
@@ -129,7 +127,7 @@ class DataList
 
 
     /**
-     * Paginate 
+     * Paginação 
      * @return self
      */
     public function paginate()
@@ -160,8 +158,8 @@ class DataList
 
 
     /**
-     * Perform a search
-     * @param  [string] $q Search query
+     * Realizar uma pesquisa
+     * @param [string] $q consulta de pesquisa
      * @return self 
      */
     public function search($search_query)
@@ -178,9 +176,9 @@ class DataList
 
 
     /**
-     * Set search query string (after processing it in the self::search() method)
-     * Query validation is in responsibility of the self::serch() method
-     * @param [type] $q [description]
+     * Definir cadeia de caracteres de consulta de pesquisa (depois de processá-la no método self::search())
+     * A validação da consulta é de responsabilidade do método self::serch()
+     * @param [tipo] $q [descrição]
      */
     protected function setSearchQuery($search_query) 
     {
@@ -189,7 +187,7 @@ class DataList
 
 
     /**
-     * Get processed search query string
+     * Obter sequência de consulta de pesquisa processada
      * @return string|null 
      */
     public function getSearchQuery()
@@ -199,7 +197,7 @@ class DataList
 
 
     /**
-     * Set the status of the search_performed property
+     * Definir o status da propriedade search_performed
      * @param  boolean $status 
      * @return self          
      */
@@ -211,7 +209,7 @@ class DataList
 
 
     /**
-     * Get the status of serch_performed
+     * Obter o status de serch_performed
      * @return boolean 
      */
     public function isSearchPerformed()
@@ -221,7 +219,7 @@ class DataList
 
 
     /**
-     * Request data from database
+     * Solicitar dados do banco de dados
      * @return self
      */
     public function fetchData()
@@ -234,8 +232,8 @@ class DataList
 
 
     /**
-     * Get data
-     * @return [type] [description]
+     * Get Informações
+     * @return [tipo] [descrição]
      */
     public function getData()
     {
@@ -266,8 +264,8 @@ class DataList
 
 
     /**
-     * Check if inaccessible method is a accessible method in query object
-     * @param  string $method Case sensitive name of method
+     * Verificar se o método inacessível é um método acessível no objeto de consulta
+     * @param  string $method Nome sensível do método ASE
      * @param  mixed $args   
      * @return DataList|Exception
      */

@@ -16,7 +16,7 @@ interface FilterInterface
     /**
      * Returns the priority of the filter.
      *
-     * @return int
+     * @return integer
      */
     public function getPriority();
 }

@@ -1,8 +1,3 @@
-$("select").select2({
-   theme: "bootstrap-5",
-});
-
-
 /*!
  * jQuery JavaScript Library v3.6.0
  * https://jquery.com/

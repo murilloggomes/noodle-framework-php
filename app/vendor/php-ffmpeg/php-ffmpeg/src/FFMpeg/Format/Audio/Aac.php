@@ -12,7 +12,7 @@
 namespace FFMpeg\Format\Audio;
 
 /**
- * The AAC audio format.
+ * The AAC audio format
  */
 class Aac extends DefaultAudio
 {
@@ -26,6 +26,6 @@ class Aac extends DefaultAudio
      */
     public function getAvailableAudioCodecs()
     {
-        return ['libfdk_aac'];
+        return array('libfdk_aac');
     }
 }

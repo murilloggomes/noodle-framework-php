@@ -11,30 +11,30 @@
 
 namespace FFMpeg\FFProbe\DataMapping;
 
-use FFMpeg\Coordinate\Dimension;
 use FFMpeg\Exception\LogicException;
 use FFMpeg\Exception\RuntimeException;
+use FFMpeg\Coordinate\Dimension;
 
 class Stream extends AbstractData
 {
     /**
      * Returns true if the stream is an audio stream.
      *
-     * @return bool
+     * @return Boolean
      */
     public function isAudio()
     {
-        return 'audio' === $this->get('codec_type');
+        return $this->get('codec_type') === 'audio';
     }
 
     /**
      * Returns true if the stream is a video stream.
      *
-     * @return bool
+     * @return Boolean
      */
     public function isVideo()
     {
-        return 'video' === $this->get('codec_type');
+        return $this->get('codec_type') === 'video';
     }
 
     /**
@@ -42,8 +42,8 @@ class Stream extends AbstractData
      *
      * @return Dimension
      *
-     * @throws LogicException   in case the stream is not a video stream
-     * @throws RuntimeException in case the dimensions can not be extracted
+     * @throws LogicException   In case the stream is not a video stream.
+     * @throws RuntimeException In case the dimensions can not be extracted.
      */
     public function getDimensions()
     {
@@ -68,7 +68,7 @@ class Stream extends AbstractData
         }
 
         if (null !== $displayRatio && null !== $sampleRatio) {
-            if (1 !== $sampleRatio[0] && 1 !== $sampleRatio[1]) {
+            if ($sampleRatio[0] !== 1 && $sampleRatio[1] !== 1) {
                 if (null !== $width && null !== $height) {
                     // stretch video according to pixel sample aspect ratio
                     $width = round($width * ($sampleRatio[0] / $sampleRatio[1]));
@@ -84,10 +84,9 @@ class Stream extends AbstractData
     /**
      * Extracts a ratio from a string in a \d+:\d+ format given a key name.
      *
-     * @param Stream $stream the stream where to look for the ratio
-     * @param string $name   the name of the key
-     *
-     * @return array|null an array containing the width and the height, null if not found
+     * @param  Stream     $stream The stream where to look for the ratio.
+     * @param  string     $name   the name of the key.
+     * @return null|array An array containing the width and the height, null if not found.
      */
     private function extractRatio(Stream $stream, $name)
     {
@@ -101,9 +100,7 @@ class Stream extends AbstractData
                 return $int > 0;
             });
             if (2 === count($data)) {
-                return array_map(function ($int) {
-                    return (int) $int;
-                }, $data);
+                return array_map(function ($int) { return (int) $int; }, $data);
             }
         }
     }

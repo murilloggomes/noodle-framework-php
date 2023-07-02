@@ -1,7 +1,6 @@
 <?php 
     /**
-     * This is a temporary function used just in this file
-     * It's being used to escape quotes for JS strings
+     * Utilizada para fazer a tradução de todo o conteudo i18n colocado durante o site, nessa prova não levei isso ao foco mas é fácil implementar
      * @param  string $string 
      * @return string         
      */

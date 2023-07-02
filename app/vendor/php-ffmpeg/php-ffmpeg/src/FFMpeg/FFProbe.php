@@ -13,27 +13,27 @@ namespace FFMpeg;
 
 use Alchemy\BinaryDriver\ConfigurationInterface;
 use Alchemy\BinaryDriver\Exception\ExecutionFailureException;
+use Doctrine\Common\Cache\ArrayCache;
+use Doctrine\Common\Cache\Cache;
 use FFMpeg\Driver\FFProbeDriver;
-use FFMpeg\Exception\InvalidArgumentException;
-use FFMpeg\Exception\RuntimeException;
 use FFMpeg\FFProbe\DataMapping\Format;
-use FFMpeg\FFProbe\DataMapping\StreamCollection;
 use FFMpeg\FFProbe\Mapper;
 use FFMpeg\FFProbe\MapperInterface;
 use FFMpeg\FFProbe\OptionsTester;
 use FFMpeg\FFProbe\OptionsTesterInterface;
 use FFMpeg\FFProbe\OutputParser;
 use FFMpeg\FFProbe\OutputParserInterface;
-use Psr\Cache\CacheItemPoolInterface;
+use FFMpeg\Exception\InvalidArgumentException;
+use FFMpeg\Exception\RuntimeException;
+use FFMpeg\FFProbe\DataMapping\StreamCollection;
 use Psr\Log\LoggerInterface;
-use Symfony\Component\Cache\Adapter\ArrayAdapter;
 
 class FFProbe
 {
-    public const TYPE_STREAMS = 'streams';
-    public const TYPE_FORMAT  = 'format';
+    const TYPE_STREAMS = 'streams';
+    const TYPE_FORMAT = 'format';
 
-    /** @var CacheItemPoolInterface */
+    /** @var Cache */
     private $cache;
     /** @var OptionsTesterInterface */
     private $optionsTester;
@@ -44,13 +44,13 @@ class FFProbe
     /** @var MapperInterface */
     private $mapper;
 
-    public function __construct(FFProbeDriver $ffprobe, CacheItemPoolInterface $cache)
+    public function __construct(FFProbeDriver $ffprobe, Cache $cache)
     {
-        $this->ffprobe       = $ffprobe;
+        $this->ffprobe = $ffprobe;
         $this->optionsTester = new OptionsTester($ffprobe, $cache);
-        $this->parser        = new OutputParser();
-        $this->mapper        = new Mapper();
-        $this->cache         = $cache;
+        $this->parser = new OutputParser();
+        $this->mapper = new Mapper();
+        $this->cache = $cache;
     }
 
     /**
@@ -62,6 +62,8 @@ class FFProbe
     }
 
     /**
+     * @param OutputParserInterface $parser
+     *
      * @return FFProbe
      */
     public function setParser(OutputParserInterface $parser)
@@ -80,6 +82,8 @@ class FFProbe
     }
 
     /**
+     * @param FFProbeDriver $ffprobe
+     *
      * @return FFProbe
      */
     public function setFFProbeDriver(FFProbeDriver $ffprobe)
@@ -90,6 +94,8 @@ class FFProbe
     }
 
     /**
+     * @param OptionsTesterInterface $tester
+     *
      * @return FFProbe
      */
     public function setOptionsTester(OptionsTesterInterface $tester)
@@ -108,11 +114,11 @@ class FFProbe
     }
 
     /**
-     * @param CacheItemPoolInterface $cache
+     * @param Cache $cache
      *
      * @return FFProbe
      */
-    public function setCache(CacheItemPoolInterface $cache)
+    public function setCache(Cache $cache)
     {
         $this->cache = $cache;
 
@@ -136,6 +142,8 @@ class FFProbe
     }
 
     /**
+     * @param MapperInterface $mapper
+     *
      * @return FFProbe
      */
     public function setMapper(MapperInterface $mapper)
@@ -168,16 +176,14 @@ class FFProbe
      * Checks wether the given `$pathfile` is considered a valid media file.
      *
      * @param string $pathfile
-     *
      * @return bool
-     *
      * @since 0.10.0
      */
     public function isValid($pathfile)
     {
         try {
             return $this->format($pathfile)->get('duration') > 0;
-        } catch (\Exception $e) {
+        } catch(\Exception $e) {
             // complete invalid data
             return false;
         }
@@ -207,14 +213,14 @@ class FFProbe
      *
      * @param array|ConfigurationInterface $configuration
      * @param LoggerInterface              $logger
-     * @param CacheItemPoolInterface       $cache
+     * @param Cache                        $cache
      *
      * @return FFProbe
      */
-    public static function create($configuration = [], LoggerInterface $logger = null, CacheItemPoolInterface $cache = null)
+    public static function create($configuration = array(), LoggerInterface $logger = null, Cache $cache = null)
     {
         if (null === $cache) {
-            $cache = new ArrayAdapter();
+            $cache = new ArrayCache();
         }
 
         return new static(FFProbeDriver::create($configuration, $logger), $cache);
@@ -222,17 +228,20 @@ class FFProbe
 
     private function probe($pathfile, $command, $type, $allowJson = true)
     {
-        $id = md5(sprintf('%s-%s', $command, $pathfile));
+        $id = sprintf('%s-%s', $command, $pathfile);
 
-        if ($this->cache->hasItem($id)) {
-            return $this->cache->getItem($id)->get();
+        if ($this->cache->contains($id)) {
+            return $this->cache->fetch($id);
         }
 
         if (!$this->optionsTester->has($command)) {
-            throw new RuntimeException(sprintf('This version of ffprobe is too old and ' . 'does not support `%s` option, please upgrade', $command));
+            throw new RuntimeException(sprintf(
+                'This version of ffprobe is too old and '
+                . 'does not support `%s` option, please upgrade', $command
+            ));
         }
 
-        $commands = [$pathfile, $command];
+        $commands = array($pathfile, $command);
 
         $parseIsToDo = false;
 
@@ -267,9 +276,7 @@ class FFProbe
 
         $ret = $this->mapper->map($type, $data);
 
-        $cacheItem = $this->cache->getItem($id);
-        $cacheItem->set($ret);
-        $this->cache->save($cacheItem);
+        $this->cache->save($id, $ret);
 
         return $ret;
     }
