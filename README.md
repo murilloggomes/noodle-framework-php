@@ -52,14 +52,24 @@ run: "cd" no caminho da pasta do projeto (que deve ser baixa na pasta raiz realm
 
 ## Como rodar os testes
 ```
-sudo nano /app/config/database.config.php;
+Mudar configurações Banco de Dados /app/config/db.config.php;
 ```
 ```
 define("DB_HOST", "localhost");
-define("DB_NAME", "nome_banco");
-define("DB_USER", "usuario_banco");
-define("DB_PASS", "senha_banco");
+define("DB_NAME", "base_noodle");
+define("DB_USER", "user_noodle");
+define("DB_PASS", "senha_noodle");
 define("DB_ENCODING", "utf8");
+
+define("TABLE_PREFIX", "mg_");
+
+// Set table names without prefix
+define("TABLE_USERS", "users");
+define("TABLE_LOGS", "logs");
+define("TABLE_GENERAL_DATA", "general_data");
+define("TABLE_OPTIONS", "options");
+define("TABLE_PRODUTOS", "produtos");
+define("TABLE_CATEGORIAS", "categorias");
 ```
 
 ## Casos de Uso
