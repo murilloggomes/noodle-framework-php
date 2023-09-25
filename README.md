@@ -64,7 +64,7 @@ define("DB_ENCODING", "utf8");
 define("TABLE_PREFIX", "mg_");
 
 // Set table names without prefix
-define("TABLE_USUARIOS", "users");
+define("TABLE_USERS", "users");
 define("TABLE_LOGS", "logs");
 define("TABLE_GENERAL_DATA", "general_data");
 define("TABLE_OPTIONS", "options");
