@@ -12,7 +12,7 @@ class LoginController extends Controller
         $AuthUser = $this->getVariable("AuthUser");
         
         if ($AuthUser) {
-            header("Location: ".APPURL."/dashboard");
+            header("Location: ".APPURL."/categorias");
             exit;
         }   
 
@@ -55,7 +55,7 @@ class LoginController extends Controller
                     setcookie("nplrmm", "1", time() - 30*86400, "/");
                 }
 
-               header("Location: ".APPURL."/produtos");
+               header("Location: ".APPURL."/categorias");
                 exit; 
 
             } else {
