@@ -52,7 +52,7 @@ run: "cd" no caminho da pasta do projeto (que deve ser baixa na pasta raiz realm
 
 ## Como rodar os testes
 ```
-sudo nano /app/config/database.config.php;
+sudo nano /app/config/db.config.php;
 ```
 ```
 define("DB_HOST", "localhost");
