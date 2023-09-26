@@ -1,6 +1,6 @@
-<p align="center">
-<h1 style="text-align: -webkit-center !important;">Noodle Framework - Compativel com PHP 8.2 - Melhor, mais veloz e mais seguro que laravel.</h1> 
-</p>
+
+<h1 style="text-align: -webkit-center !important;">[Open Source] - Noodle Framework MVC - Compativel com PHP 8.2 </h1> 
+
 <p align="center">
   <img src="http://img.shields.io/static/v1?label=License&message=MIT&color=green&style=for-the-badge"/>
    <img src="http://img.shields.io/static/v1?label=STATUS&message=Desenvolvimento&color=GREY&style=for-the-badge"/>
