@@ -80,18 +80,15 @@ Linha1: $User = Controller::model("User", $IdUser);
 ```
 Linha2: $nome = $User->get("nome");
 ```
-
+```
 Ou então setar as informações como:
-
-
+```
 ```  
 Linha1: $User = Controller::model("User", $IdUser);
 ``` 
-
 ```  
 Linha2: $User->set("nome", "SpartechLtda");
-``` 
-
+```
 ```  
 Linha3: $User->save();
 ``` 
