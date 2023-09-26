@@ -72,7 +72,7 @@ Usuário: noodle@spartechltda.com.br | Senha: @noodle123
 ```
 
 Após isso se aventurar na contrução de páginas utilizando o MVC, com as routes chamando os controller e os controller chamando as views. Os dados do banco sempre será chamados dos Models por uma estrutura muito simples como:
-
+<p style="position:block;">
 ||$User = Controller::model("User", $IdUser);
 ||$nome = $User->get("nome");
 
@@ -81,7 +81,7 @@ Ou então setar as informações como:
 ||$User = Controller::model("User", $IdUser);
 ||$User->set("nome", "SpartechLtda");
 ||$User->save();
-
+</p>  
 
 Com isso trouxemos um colocamos em uma váriavel o valor do nome dentro do banco user, e na segunda opção troxemos e setamos um novo valor para aquele nome daquele $IdUser de uma maneira muito simples e sem precisar tocar em nenhum momento em query. Tudo rápido fácil e totalmente seguro!
 
