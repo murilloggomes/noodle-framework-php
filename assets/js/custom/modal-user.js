@@ -1,5 +1,4 @@
-$(function(){
-	
+$(function(){	
 	
 $("body").on('click','.botaoModalProdutos',function(){
 			$(".js-example-basic-multiple").select2();

@@ -5,7 +5,7 @@
       <div class="col-md-6">
         <script>
           document.write(new Date().getFullYear())
-        </script> © PROVA ARQMED
+        </script> © Noodle Framework
       </div>      
     </div>
   </div>

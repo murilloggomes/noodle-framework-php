@@ -1,30 +1,5 @@
 $(function(){
 	
-	var tableProdutos = $('#tabelaPrincipalProdutos').DataTable({
-		processing: true,
-		serverSide: true,
-		ajax: {
-			url: document.baseURI,	
-			type: 'POST',	
-			data: {
-				action: 'dadosTabelaProdutos',
-			},
-			deferRender: true,
-		},	
-	});
-
-	var tableCategorias = $('#tabelaPrincipalCategorias').DataTable({
-		processing: true,
-		serverSide: true,
-		ajax: {
-			url: document.baseURI,	
-			type: 'POST',	
-			data: {
-				action: 'dadosTabelaCategoria',
-			},
-			deferRender: true,
-		},	
-	});
 
 	$("body").on("click",".deletar", function(){
 		var tabela = $(this).data("id");

@@ -20,23 +20,14 @@
                     <!--- Sidemenu -->
                     <ul class="side-nav">
 
-                        <li class="side-nav-title side-nav-item">Menu</li>
-                        <?php $Produtos = Controller::model("Produtos")->fetchData("id"); ?>
+                        <li class="side-nav-title side-nav-item">Menu</li>                     
                         <li class="side-nav-item">
-                            <a href="<?= APPURL . "/produtos" ?>" class="side-nav-link">
+                            <a href="<?= APPURL . "/users" ?>" class="side-nav-link">
                                 <i class="uil-home-alt"></i>
-                                <span class="badge bg-success float-end"><?= $Produtos->getTotalCount() ?></span>
-                                <span> Produtos </span>
+                                <span class="badge bg-success float-end"><?= $Users->getTotalCount() ?></span>
+                                <span> Usuários </span>
                             </a>                            
-                        </li>  
-                        <?php $Categoria = Controller::model("Categorias")->fetchData("id"); ?>   
-                        <li class="side-nav-item">
-                            <a href="<?= APPURL . "/categorias" ?>" class="side-nav-link">
-                                <i class="uil-home-alt"></i>
-                                <span class="badge bg-success float-end"><?= $Categoria->getTotalCount() ?></span>
-                                <span> Categorias </span>
-                            </a>                            
-                        </li>     
+                        </li> 
                     </ul>
 
                 </div>

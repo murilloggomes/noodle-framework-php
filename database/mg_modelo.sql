@@ -20,27 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `php`
 --
-CREATE DATABASE IF NOT EXISTS `php` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `php`;
-
--- --------------------------------------------------------
-
---
--- Estrutura para tabela `mg_categoria`
---
-
-CREATE TABLE `mg_categoria` (
-  `id` int(11) NOT NULL,
-  `nome` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Despejando dados para a tabela `mg_categoria`
---
-
-INSERT INTO `mg_categoria` (`id`, `nome`) VALUES
-(6, 'Carro2'),
-(7, 'carro1');
+CREATE DATABASE IF NOT EXISTS `noodle` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `noodle`;
 
 -- --------------------------------------------------------
 
@@ -141,29 +122,6 @@ INSERT INTO `mg_options` (`id`, `option_name`, `option_value`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `mg_produtos`
---
-
-CREATE TABLE `mg_produtos` (
-  `id` int(11) NOT NULL,
-  `nome` varchar(50) NOT NULL,
-  `sku` varchar(50) NOT NULL,
-  `preco` varchar(50) NOT NULL,
-  `quantidade` int(11) NOT NULL,
-  `categoria` mediumtext NOT NULL,
-  `data_criacao` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Despejando dados para a tabela `mg_produtos`
---
-
-INSERT INTO `mg_produtos` (`id`, `nome`, `sku`, `preco`, `quantidade`, `categoria`, `data_criacao`) VALUES
-(1, 'Murillo', '2090', '200', 2, '[[\"6\"],[\"7\"]]', '2023-06-08 07:42:03');
-
--- --------------------------------------------------------
-
---
 -- Estrutura para tabela `mg_users`
 --
 
@@ -181,17 +139,11 @@ CREATE TABLE `mg_users` (
 --
 
 INSERT INTO `mg_users` (`id`, `account_type`, `email`, `password`, `firstname`, `is_active`) VALUES
-(1, 'admin', 'murilloggomes@gmail.com', '$2y$10$9MndhhRQ238I/cYMOqHKp.ivpmgz9/t4HQcYtXKc49vGyWFbijjG6', 'Renael Conceição', 1);
+(1, 'admin', 'noodle@spartechltda.com.br', '$2y$10$9MndhhRQ238I/cYMOqHKp.ivpmgz9/t4HQcYtXKc49vGyWFbijjG6', 'Renael Conceição', 1);
 
 --
 -- Índices para tabelas despejadas
 --
-
---
--- Índices de tabela `mg_categoria`
---
-ALTER TABLE `mg_categoria`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Índices de tabela `mg_general_data`
@@ -213,27 +165,11 @@ ALTER TABLE `mg_options`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices de tabela `mg_produtos`
---
-ALTER TABLE `mg_produtos`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Índices de tabela `mg_users`
 --
 ALTER TABLE `mg_users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `email` (`email`);
-
---
--- AUTO_INCREMENT para tabelas despejadas
---
-
---
--- AUTO_INCREMENT de tabela `mg_categoria`
---
-ALTER TABLE `mg_categoria`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de tabela `mg_general_data`
@@ -252,12 +188,6 @@ ALTER TABLE `mg_logs`
 --
 ALTER TABLE `mg_options`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT de tabela `mg_produtos`
---
-ALTER TABLE `mg_produtos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `mg_users`

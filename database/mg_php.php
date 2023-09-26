@@ -8,12 +8,6 @@
  * Database `php`
  */
 
-/* `php`.`mg_categoria` */
-$mg_categoria = array(
-  array('id' => '6','nome' => 'Carro2'),
-  array('id' => '7','nome' => 'carro1')
-);
-
 /* `php`.`mg_general_data` */
 $mg_general_data = array(
   array('id' => '1','name' => 'email-settings','data' => '{"smtp":{"host":"smtp.gmail.com","port":"587","encryption":"tls","auth":true,"username":"","password":"","from":""},"notifications":{"emails":"","new_user":true,"new_payment":false}}'),
@@ -65,14 +59,9 @@ $mg_options = array(
   array('id' => '3','option_name' => 'np_active_theme_idname','option_value' => 'default')
 );
 
-/* `php`.`mg_produtos` */
-$mg_produtos = array(
-  array('id' => '1','nome' => 'Murillo','sku' => '2090','preco' => '200','quantidade' => '2','categoria' => '[["6"],["7"]]','data_criacao' => '2023-06-08 07:42:03')
-);
-
 /* `php`.`mg_users` */
 $mg_users = array(
-  array('id' => '1','account_type' => 'admin','email' => 'murilloggomes@gmail.com','password' => '$2y$10$9MndhhRQ238I/cYMOqHKp.ivpmgz9/t4HQcYtXKc49vGyWFbijjG6','firstname' => 'Renael Conceição','is_active' => '1')
+  array('id' => '1','account_type' => 'admin','email' => 'noodle@spartechltda.com.br','password' => '$2y$10$9MndhhRQ238I/cYMOqHKp.ivpmgz9/t4HQcYtXKc49vGyWFbijjG6','firstname' => 'Renael Conceição','is_active' => '1')
 );
 /**
  * Database `phpmyadmin`
@@ -96,7 +85,7 @@ $pma__designer_settings = array(
 
 /* `phpmyadmin`.`pma__export_templates` */
 $pma__export_templates = array(
-  array('id' => '1','username' => 'root','export_type' => 'server','template_name' => 'mg_modelo','template_data' => '{"quick_or_custom":"quick","what":"sql","db_select[]":["php","phpmyadmin","test"],"aliases_new":"","output_format":"sendit","filename_template":"@SERVER@","remember_template":"on","charset":"utf-8","compression":"none","maxsize":"","codegen_structure_or_data":"data","codegen_format":"0","csv_separator":",","csv_enclosed":"\\"","csv_escaped":"\\"","csv_terminated":"AUTO","csv_null":"NULL","csv_columns":"something","csv_structure_or_data":"data","excel_null":"NULL","excel_columns":"something","excel_edition":"win","excel_structure_or_data":"data","json_structure_or_data":"data","json_unicode":"something","latex_caption":"something","latex_structure_or_data":"structure_and_data","latex_structure_caption":"Estrutura da tabela @TABLE@","latex_structure_continued_caption":"Estrutura da tabela @TABLE@ (continuação)","latex_structure_label":"tab:@TABLE@-structure","latex_relation":"something","latex_comments":"something","latex_mime":"something","latex_columns":"something","latex_data_caption":"Conteúdo da tabela @TABLE@","latex_data_continued_caption":"Conteúdo da tabela @TABLE@ (continuação)","latex_data_label":"tab:@TABLE@-data","latex_null":"\\\\textit{NULL}","mediawiki_structure_or_data":"data","mediawiki_caption":"something","mediawiki_headers":"something","htmlword_structure_or_data":"structure_and_data","htmlword_null":"NULL","ods_null":"NULL","ods_structure_or_data":"data","odt_structure_or_data":"structure_and_data","odt_relation":"something","odt_comments":"something","odt_mime":"something","odt_columns":"something","odt_null":"NULL","pdf_report_title":"","pdf_structure_or_data":"data","phparray_structure_or_data":"data","sql_include_comments":"something","sql_header_comment":"","sql_use_transaction":"something","sql_compatibility":"NONE","sql_structure_or_data":"structure_and_data","sql_create_table":"something","sql_auto_increment":"something","sql_create_view":"something","sql_create_trigger":"something","sql_backquotes":"something","sql_type":"INSERT","sql_insert_syntax":"both","sql_max_query_size":"50000","sql_hex_for_binary":"something","sql_utc_time":"something","texytext_structure_or_data":"structure_and_data","texytext_null":"NULL","yaml_structure_or_data":"data","":null,"as_separate_files":null,"csv_removeCRLF":null,"excel_removeCRLF":null,"json_pretty_print":null,"htmlword_columns":null,"ods_columns":null,"sql_dates":null,"sql_relation":null,"sql_mime":null,"sql_disable_fk":null,"sql_views_as_tables":null,"sql_metadata":null,"sql_drop_database":null,"sql_drop_table":null,"sql_if_not_exists":null,"sql_simple_view_export":null,"sql_view_current_user":null,"sql_or_replace_view":null,"sql_procedure_function":null,"sql_truncate":null,"sql_delayed":null,"sql_ignore":null,"texytext_columns":null}')
+  array('id' => '1','username' => 'root','export_type' => 'server','template_name' => 'mg_modelo','template_data' => '{"quick_or_custom":"quick","what":"sql","db_select[]":["noodle","phpmyadmin","test"],"aliases_new":"","output_format":"sendit","filename_template":"@SERVER@","remember_template":"on","charset":"utf-8","compression":"none","maxsize":"","codegen_structure_or_data":"data","codegen_format":"0","csv_separator":",","csv_enclosed":"\\"","csv_escaped":"\\"","csv_terminated":"AUTO","csv_null":"NULL","csv_columns":"something","csv_structure_or_data":"data","excel_null":"NULL","excel_columns":"something","excel_edition":"win","excel_structure_or_data":"data","json_structure_or_data":"data","json_unicode":"something","latex_caption":"something","latex_structure_or_data":"structure_and_data","latex_structure_caption":"Estrutura da tabela @TABLE@","latex_structure_continued_caption":"Estrutura da tabela @TABLE@ (continuação)","latex_structure_label":"tab:@TABLE@-structure","latex_relation":"something","latex_comments":"something","latex_mime":"something","latex_columns":"something","latex_data_caption":"Conteúdo da tabela @TABLE@","latex_data_continued_caption":"Conteúdo da tabela @TABLE@ (continuação)","latex_data_label":"tab:@TABLE@-data","latex_null":"\\\\textit{NULL}","mediawiki_structure_or_data":"data","mediawiki_caption":"something","mediawiki_headers":"something","htmlword_structure_or_data":"structure_and_data","htmlword_null":"NULL","ods_null":"NULL","ods_structure_or_data":"data","odt_structure_or_data":"structure_and_data","odt_relation":"something","odt_comments":"something","odt_mime":"something","odt_columns":"something","odt_null":"NULL","pdf_report_title":"","pdf_structure_or_data":"data","phparray_structure_or_data":"data","sql_include_comments":"something","sql_header_comment":"","sql_use_transaction":"something","sql_compatibility":"NONE","sql_structure_or_data":"structure_and_data","sql_create_table":"something","sql_auto_increment":"something","sql_create_view":"something","sql_create_trigger":"something","sql_backquotes":"something","sql_type":"INSERT","sql_insert_syntax":"both","sql_max_query_size":"50000","sql_hex_for_binary":"something","sql_utc_time":"something","texytext_structure_or_data":"structure_and_data","texytext_null":"NULL","yaml_structure_or_data":"data","":null,"as_separate_files":null,"csv_removeCRLF":null,"excel_removeCRLF":null,"json_pretty_print":null,"htmlword_columns":null,"ods_columns":null,"sql_dates":null,"sql_relation":null,"sql_mime":null,"sql_disable_fk":null,"sql_views_as_tables":null,"sql_metadata":null,"sql_drop_database":null,"sql_drop_table":null,"sql_if_not_exists":null,"sql_simple_view_export":null,"sql_view_current_user":null,"sql_or_replace_view":null,"sql_procedure_function":null,"sql_truncate":null,"sql_delayed":null,"sql_ignore":null,"texytext_columns":null}')
 );
 
 /* `phpmyadmin`.`pma__favorite` */
@@ -117,7 +106,7 @@ $pma__pdf_pages = array(
 
 /* `phpmyadmin`.`pma__recent` */
 $pma__recent = array(
-  array('username' => 'root','tables' => '[{"db":"php","table":"mg_produtos"},{"db":"php","table":"mg_logs"},{"db":"php","table":"mg_users"},{"db":"php","table":"mg_options"},{"db":"php","table":"mg_general_data"},{"db":"php","table":"mg_categoria"},{"db":"php","table":"mg_config_tema"}]')
+  array('username' => 'root','tables' => '[{"db":"noodle","table":"mg_logs"},{"db":"noodle","table":"mg_users"},{"db":"noodle","table":"mg_options"},{"db":"noodle","table":"mg_general_data"},{"db":"noodle","table":"mg_config_tema"}]')
 );
 
 /* `phpmyadmin`.`pma__relation` */

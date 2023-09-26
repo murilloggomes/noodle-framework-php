@@ -4,40 +4,6 @@ using System.Collections.Generic;
 using System.Text;
 namespace Php
 {
-    #region Mg_categoria
-    public class Mg_categoria
-    {
-        #region Member Variables
-        protected int _id;
-        protected string _nome;
-        #endregion
-        #region Constructors
-        public Mg_categoria() { }
-        public Mg_categoria(string nome)
-        {
-            this._nome=nome;
-        }
-        #endregion
-        #region Public Properties
-        public virtual int Id
-        {
-            get {return _id;}
-            set {_id=value;}
-        }
-        public virtual string Nome
-        {
-            get {return _nome;}
-            set {_nome=value;}
-        }
-        #endregion
-    }
-    #endregion
-}using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Text;
-namespace Php
-{
     #region Mg_general_data
     public class Mg_general_data
     {
@@ -176,76 +142,7 @@ namespace Php
         #endregion
     }
     #endregion
-}using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Text;
-namespace Php
-{
-    #region Mg_produtos
-    public class Mg_produtos
-    {
-        #region Member Variables
-        protected int _id;
-        protected string _nome;
-        protected string _sku;
-        protected string _preco;
-        protected int _quantidade;
-        protected unknown _categoria;
-        protected DateTime _data_criacao;
-        #endregion
-        #region Constructors
-        public Mg_produtos() { }
-        public Mg_produtos(string nome, string sku, string preco, int quantidade, unknown categoria, DateTime data_criacao)
-        {
-            this._nome=nome;
-            this._sku=sku;
-            this._preco=preco;
-            this._quantidade=quantidade;
-            this._categoria=categoria;
-            this._data_criacao=data_criacao;
-        }
-        #endregion
-        #region Public Properties
-        public virtual int Id
-        {
-            get {return _id;}
-            set {_id=value;}
-        }
-        public virtual string Nome
-        {
-            get {return _nome;}
-            set {_nome=value;}
-        }
-        public virtual string Sku
-        {
-            get {return _sku;}
-            set {_sku=value;}
-        }
-        public virtual string Preco
-        {
-            get {return _preco;}
-            set {_preco=value;}
-        }
-        public virtual int Quantidade
-        {
-            get {return _quantidade;}
-            set {_quantidade=value;}
-        }
-        public virtual unknown Categoria
-        {
-            get {return _categoria;}
-            set {_categoria=value;}
-        }
-        public virtual DateTime Data_criacao
-        {
-            get {return _data_criacao;}
-            set {_data_criacao=value;}
-        }
-        #endregion
-    }
-    #endregion
-}using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;

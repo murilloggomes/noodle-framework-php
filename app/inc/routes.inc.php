@@ -42,13 +42,9 @@ $settings_pages = [
   ];
   App::addRoute("GET|POST", "/settings/[".implode("|", $settings_pages).":page]?/?", "Settings");
 
-// Produtos
-App::addRoute("GET|POST", "/produtos/?", "Produtos");
 
-// Categorias
-App::addRoute("GET|POST", "/categorias/?", "Categorias");
-
-// Rotas simples e praticas para serem aprimoradas com níveis de permissão de usuários ou grupos de controles posteriores.
+// Usuários
+App::addRoute("GET|POST", "/users/?", "Users");
 
 
 

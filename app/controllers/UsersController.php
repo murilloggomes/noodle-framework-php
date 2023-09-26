@@ -16,18 +16,19 @@ class UsersController extends Controller
             exit;
         }
         
-        $Usuarios = Controller::model("Users");			 
-    
-        $this->setVariable("Users", $Usuarios); 
+        $Usuarios = Controller::model("Users");	
+				$Usuarios->fetchData();
 			
-		// Chamada de Funções na página
+				// Chamada de Funções na página
         if (Input::post("action") == "salvarUsuario") {
-		   $this->salvarUsuario();
+		   		$this->salvarUsuario();
         } else if (Input::post("action") == "remover") {
            $this->remover(); 
         } else if (Input::post("action") == "login") {
            $this->login();
         }   
+			
+				$this->setVariable("Users", $Usuarios); 
 		
         $this->view("users");
     }

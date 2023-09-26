@@ -2,10 +2,9 @@
 <html lang="pt-BR">
     <head>
         <meta charset="utf-8" />
-        <title>Produtos | Teste PHP</title>
+        <title>Usuários</title>
         <meta name="viewport" content="width=device-width, user-scalable=no">
-				<meta http-equip="X-UA-Compatible" content="ie=edge">
-        <meta content="Teste ARQMED em MVC PHP 8.2" name="description" />
+				<meta http-equip="X-UA-Compatible" content="ie=edge">  
         <meta content="Murillo Gomes" name="author" />
         <!-- App favicon -->
         <link rel="shortcut icon" href="<?= APPURL . "/assets/images/favicon.ico"?>">
@@ -44,8 +43,8 @@
 					
             <div class="content-page">     
 							
-						 <?php require(APPPATH.'/views/fragments/produtos.fragment.php'); ?>
-             <?php require(APPPATH.'/views/fragments/modals/modal-produtos.fragment.php'); ?>
+						 <?php require(APPPATH.'/views/fragments/user.fragment.php'); ?>
+            
              <?php require(APPPATH.'/views/fragments/siteconfig/footer.fragment.php'); ?>
 
             </div>
@@ -80,6 +79,6 @@
         <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
         <!-- end demo js-->
 				<script src="<?= APPURL . "/assets/js/custom/custom.js"?>"></script>
-        <script src="<?= APPURL . "/assets/js/custom/modal-produtos.js"?>"></script>
+      
     </body>
 </html>

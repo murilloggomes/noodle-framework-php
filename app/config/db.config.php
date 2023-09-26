@@ -12,5 +12,4 @@ define("TABLE_USERS", "users");
 define("TABLE_LOGS", "logs");
 define("TABLE_GENERAL_DATA", "general_data");
 define("TABLE_OPTIONS", "options");
-define("TABLE_PRODUTOS", "produtos");
-define("TABLE_CATEGORIAS", "categorias");
+
