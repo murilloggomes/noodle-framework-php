@@ -71,6 +71,23 @@ Depois disso pode ir direto pro login e acessar com o usuário e senha que você
 Usuário: noodle@spartechltda.com.br | Senha: @noodle123
 ```
 
+Após isso se aventurar na contrução de páginas utilizando o MVC, com as routes chamando os controller e os controller chamando as views. Os dados do banco sempre será chamados dos Models por uma estrutura muito simples como:
+
+----------------------------------------------
+$User = Controller::model("User", $IdUser);
+$nome = $User->get("nome");
+----------------------------------------------
+
+Ou então setar as informações como
+
+----------------------------------------------
+$User = Controller::model("User", $IdUser);
+$User->set("nome", "SpartechLtda");
+$User->save();
+-----------------------------------------------
+
+Com isso trouxemos um colocamos em uma váriavel o valor do nome dentro do banco user, e na segunda opção troxemos e setamos um novo valor para aquele nome daquele $IdUser de uma maneira muito simples e sem precisar tocar em nenhum momento em query. Tudo rápido fácil e totalmente seguro!
+
 ## Contribuições
 <p align="center" style="position:block">
   <img src="https://user-images.githubusercontent.com/67968960/270708300-9df8faa5-07bb-471c-b242-9d0d9449623c.png" style="width:150px !important"></img>
