@@ -79,7 +79,7 @@ Depois disso pode ir direto pro login e acessar com o usuário e senha que você
 
 ## Contribuições
 <p align="center">
-<img src="https://user-images.githubusercontent.com/67968960/270708300-9df8faa5-07bb-471c-b242-9d0d9449623c.png" style="width:150px !important"></img>
-[Buy Me A Coffee](https://www.buymeacoffee.com/murilloggo)
+  <img src="https://user-images.githubusercontent.com/67968960/270708300-9df8faa5-07bb-471c-b242-9d0d9449623c.png" style="width:150px !important"></img>
+  <a href="https://www.buymeacoffee.com/murilloggo">Buy Me A Coffee</a>
 </p>
 
