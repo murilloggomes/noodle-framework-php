@@ -10,7 +10,7 @@
       
 
 ### Tópicos 
-<span style="text-align: -webkit-center !important;text-align-last: center !important">
+<span>
 :small_blue_diamond: [Descrição do projeto](#descrição-do-projeto)    :small_blue_diamond: [Deploy da Aplicação](#deploy-da-aplicação-dash)
 
 :small_blue_diamond: [Funcionalidades](#funcionalidades)    :small_blue_diamond: [Pré-requisitos](#pré-requisitos)
