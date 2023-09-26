@@ -22,18 +22,18 @@
 ## Descrição do do FrameWork 
 
 <p align="justify">
-  Framework leve e extremamente potente para se extrair da melhor forma o php 8.2, baseado em MVC muitos já vão estar familizados! 
+  Framework leve e extremamente potente para se extrair da melhor forma o php 8.2. Arquitetado em MVC muitos o qual muitos já vão estar familiazirados. 
 </p>
 
 ## Funcionalidades
 
-:heavy_check_mark: Página Externa para acesso ao cliente (Situ institucional, e-commerce, vai da ideia da projeto).  
+:heavy_check_mark: Página Externa para acesso ao cliente (Situ institucional, E-Commerce, Consulta de Propostas ou Orçamentos, Agendamendo de serviços ou entregas... indo do planejamento estratégico do projeto.).  
 
-:heavy_check_mark: Dashboard interno já estruturado para você escalar mediante suas nececidades, com uma arquitetura MVC basta você se preocupar em Controller, Views, Moldes e Rotas e seu sistema sempre estará 100%!
+:heavy_check_mark: Dashboard interno já estruturado para você escalar mediante suas nececidades, com gráficos, componentes atualizados para tratamento de processos de vários tipos, desde vendas, analise de compras e receitas, indicadores de departamentos para tomada de gestão, e o programador deverá se preocupar apenas com a dinamica da arquitetura MVC lembrando sempre de abastecer o conhecimento nas Routes, Views, Controllers e Models, que a equipe SparteLtda sempre estára atualizando a ferramenta a medida que for sendo necessario mais funcionalidades para sanar necessidades de vocês e/ou seus clentes!
 
-:heavy_check_mark: Responsivo para todo o tipo de tela, e também nas proporções corretas para se fazer um webviews mobile dele.  
+:heavy_check_mark: Responsivo para todo o tipo de tela, totalmente preparado para se tornar um aplicativo WebView para celulares, podendo ser inserido nas lojas de APP como Apple Store e Play Store, sem nenhum inpedimento técnico.  
 
-:heavy_check_mark: Extensões diversas adormecidas esperando a necessidade do usuário como chars, models, fullcalendar, entre outras  
+:heavy_check_mark: Componentes totalmente atualizados e de alta usabilidade como chars, datatable, fullcalendary, phpmailer, simpleimage, php-encryption, moment, ionCube, router, qr-code, pix, monolog, aws, mpdf, google auth, entre outros interessantes que vocês irão precisar para cada tipo de projeto distinto.
 
 ## Pré-requisitos
 
