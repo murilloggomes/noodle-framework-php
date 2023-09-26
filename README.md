@@ -91,6 +91,9 @@ Linha3: $User->save();
 ``` 
 Com isso trouxemos um colocamos em uma váriavel o valor do nome dentro do banco user, e na segunda opção troxemos e setamos um novo valor para aquele nome daquele $IdUser de uma maneira muito simples e sem precisar tocar em nenhum momento em query. Tudo rápido fácil e totalmente seguro!
 
+## Dicas e ideias, deixe em nosso comentário do fórum
+<a href="https://github.com/murilloggomes/noodle-framework-php/discussions/1"</a>
+
 ## Contribuições
 <p align="center" style="position:block">
   <img src="https://user-images.githubusercontent.com/67968960/270708300-9df8faa5-07bb-471c-b242-9d0d9449623c.png" style="width:150px !important"></img>
