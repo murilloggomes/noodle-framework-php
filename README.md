@@ -81,7 +81,7 @@ Linha1: $User = Controller::model("User", $IdUser);
 Linha2: $nome = $User->get("nome");
 ```
 ```
-Ou então setar as informações como:
+Ou então inserir informações assim:
 ```
 ```  
 Linha1: $User = Controller::model("User", $IdUser);
@@ -92,8 +92,6 @@ Linha2: $User->set("nome", "SpartechLtda");
 ```  
 Linha3: $User->save();
 ``` 
-  
-
 Com isso trouxemos um colocamos em uma váriavel o valor do nome dentro do banco user, e na segunda opção troxemos e setamos um novo valor para aquele nome daquele $IdUser de uma maneira muito simples e sem precisar tocar em nenhum momento em query. Tudo rápido fácil e totalmente seguro!
 
 ## Contribuições
