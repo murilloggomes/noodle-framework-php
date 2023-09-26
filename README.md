@@ -27,7 +27,7 @@
 
 ## Funcionalidades
 
-:heavy_check_mark: Página Externa para acesso ao cliente (Site institucional, e-commerce, vai da ideia da projeto).  
+:heavy_check_mark: Página Externa para acesso ao cliente (Situ institucional, e-commerce, vai da ideia da projeto).  
 
 :heavy_check_mark: Dashboard interno já estruturado para você escalar mediante suas nececidades, com uma arquitetura MVC basta você se preocupar em Controller, Views, Moldes e Rotas e seu sistema sempre estará 100%!
 
@@ -52,24 +52,14 @@ run: "cd" no caminho da pasta do projeto (que deve ser baixa na pasta raiz realm
 
 ## Como rodar os testes
 ```
-Mudar configurações Banco de Dados /app/config/db.config.php;
+sudo nano /app/config/database.config.php;
 ```
 ```
 define("DB_HOST", "localhost");
-define("DB_NAME", "base_noodle");
-define("DB_USER", "user_noodle");
-define("DB_PASS", "senha_noodle");
+define("DB_NAME", "nome_banco");
+define("DB_USER", "usuario_banco");
+define("DB_PASS", "senha_banco");
 define("DB_ENCODING", "utf8");
-
-define("TABLE_PREFIX", "mg_");
-
-// Set table names without prefix
-define("TABLE_USERS", "users");
-define("TABLE_LOGS", "logs");
-define("TABLE_GENERAL_DATA", "general_data");
-define("TABLE_OPTIONS", "options");
-define("TABLE_PRODUTOS", "produtos");
-define("TABLE_CATEGORIAS", "categorias");
 ```
 
 ## Casos de Uso
@@ -78,11 +68,5 @@ Depois disso pode ir direto pro login e acessar com o usuário e senha que você
 
 
 ## Contribuições
-<p align="center" style="position:block">
-  <img src="https://user-images.githubusercontent.com/67968960/270708300-9df8faa5-07bb-471c-b242-9d0d9449623c.png" style="width:150px !important"></img>
-</p> 
-<p align="center">
-  <a href="https://www.buymeacoffee.com/murilloggo">Buy Me A Coffee</a>
-</p>
 
-
+[Buy Me A Coffee](https://www.buymeacoffee.com/murilloggo)
