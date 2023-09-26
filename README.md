@@ -9,11 +9,11 @@
 <h2>[Status do Projeto] - ### Desenvolvimento ### - Atualizações todas as semanas !</h2>
       
 
-### Tópicos 
-:small_blue_diamond: [Descrição do projeto](#descrição-do-projeto)    :small_blue_diamond: [Deploy da Aplicação](#deploy-da-aplicação-dash)
-### Tópicos
-:small_blue_diamond: [Funcionalidades](#funcionalidades)    :small_blue_diamond: [Pré-requisitos](#pré-requisitos)
-### Tópicos
+### PARTE 01 
+:small_blue_diamond: [Descrição do projeto](#descrição-do-projeto)    :small_blue_diamond: [Funcionalidades](#funcionalidades) 
+### Parte 02
+:small_blue_diamond: [Pré-requisitos](#pré-requisitos)     :small_blue_diamond: [Deploy da Aplicação](#deploy-da-aplicação-dash)
+### Rodando a aplicação
 :small_blue_diamond: [Como rodar a aplicação](#como-rodar-a-aplicação-arrow_forward)
 
 
