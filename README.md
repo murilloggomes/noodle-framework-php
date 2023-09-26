@@ -6,7 +6,7 @@
    <img src="http://img.shields.io/static/v1?label=STATUS&message=Desenvolvimento&color=GREY&style=for-the-badge"/>
 </p>
 
-<h2>[Status do Projeto] - ### Desenvolvimento ### - Atualizações todas as semanas!</h2>
+<h2>[Status do Projeto] - ### Desenvolvimento ### - Atualizações todas as semanas !</h2>
       
 
 ### Tópicos 
@@ -52,22 +52,23 @@ sudo git clone git@github.com:murilloggomes/noodle-open-source-framework-php-82.
 
 run: "cd" no caminho da pasta do projeto (que deve ser baixa na pasta raiz realmente da aplicação)
 
-## Como rodar os testes
+## Como vincular o banco de dados corretamente
 ```
-sudo nano /app/config/database.config.php;
+cd /app/config/db.config.php;
 ```
 ```
-define("DB_HOST", "localhost");
-define("DB_NAME", "nome_banco");
-define("DB_USER", "usuario_banco");
-define("DB_PASS", "senha_banco");
-define("DB_ENCODING", "utf8");
+define("DB_HOST", "localhost"); -> Host do banco de dados, geralmente localhost ou 127.0.0.1
+define("DB_NAME", "nome_banco"); -> Nome do banco criado por vocês, poderá ser qualquer nome.
+define("DB_USER", "usuario_banco"); -> Usuário do banco padrão ou então um usuário criado com privilégios apenas para esse banco.
+define("DB_PASS", "senha_banco"); -> Senha do usuário a cima.
+define("DB_ENCODING", "utf8mb4_general_ci"); -> Estilo de encoding do banco 
 ```
 
 ## Casos de Uso
 
 Depois disso pode ir direto pro login e acessar com o usuário e senha que você cadastrou ou rodar o script sql:
-
+## Login padrão da aplicação: noodle@spartechltda.com.br
+## Senha: @noodle123
 
 ## Contribuições
 <p align="center" style="position:block">
