@@ -88,7 +88,7 @@ Ou então setar as informações como:
 ### $User->set("nome", "SpartechLtda");
 </p>
 <p style="position:block;">
-### $User->save();
+###$User->save();
 </p>  
 
 Com isso trouxemos um colocamos em uma váriavel o valor do nome dentro do banco user, e na segunda opção troxemos e setamos um novo valor para aquele nome daquele $IdUser de uma maneira muito simples e sem precisar tocar em nenhum momento em query. Tudo rápido fácil e totalmente seguro!
