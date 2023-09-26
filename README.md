@@ -10,13 +10,12 @@
       
 
 ### Tópicos 
-<span>
 :small_blue_diamond: [Descrição do projeto](#descrição-do-projeto)    :small_blue_diamond: [Deploy da Aplicação](#deploy-da-aplicação-dash)
-
+### Tópicos
 :small_blue_diamond: [Funcionalidades](#funcionalidades)    :small_blue_diamond: [Pré-requisitos](#pré-requisitos)
-
+### Tópicos
 :small_blue_diamond: [Como rodar a aplicação](#como-rodar-a-aplicação-arrow_forward)
-</span>
+
 
 ## Descrição do projeto 
 
