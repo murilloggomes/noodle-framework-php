@@ -1,5 +1,5 @@
 
-<h1 style="text-align: -webkit-center !important;text-align-last: center !important">[Open Source] - Noodle Framework MVC - Compativel com PHP 8.2 </h1> 
+<h1 style="text-align: -webkit-center !important;text-align-last: center !important">[Open Source] - Noodle Framework MVC - Compativel com PHP 8.2</h1> 
 
 <p align="center">
   <img src="http://img.shields.io/static/v1?label=License&message=MIT&color=green&style=for-the-badge"/>
