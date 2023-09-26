@@ -78,7 +78,9 @@ Após isso se aventurar na contrução de páginas utilizando o MVC, com as rout
 <p style="position:block;">
 || $nome = $User->get("nome");
 </p>
+<p style="position:block;">
 Ou então setar as informações como:
+</p>
 <p style="position:block;">
 || $User = Controller::model("User", $IdUser);
 </p>
