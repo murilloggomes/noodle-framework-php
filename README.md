@@ -81,5 +81,5 @@ Depois disso pode ir direto pro login e acessar com o usuário e senha que você
 
 [Buy Me A Coffee](https://www.buymeacoffee.com/murilloggo)
 
-![bmc_qr](https://github.com/murilloggomes/noodle-framework-php/assets/67968960/9df8faa5-07bb-471c-b242-9d0d9449623c)
+<style font-size='15px'>![bmc_qr](https://github.com/murilloggomes/noodle-framework-php/assets/67968960/9df8faa5-07bb-471c-b242-9d0d9449623c)</style>
 
