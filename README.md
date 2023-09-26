@@ -74,12 +74,18 @@ Usuário: noodle@spartechltda.com.br | Senha: @noodle123
 Após isso se aventurar na contrução de páginas utilizando o MVC, com as routes chamando os controller e os controller chamando as views. Os dados do banco sempre será chamados dos Models por uma estrutura muito simples como:
 <p style="position:block;">
 ||$User = Controller::model("User", $IdUser);
+</p>
+<p style="position:block;">
 ||$nome = $User->get("nome");
-
+</p>
 Ou então setar as informações como:
-
+<p style="position:block;">
 ||$User = Controller::model("User", $IdUser);
+</p>
+<p style="position:block;">
 ||$User->set("nome", "SpartechLtda");
+</p>
+<p style="position:block;">
 ||$User->save();
 </p>  
 
