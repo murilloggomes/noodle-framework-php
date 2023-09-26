@@ -67,8 +67,9 @@ define("DB_ENCODING", "utf8mb4_general_ci"); -> Estilo de encoding do banco
 ## Casos de Uso
 
 Depois disso pode ir direto pro login e acessar com o usuário e senha que você cadastrou ou rodar o script sql:
-## Login padrão da aplicação: noodle@spartechltda.com.br
-## Senha: @noodle123
+```
+Login padrão da aplicação: noodle@spartechltda.com.br | Senha: @noodle123
+```
 
 ## Contribuições
 <p align="center" style="position:block">
