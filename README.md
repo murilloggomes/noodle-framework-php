@@ -81,5 +81,5 @@ Depois disso pode ir direto pro login e acessar com o usuário e senha que você
 
 [Buy Me A Coffee](https://www.buymeacoffee.com/murilloggo)
 
-<img src="https://user-images.githubusercontent.com/67968960/270708300-9df8faa5-07bb-471c-b242-9d0d9449623c.png" font-size='width:250px !important'></img>
+<img src="https://user-images.githubusercontent.com/67968960/270708300-9df8faa5-07bb-471c-b242-9d0d9449623c.png" style='width:250px !important'></img>
 
