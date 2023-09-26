@@ -27,7 +27,7 @@
 
 ## Funcionalidades
 
-:heavy_check_mark: Página Externa para acesso ao cliente (Situ institucional, e-commerce, vai da ideia da projeto).  
+:heavy_check_mark: Página Externa para acesso ao cliente (Site institucional, e-commerce, vai da ideia da projeto).  
 
 :heavy_check_mark: Dashboard interno já estruturado para você escalar mediante suas nececidades, com uma arquitetura MVC basta você se preocupar em Controller, Views, Moldes e Rotas e seu sistema sempre estará 100%!
 
