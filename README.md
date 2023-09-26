@@ -19,7 +19,7 @@
 :small_blue_diamond: [Como rodar a aplicação](#como-rodar-a-aplicação-arrow_forward)
 
 
-## Descrição do projeto 
+## Descrição do do FrameWork 
 
 <p align="justify">
   Framework leve e extremamente potente para se extrair da melhor forma o php 8.2, baseado em MVC muitos já vão estar familizados! 
