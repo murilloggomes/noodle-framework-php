@@ -6,7 +6,8 @@
    <img src="http://img.shields.io/static/v1?label=STATUS&message=Desenvolvimento&color=GREY&style=for-the-badge"/>
 </p>
 
-[Status do Projeto] ### Desenvolvimentos
+<h2>[Status do Projeto]</h2>
+       Desenvolvimento
 
 ### Tópicos 
 
