@@ -4,6 +4,7 @@
   <img src="http://img.shields.io/static/v1?label=License&message=MIT&color=green&style=for-the-badge"/>
    <img src="http://img.shields.io/static/v1?label=STATUS&message=Desenvolvimento&color=GREY&style=for-the-badge"/>
 </p>
+![image](https://github.com/murilloggomes/noodle-framework-php/assets/67968960/5a3f43e8-ad46-4e75-8587-e2a2c5f858b6)
 
 <h2>[Status do Projeto] - ### Desenvolvimento ### - Atualizações todas as semanas !</h2>
       
