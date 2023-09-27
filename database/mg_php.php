@@ -61,7 +61,7 @@ $mg_options = array(
 
 /* `php`.`mg_users` */
 $mg_users = array(
-  array('id' => '1','account_type' => 'admin','email' => 'noodle@spartechltda.com.br','password' => '$2y$10$9MndhhRQ238I/cYMOqHKp.ivpmgz9/t4HQcYtXKc49vGyWFbijjG6','firstname' => 'Renael Conceição','is_active' => '1')
+  array('id' => '1','account_type' => 'admin','email' => 'noodle@spartechltda.com.br','password' => '$2y$10$Uexwcrqs5xLcDn5akZaD4.FXOsA/UzXGVk5bTAhjNC4TvZ/J6K0EO','firstname' => 'Noodle Framework','is_active' => '1')
 );
 /**
  * Database `phpmyadmin`

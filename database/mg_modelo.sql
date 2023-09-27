@@ -109,7 +109,7 @@ INSERT INTO `mg_logs` (`id`, `id_user`, `situacao`, `pagina`, `detalhes`, `horas
 CREATE TABLE `mg_options` (
   `id` int(10) NOT NULL,
   `option_name` varchar(255) NOT NULL,
-  `option_value` varchar(255) NOT NULL
+  `option_value` varchar(255) NOT NULL,
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -118,6 +118,18 @@ CREATE TABLE `mg_options` (
 
 INSERT INTO `mg_options` (`id`, `option_name`, `option_value`) VALUES
 (3, 'np_active_theme_idname', 'default');
+
+-----------------------------------------------------------
+
+--
+-- Estrutura Configuração Estilo Usuário
+--
+
+CREATE TABLE `base_noodle`.`config_tema` (
+    `id` INT(11) NOT NULL AUTO_INCREMENT,
+    `usuario` INT(11) NOT NULL , `largura_tela` INT(11) NOT NULL,
+    `cor_menu` INT(11) NOT NULL , `data_alteracao` DATETIME NULL,
+) ENGINE = InnoDB CHARSET=utf8mb4 COLLATE utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -139,7 +151,7 @@ CREATE TABLE `mg_users` (
 --
 
 INSERT INTO `mg_users` (`id`, `account_type`, `email`, `password`, `firstname`, `is_active`) VALUES
-(1, 'admin', 'noodle@spartechltda.com.br', '$2y$10$9MndhhRQ238I/cYMOqHKp.ivpmgz9/t4HQcYtXKc49vGyWFbijjG6', 'Renael Conceição', 1);
+(1, 'admin', 'noodle@spartechltda.com.br', '$2y$10$Uexwcrqs5xLcDn5akZaD4.FXOsA/UzXGVk5bTAhjNC4TvZ/J6K0EO', 'Noodle Framework', 1);
 
 --
 -- Índices para tabelas despejadas
@@ -151,6 +163,14 @@ INSERT INTO `mg_users` (`id`, `account_type`, `email`, `password`, `firstname`, 
 ALTER TABLE `mg_general_data`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `name` (`name`);
+
+--
+-- Índices de tabela `mg_config_tema`
+--
+
+ALTER TABLE `mg_config_tema`
+    ADD PRIMARY KEY (`id`),
+    ADD UNIQUE KEY `usuario` (`usuario`);
 
 --
 -- Índices de tabela `mg_logs`
@@ -350,7 +370,7 @@ CREATE TABLE `pma__recent` (
 --
 
 INSERT INTO `pma__recent` (`username`, `tables`) VALUES
-('root', '[{\"db\":\"php\",\"table\":\"mg_produtos\"},{\"db\":\"php\",\"table\":\"mg_logs\"},{\"db\":\"php\",\"table\":\"mg_users\"},{\"db\":\"php\",\"table\":\"mg_options\"},{\"db\":\"php\",\"table\":\"mg_general_data\"},{\"db\":\"php\",\"table\":\"mg_categoria\"},{\"db\":\"php\",\"table\":\"mg_config_tema\"}]');
+('root', '[{\"db\":\"noodle\",\"table\":\"mg_produtos\"},{\"db\":\"noodle\",\"table\":\"mg_logs\"},{\"db\":\"noodle\",\"table\":\"mg_users\"},{\"db\":\"noodle\",\"table\":\"mg_options\"},{\"db\":\"noodle\",\"table\":\"mg_general_data\"},{\"db\":\"noodle\",\"table\":\"mg_categoria\"},{\"db\":\"noodle\",\"table\":\"mg_config_tema\"}]');
 
 -- --------------------------------------------------------
 

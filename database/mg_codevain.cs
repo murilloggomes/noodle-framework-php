@@ -4,6 +4,49 @@ using System.Collections.Generic;
 using System.Text;
 namespace Php
 {
+    #region Mg_config_tema
+    public class Mg_config_tema
+    {
+        #region Member Variables
+        protected int _id;
+        protected string _name;
+        protected unknown _data;
+        #endregion
+        #region Constructors
+        public Mg_config_tema() { }
+        public Mg_config_tema(string usuario, int largura_tela, int cor_menu, Unknow data_alteracao)
+        {
+            this._usuario=usuario;
+            this._largura_tela=largura_tela;
+            this._cor_menu=cor_menu;
+            this._data_alteracao=data_alteracao;
+        }
+        #endregion
+        #region Public Properties
+        public virtual int Id
+        {
+            get {return _id;}
+            set {_id=value;}
+        }
+        public virtual string Name
+        {
+            get {return _name;}
+            set {_name=value;}
+        }
+        public virtual unknown Data
+        {
+            get {return _data;}
+            set {_data=value;}
+        }
+        #endregion
+    }
+    #endregion
+}using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Text;
+namespace Php
+{
     #region Mg_general_data
     public class Mg_general_data
     {
