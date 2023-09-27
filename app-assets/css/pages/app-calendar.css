@@ -1,0 +1,61 @@
+/*----------------------------------------
+  Calendar App
+------------------------------------------*/
+.fc .fc-event
+{
+    padding: 4px 7px;
+
+    color: #fff;
+    border: none;
+    background: #3f51b5;
+}
+
+.fc .fc-button
+{
+    height: auto;
+    padding: 10px;
+
+    color: #fff !important;
+    border-color: #ff4081 !important;
+    border-radius: 2px;
+    background: #ff4081 !important;
+    text-shadow: none;
+}
+
+.fc .fc-button-primary:not(:disabled).fc-button-active:focus,
+.fc .fc-button-primary:not(:disabled):active:focus,
+.fc .fc-button-primary:focus
+{
+    box-shadow: none;
+}
+
+.fc .fc-content-skeleton tr
+{
+    border-bottom: none;
+}
+
+.fc td.fc-day
+{
+    border-width: 1px !important;
+}
+
+.fc-toolbar
+{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
+
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+}
+
+@media (max-width: 900px)
+{
+    .fc-left,
+    .fc-center
+    {
+        margin-bottom: .5rem;
+    }
+}

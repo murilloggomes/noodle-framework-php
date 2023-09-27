@@ -1,0 +1,137 @@
+/*  Account setting */
+/*-----------------*/
+.tabs-vertical
+{
+    /* tabs*/
+    /* hide default indicator*/
+    /*input file hide */
+}
+
+.tabs-vertical .media-body
+{
+    padding: 0 25px;
+    /*media body in general tab*/
+
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+            flex-grow: 1;
+}
+
+.tabs-vertical .tabs
+{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
+            flex-direction: column;
+
+    height: auto;
+
+    border-radius: 4px;
+    background-color: transparent;
+
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+            justify-content: flex-start;
+}
+
+.tabs-vertical .tabs .tab
+{
+    /* tab inside tabs*/
+    width: 100%;
+
+    text-align: start;
+}
+
+.tabs-vertical .tabs .tab a
+{
+    -webkit-transition: none !important;
+            transition: none !important;
+
+    color: #6b6f82;
+}
+
+.tabs-vertical .tabs .tab a:hover
+{
+    color: #6b6f82 !important;
+}
+
+.tabs-vertical .tabs .tab a.active
+{
+    color: #2d4c64 !important;
+    border-radius: 4px;
+    background-color: #e8f5e9  !important;
+}
+
+.tabs-vertical .tabs .tab a.active:hover
+{
+    color: #3f51b5 !important;
+}
+
+.tabs-vertical .tabs .tab a i
+{
+    /* icons */
+    position: relative;
+    top: 7px;
+
+    margin-right: .2rem;
+}
+
+.tabs-vertical .tabs .tab:hover
+{
+    background-color: #eee;
+}
+
+.tabs-vertical .indicator
+{
+    display: none;
+}
+
+.tabs-vertical .upfilewrapper
+{
+    overflow: hidden;
+
+    width: 0;
+    height: 0;
+}
+
+@media (max-width: 600px)
+{
+    /* all submit and cancel button alignmet change*/
+    .media-body .general-action-btn
+    {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display:         flex;
+                flex-direction: column;
+
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+    }
+    .media-body .general-action-btn .btn
+    {
+        margin-bottom: 1rem;
+    }
+    .form-action
+    {
+                flex-direction: column;
+
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+    }
+    .form-action .btn
+    {
+        margin-bottom: 1rem;
+    }
+}

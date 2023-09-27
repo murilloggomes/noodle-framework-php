@@ -1,0 +1,225 @@
+/* Timeline Page*/
+.timeline
+{
+    position: relative;
+}
+
+.timeline:before
+{
+    position: absolute;
+    z-index: -1;
+    /* Timeline center line */
+    top: 35px;
+    left: 50%;
+
+    width: 3px;
+    height: 100%;
+
+    content: ' ';
+
+    background-color: #eee;
+}
+
+.timeline > li
+{
+    position: relative;
+
+    float: left;
+    clear: left;
+
+    width: 50%;
+    /* timeline all list*/
+    margin-bottom: 35px;
+}
+
+.timeline > li .timeline-panel
+{
+    position: relative;
+    /* Time line panel */
+
+    width: calc(100% - 43px);
+}
+
+.timeline > li .timeline-panel::before
+{
+    /* Triangle arrow for timeline panel*/
+    position: absolute;
+    top: 26px;
+    right: -15px;
+
+    display: inline-block;
+
+    content: ' ';
+
+    border-top: 15px solid transparent;
+    border-right: 0 solid #ccc;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid #ccc;
+}
+
+.timeline > li .timeline-panel::after
+{
+    /* Triangle arrow for timeline panel*/
+    position: absolute;
+    top: 27px;
+    right: -14px;
+
+    display: inline-block;
+
+    content: ' ';
+
+    border-top: 14px solid transparent;
+    border-right: 0 solid #fff;
+    border-bottom: 14px solid transparent;
+    border-left: 14px solid #fff;
+}
+
+.timeline > li .timeline-badge
+{
+    position: absolute;
+    z-index: 8;
+    top: 27px;
+    right: -19px;
+    /* Center icons icons container */
+
+    width: 35px;
+    height: 35px;
+
+    text-align: center;
+
+    border-radius: 50%;
+}
+
+.timeline > li .timeline-badge a i
+{
+    /*Icons inside Badges */
+    font-size: 1.4rem;
+    line-height: 35px;
+}
+
+.timeline > li.timeline-inverted
+{
+    /* Right side timline list*/
+    float: right;
+    clear: right;
+
+    margin-top: 60px;
+    margin-bottom: 50px;
+}
+
+.timeline > li.timeline-inverted .timeline-panel
+{
+    float: right;
+}
+
+.timeline > li.timeline-inverted .timeline-panel::before
+{
+    right: auto;
+    left: -15px;
+
+    border-right-width: 15px;
+    border-left-width: 0;
+}
+
+.timeline > li.timeline-inverted .timeline-panel::after
+{
+    right: auto;
+    left: -14px;
+
+    border-right-width: 14px;
+    border-left-width: 0;
+}
+
+.timeline > li.timeline-inverted .timeline-badge
+{
+    left: -15px;
+}
+
+.timeline > li .card .card-header
+{
+    /* Card header inside card */
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
+
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+            align-items: center;
+}
+
+.timeline > li .card .card-text .flow-text
+{
+    font-size: 1.4rem;
+}
+
+.timeline > li .card .horizontal-avatar li
+{
+    /* Specific list inside card*/
+    display: inline-block;
+
+    margin-right: .9rem;
+}
+
+@media (max-width: 767px)
+{
+    /* media query for small screen  */
+    .timeline::before
+    {
+        /* Center line*/
+        left: 44px;
+    }
+    .timeline > li
+    {
+        position: relative;
+
+        float: left;
+        clear: left;
+
+        width: 100%;
+        /* All list inside timeline*/
+        margin-bottom: 20px;
+    }
+    .timeline > li .timeline-panel
+    {
+        float: right;
+
+        width: calc(100% - 90px);
+    }
+    .timeline > li .timeline-panel::before
+    {
+        right: auto;
+        left: -15px;
+
+        border-right-width: 15px;
+        border-left-width: 0;
+    }
+    .timeline > li .timeline-panel::after
+    {
+        right: auto;
+        left: -14px;
+
+        border-right-width: 14px;
+        border-left-width: 0;
+    }
+    .timeline > li .timeline-badge
+    {
+        top: 22px;
+        left: 28px;
+
+        margin-left: 0;
+    }
+    .timeline > li.timeline-inverted
+    {
+        float: left;
+        clear: left;
+
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    .timeline > li.timeline-inverted .timeline-badge
+    {
+        left: 28px;
+    }
+}

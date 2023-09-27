@@ -1,0 +1,16 @@
+{
+  "listItems": [
+    {
+      "url": "page-blank.html",
+      "name": "Blank Page",
+      "icon": "pages",
+      "category": "Blank Page"
+    },
+    {
+      "url": "changelog.html",
+      "name": "Change Log",
+      "icon": "track_changes",
+      "category": "Changelog"
+    }
+  ]
+}

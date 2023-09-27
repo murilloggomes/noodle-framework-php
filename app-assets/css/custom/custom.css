@@ -1,0 +1,97 @@
+/*================================================================================
+	Item Name: Materialize - Material Design Admin Template
+	Version: 5.0
+	Author: PIXINVENT
+	Author URL: https://themeforest.net/user/pixinvent/portfolio
+================================================================================
+
+NOTE:
+------
+PLACE HERE YOUR OWN CSS CODES AND IF NEEDED, OVERRIDE THE STYLES FROM THE OTHER STYLESHEETS.
+WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BETTER LIKE THIS.  */
+/* .blue-grey-custom {
+  background-color: #ff770e;
+}
+
+.grey-js-insertion {
+  background: #00000009;
+  border: 1px solid #00000050;
+}
+
+.success-toast {
+  background-color: #36b158;
+}
+
+.black-background {
+  background-color: #000000;
+}
+
+.white-font {
+  color: #ffffff;
+}
+
+.font-s8 {
+  font-size: 8px !important;
+}
+
+.font-s18 {
+  font-size: 18px !important;
+	margin: 0px !important;
+}
+
+.mt-19px {
+  margin-top: 19px !important;
+}
+
+.selected-button-table {
+  border: 1px solid #e4e4e4;
+	background: #ff780e;
+	color:#fff !important;
+}
+
+
+.waves-effect-laranja {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    overflow: hidden;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transition: .3s ease-out;
+    transition: .50s ease-out;
+    vertical-align: middle;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.waves-effect-laranja:hover {
+color: #f57823;
+}
+
+.add-campo:hover {
+	cursor: pointer;
+}
+
+.select-visual {
+  width: 95% !important;
+  left: 35px;
+}
+
+.icon-modal-pos {
+  position: absolute;
+  left: -23px;
+}
+
+.inputmodal-pos-left {
+  right: -38px !important;
+  width: 47% !important;  
+}
+
+.inputmodal-pos-right {
+  left: 72px !important;
+  width: 509px !important;
+}
+
+ */
