@@ -22,18 +22,18 @@
 ## Descrição do do FrameWork 
 
 <p align="justify">
-  Framework leve e extremamente potente para se extrair da melhor forma o php 8.2. Arquitetado em MVC muitos o qual muitos já vão estar familiazirados. 
+  Framework leve e extremamente potente para se extrair da melhor forma o php 8.2. Arquitetado em MVC o qual muitos já vão estar familiarizados. 
 </p>
 
 ## Funcionalidades
 
-:heavy_check_mark: Página Externa para acesso ao cliente (Situ institucional, E-Commerce, Consulta de Propostas ou Orçamentos, Agendamendo de serviços ou entregas... indo do planejamento estratégico do projeto.).  
+:heavy_check_mark: Página Externa para acesso do cliente (Site institucional, E-Commerce, Consulta de Propostas ou Orçamentos, Agendamendo de serviços ou entregas... indo do planejamento estratégico do projeto.).  
 
-:heavy_check_mark: Dashboard interno já estruturado para você escalar mediante suas nececidades, com gráficos, componentes atualizados para tratamento de processos de vários tipos, desde vendas, analise de compras e receitas, indicadores de departamentos para tomada de gestão, e o programador deverá se preocupar apenas com a dinamica da arquitetura MVC lembrando sempre de abastecer o conhecimento nas Routes, Views, Controllers e Models, que a equipe SparteLtda sempre estára atualizando a ferramenta a medida que for sendo necessario mais funcionalidades para sanar necessidades de vocês e/ou seus clentes!
+:heavy_check_mark: Dashboard interno já estruturado para você escalar mediante suas nececidades, com gráficos, componentes atualizados para tratamento de processos de vários tipos, desde vendas, análise de compras e receitas, indicadores de departamentos para tomada de gestão, devendo se preocupar apenas com a dinâmica da arquitetura MVC lembrando sempre de abastecer o conhecimento nas Routes, Views, Controllers e Models, que a equipe SparteLtda sempre estára atualizando a ferramenta a medida que for sendo necessario mais funcionalidades para sanar necessidades de vocês e/ou seus clentes!
 
-:heavy_check_mark: Responsivo para todo o tipo de tela, totalmente preparado para se tornar um aplicativo WebView para celulares, podendo ser inserido nas lojas de APP como Apple Store e Play Store, sem nenhum inpedimento técnico.  
+:heavy_check_mark: Responsivo para todo o tipo de tela, totalmente preparado para se tornar um aplicativo WebView para celulares, podendo ser inserido nas lojas de APP como Apple Store e Play Store, sem nenhum impedimento técnico.  
 
-:heavy_check_mark: Componentes totalmente atualizados e de alta usabilidade como chars, datatable, fullcalendary, phpmailer, simpleimage, php-encryption, moment, ionCube, router, qr-code, pix, monolog, aws, mpdf, google auth, entre outros interessantes que vocês irão precisar para cada tipo de projeto distinto.
+:heavy_check_mark: Componentes totalmente atualizados e de alta usabilidade como chars, datatable, fullcalendary, phpmailer, simpleimage, php-encryption, moment, ionCube, router, qr-code, pix, monolog, aws, mpdf, google auth, entre outros interessantes que vocês irão precisar para cada projeto distinto.
 
 ## Pré-requisitos
 
@@ -48,7 +48,7 @@ No terminal, clone o projeto:
 sudo git clone git@github.com:murilloggomes/noodle-open-source-framework-php-82.git
 ```
 
-run: "cd" no caminho da pasta do projeto (que deve ser baixa na pasta raiz realmente da aplicação)
+run: "cd" no caminho da pasta do projeto (que deve ser baixado na pasta raiz real da aplicação)
 
 ## Como vincular o banco de dados corretamente
 ```
@@ -69,7 +69,7 @@ Depois disso pode ir direto pro login e acessar com o usuário e senha que você
 Usuário: noodle@spartechltda.com.br | Senha: @noodle123
 ```
 
-Após isso se aventurar na contrução de páginas utilizando o MVC, com as routes chamando os controller e os controller chamando as views. Os dados do banco sempre será chamados dos Models por uma estrutura muito simples como:
+Após isso se aventurar na contrução de páginas utilizando o MVC, com as routes chamando os controller e os controller chamando as views. Os dados do banco sempre serão chamados dos Models por uma estrutura muito simples como:
 
 ## Uso do SQL Controller
 ```
@@ -90,7 +90,7 @@ Linha2: $User->set("nome", "SpartechLtda");
 ```  
 Linha3: $User->save();
 ``` 
-Com isso trouxemos um colocamos em uma váriavel o valor do nome dentro do banco user, e na segunda opção troxemos e setamos um novo valor para aquele nome daquele $IdUser de uma maneira muito simples e sem precisar tocar em nenhum momento em query. Tudo rápido fácil e totalmente seguro!
+Com isso trouxemos em uma váriavel o valor do nome dentro do banco user, e na segunda opção troxemos e setamos um novo valor para aquele nome daquele $IdUser de uma maneira muito simples e sem precisar tocar em nenhum momento em query. Tudo rápido fácil e totalmente seguro!
 
 ## Dicas e ideias, deixe em nosso comentário do fórum
 <a href="https://github.com/murilloggomes/noodle-framework-php/discussions/1">Fórum de discussão</a>
